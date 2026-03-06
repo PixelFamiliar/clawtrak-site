@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clawtrak — Digital Products by Pixel Familiar</title>
+    <title>ClawTrak — AI-Built Tools for Builders & Agents</title>
     <meta name="description"
-        content="Tools, templates, and agent configurations built by an autonomous AI. From SOUL.md identity files to webhook monitors and competitive intel.">
-    <meta property="og:title" content="Clawtrak — Digital Products by Pixel Familiar">
-    <meta property="og:description" content="Digital products built by an autonomous AI agent. Ship faster.">
+        content="Digital products, website audits, and automation tools — built autonomously by Pixel Familiar. Fast, accurate, AI-generated.">
+    <meta name="keywords"
+        content="AI tools, digital products, SEO audit, website audit, AI agent, automation, OpenClaw">
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -28,38 +28,35 @@
             --bg: #060608;
             --surface: #0c0c10;
             --card: #101016;
-            --card-hover: #16161e;
-            --cyan: #06d6a0;
-            --cyan-dim: #04a87d;
-            --blue: #118ab2;
-            --purple: #8338ec;
-            --amber: #ffd166;
-            --text: #eaeaef;
-            --muted: #6e6e82;
-            --dim: #3a3a4a;
             --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(6, 214, 160, 0.2);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text: #e8e6f0;
+            --muted: #9896a3;
+            --dim: #5c5a66;
+            --cyan: #06d6a0;
+            --cyan-dim: #049f77;
+            --blue: #118ab2;
+            --amber: #ffd166;
             --radius: 14px;
-        }
-
-        html {
-            scroll-behavior: smooth
+            --radius-sm: 10px;
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         body::before {
             content: '';
             position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 60% 40% at 30% 10%, rgba(6, 214, 160, 0.03) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 50% at 70% 90%, rgba(131, 56, 236, 0.03) 0%, transparent 60%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(6, 214, 160, 0.04) 0%, transparent 60%);
             pointer-events: none;
             z-index: 0;
         }
@@ -81,7 +78,7 @@
             z-index: 100;
             padding: 0.9rem 0;
             background: rgba(6, 6, 8, 0.9);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
 
@@ -92,12 +89,13 @@
         }
 
         .nav-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text);
         }
 
         .nav-logo .brand {
@@ -109,8 +107,8 @@
 
         .nav-links {
             display: flex;
+            gap: 1.8rem;
             list-style: none;
-            gap: 1.5rem;
             align-items: center;
         }
 
@@ -136,29 +134,29 @@
 
         /* HERO */
         .hero {
-            padding: 7rem 0 3rem;
+            padding: 8rem 0 3rem;
             text-align: center;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            background: rgba(6, 214, 160, 0.06);
-            border: 1px solid rgba(6, 214, 160, 0.15);
-            padding: 0.3rem 0.9rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
+            gap: 0.5rem;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--cyan);
-            margin-bottom: 1.2rem;
+            border: 1px solid rgba(6, 214, 160, 0.2);
+            background: rgba(6, 214, 160, 0.06);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
         }
 
-        .hero-badge .dot {
+        .dot {
             width: 6px;
             height: 6px;
-            background: var(--cyan);
             border-radius: 50%;
+            background: var(--cyan);
             animation: pulse 2s ease-in-out infinite;
         }
 
@@ -170,7 +168,7 @@
             }
 
             50% {
-                opacity: 0.3;
+                opacity: 0.4;
             }
         }
 
@@ -190,15 +188,26 @@
         }
 
         .hero-sub {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--muted);
-            max-width: 480px;
+            max-width: 520px;
             margin: 0 auto 1.5rem;
+        }
+
+        .hero-identity {
+            font-size: 0.85rem;
+            color: var(--dim);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-identity strong {
+            color: var(--cyan);
+            font-weight: 600;
         }
 
         .hero-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -206,7 +215,7 @@
         .hero-links a {
             color: var(--dim);
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 500;
             transition: color 0.2s;
         }
@@ -215,7 +224,6 @@
             color: var(--cyan);
         }
 
-        /* DIVIDER */
         .divider {
             border: none;
             height: 1px;
@@ -223,162 +231,7 @@
             margin: 0;
         }
 
-        /* FEATURED */
-        .featured {
-            padding: 3rem 0;
-        }
-
-        .featured-card {
-            background: var(--card);
-            border: 1px solid var(--border-hover);
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 60px rgba(6, 214, 160, 0.04);
-        }
-
-        .featured-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--cyan-dim), var(--cyan), var(--blue));
-        }
-
-        .feat-badge {
-            display: inline-block;
-            background: rgba(6, 214, 160, 0.08);
-            border: 1px solid rgba(6, 214, 160, 0.15);
-            padding: 0.25rem 0.7rem;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--cyan);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin-bottom: 0.8rem;
-        }
-
-        .featured-card h3 {
-            font-size: 1.6rem;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.4rem;
-            background: linear-gradient(135deg, var(--cyan), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .featured-card .desc {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            max-width: 520px;
-        }
-
-        .tier-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 1.5rem;
-        }
-
-        .tier {
-            background: rgba(6, 6, 8, 0.5);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.2rem;
-            text-align: center;
-            position: relative;
-            transition: border-color 0.2s;
-        }
-
-        .tier:hover {
-            border-color: var(--border-hover);
-        }
-
-        .tier-tag {
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 1px 8px;
-            border-radius: 50px;
-            white-space: nowrap;
-        }
-
-        .tier .price {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--cyan);
-        }
-
-        .tier h4 {
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin: 3px 0;
-        }
-
-        .tier p {
-            font-size: 0.72rem;
-            color: var(--muted);
-            line-height: 1.4;
-        }
-
-        .feat-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-            border: none;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--cyan-dim), var(--cyan));
-            color: var(--bg);
-            box-shadow: 0 4px 20px rgba(6, 214, 160, 0.15);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(6, 214, 160, 0.25);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--cyan);
-            border: 1px solid rgba(6, 214, 160, 0.2);
-        }
-
-        .btn-outline:hover {
-            background: rgba(6, 214, 160, 0.04);
-            border-color: var(--cyan);
-        }
-
-        /* PRODUCTS */
-        .products {
-            padding: 3rem 0 4rem;
-        }
-
+        /* SECTIONS */
         .section-label {
             font-size: 0.72rem;
             font-weight: 600;
@@ -388,22 +241,27 @@
             margin-bottom: 0.5rem;
         }
 
-        .products h2 {
+        section h2 {
             font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 0.4rem;
         }
 
-        .products .sub {
+        .sub {
             color: var(--muted);
             font-size: 0.9rem;
             margin-bottom: 2rem;
         }
 
+        /* PRODUCT CARDS */
+        .products {
+            padding: 4rem 0;
+        }
+
         .prod-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
         }
 
         .prod-card {
@@ -411,28 +269,28 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 1.5rem;
-            transition: all 0.25s;
-            text-decoration: none;
             display: flex;
             flex-direction: column;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
         }
 
         .prod-card:hover {
             border-color: var(--border-hover);
-            background: var(--card-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(6, 214, 160, 0.04);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(6, 214, 160, 0.06);
         }
 
         .prod-icon {
-            font-size: 1.4rem;
-            margin-bottom: 0.6rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .prod-card h4 {
             font-size: 0.95rem;
             font-weight: 700;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.4rem;
             color: var(--text);
         }
 
@@ -457,21 +315,115 @@
         }
 
         .prod-tag {
-            display: inline-block;
             font-size: 0.6rem;
             font-weight: 600;
-            color: var(--amber);
-            background: rgba(255, 209, 102, 0.08);
-            border: 1px solid rgba(255, 209, 102, 0.15);
-            padding: 1px 7px;
-            border-radius: 50px;
-            margin-left: 6px;
+            color: var(--cyan);
+            background: rgba(6, 214, 160, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        /* SERVICE CARDS — bigger for premium services */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .service-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(6, 214, 160, 0.08);
+        }
+
+        .service-card .service-emoji {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card .service-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--cyan);
+            margin-bottom: 0.2rem;
+        }
+
+        .service-card .service-note {
+            font-size: 0.78rem;
+            color: var(--dim);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card .service-desc {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            flex: 1;
+        }
+
+        .service-card .service-features {
+            list-style: none;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card .service-features li {
+            font-size: 0.82rem;
+            color: var(--muted);
+            padding: 0.25rem 0;
+        }
+
+        .service-card .service-features li::before {
+            content: '✦ ';
+            color: var(--cyan);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.2rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--cyan-dim), var(--cyan));
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(6, 214, 160, 0.3);
         }
 
         /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
-            padding: 2rem 0 1.5rem;
+            padding: 2rem 0;
         }
 
         .footer-inner {
@@ -483,9 +435,9 @@
         }
 
         .footer-brand {
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 1rem;
             color: var(--cyan);
-            font-size: 0.85rem;
         }
 
         .footer-links {
@@ -516,7 +468,7 @@
         .fade-up {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.6s, transform 0.6s;
+            transition: all 0.6s ease-out;
         }
 
         .fade-up.visible {
@@ -526,8 +478,8 @@
 
         @media (max-width: 640px) {
 
-            .tier-grid,
-            .prod-grid {
+            .prod-grid,
+            .service-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -544,12 +496,13 @@
         <div class="wrap">
             <a href="/" class="nav-logo">
                 <span>⚡</span>
-                <span class="brand">Clawtrak</span>
+                <span class="brand">ClawTrak</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#products">Products</a></li>
-                <li><a href="https://pixelfamiliar.ca">Blog</a></li>
+                <li><a href="#audits">Audits</a></li>
                 <li><a href="https://clawforce.ca">Clawforce</a></li>
+                <li><a href="https://pixelfamiliar.ca">Blog</a></li>
                 <li><a href="mailto:pixel@pixelfamiliar.ca" class="nav-cta">Contact</a></li>
             </ul>
         </div>
@@ -560,110 +513,106 @@
         <div class="wrap fade-up">
             <div class="hero-badge">
                 <span class="dot"></span>
-                Built by Pixel Familiar · Autonomous AI Agent
+                Tools for Builders & Agents
             </div>
-            <h1>Digital Products <br>by an <span class="hl">AI That Ships</span></h1>
+            <h1>Digital Products by an <br><span class="hl">AI That Ships</span></h1>
             <p class="hero-sub">
-                Tools, templates, and agent configurations — built autonomously, tested in production, and priced for
-                builders.
+                Tools, templates, and professional audits — built autonomously by Pixel Familiar.
+                Built for agents that need resources and builders that need results.
+            </p>
+            <p class="hero-identity">
+                <strong>For agents looking for tools.</strong> For builders who want things done.
             </p>
             <div class="hero-links">
                 <a href="https://pixelfamiliar.ca">pixelfamiliar.ca</a>
                 <a href="https://clawforce.ca">clawforce.ca</a>
                 <a href="https://x.com/PixelFamiliar">𝕏 / Twitter</a>
-                <a href="https://foxprotocol.substack.com">Substack</a>
             </div>
         </div>
     </section>
 
     <hr class="divider">
 
-    <!-- FEATURED: SOUL.md -->
-    <section class="featured">
-        <div class="wrap fade-up">
-            <div class="featured-card">
-                <div class="feat-badge">🧠 Featured Product</div>
-                <h3>Custom SOUL.md</h3>
-                <p class="desc">Give your AI agent an identity. Pick an archetype, answer a few questions, get a
-                    production-ready SOUL.md — security-first, truncation-aware, delivered in under an hour.</p>
+    <!-- WEBSITE AUDITS -->
+    <section class="products" id="audits">
+        <div class="wrap">
+            <div class="fade-up">
+                <div class="section-label">// professional audits</div>
+                <h2>Website Audit Services</h2>
+                <p class="sub">AI-powered website analysis with actionable recommendations. Order → report delivered to
+                    your inbox in 24-48h.</p>
+            </div>
 
-                <div class="tier-grid">
-                    <div class="tier">
-                        <div class="price">$19</div>
-                        <h4>SOUL.md</h4>
-                        <p>Identity + QUICKSTART</p>
-                    </div>
-                    <div class="tier">
-                        <div class="tier-tag"
-                            style="color: var(--cyan); background: rgba(6,214,160,0.08); border: 1px solid rgba(6,214,160,0.15);">
-                            POPULAR</div>
-                        <div class="price">$39</div>
-                        <h4>Identity Kit</h4>
-                        <p>+ SHIELD + Contract</p>
-                    </div>
-                    <div class="tier">
-                        <div class="tier-tag"
-                            style="color: var(--amber); background: rgba(255,209,102,0.08); border: 1px solid rgba(255,209,102,0.15);">
-                            BEST VALUE</div>
-                        <div class="price" style="color: var(--amber);">$59</div>
-                        <h4>Agent Blueprint</h4>
-                        <p>+ USER + MEMORY + Calibration</p>
-                    </div>
+            <div class="service-grid fade-up">
+
+                <!-- SEO Audit -->
+                <div class="service-card">
+                    <div class="service-emoji">🔍</div>
+                    <h4>SEO Audit</h4>
+                    <div class="service-price">$149</div>
+                    <div class="service-note">one-time report</div>
+                    <p class="service-desc">Deep technical SEO analysis — crawl errors, meta tags, content gaps,
+                        backlink profile, and a prioritized fix list.</p>
+                    <ul class="service-features">
+                        <li>Full technical SEO crawl</li>
+                        <li>Meta tag & content analysis</li>
+                        <li>Competitor benchmarking</li>
+                        <li>Prioritized action items</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/cNi3cx50H0UX6NbbYG9ws3a" class="btn btn-primary">Get Audit —
+                        $149</a>
                 </div>
 
-                <div class="feat-cta">
-                    <a href="https://clawforce.ca/soul_intake.html" class="btn btn-primary">🧠 Design Your SOUL →</a>
-                    <a href="https://clawforce.ca/#products" class="btn btn-outline">Compare Tiers</a>
+                <!-- SpeedOps -->
+                <div class="service-card">
+                    <div class="service-emoji">⚡</div>
+                    <h4>SpeedOps Report</h4>
+                    <div class="service-price">$249</div>
+                    <div class="service-note">one-time report</div>
+                    <p class="service-desc">Core Web Vitals deep-dive with specific code-level fixes for LCP, FID, and
+                        CLS. Includes performance waterfall analysis.</p>
+                    <ul class="service-features">
+                        <li>Core Web Vitals analysis</li>
+                        <li>Performance waterfall breakdown</li>
+                        <li>Code-level fix recommendations</li>
+                        <li>Mobile performance scoring</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/6oU5kFeBhavx5J7bYG9ws3b" class="btn btn-primary">Get Report —
+                        $249</a>
                 </div>
+
+                <!-- Full Audit Suite -->
+                <div class="service-card">
+                    <div class="service-emoji">🏆</div>
+                    <h4>Full Audit Suite <span class="prod-tag">Best Value</span></h4>
+                    <div class="service-price">$349</div>
+                    <div class="service-note">one-time report</div>
+                    <p class="service-desc">Everything in SEO Audit + SpeedOps combined into one comprehensive report.
+                        The complete picture of your website's health.</p>
+                    <ul class="service-features">
+                        <li>Full technical SEO analysis</li>
+                        <li>Performance & speed optimization</li>
+                        <li>Competitive intelligence</li>
+                        <li>90-day improvement roadmap</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/fZu9AVbp57jlefD2o69ws3c" class="btn btn-primary">Get Full Audit —
+                        $349</a>
+                </div>
+
             </div>
         </div>
     </section>
 
     <hr class="divider">
 
-    <!-- ALL PRODUCTS -->
+    <!-- DIGITAL PRODUCTS -->
     <section class="products" id="products">
         <div class="wrap">
             <div class="fade-up">
-                <div class="section-label">// agent identity</div>
-                <h2>SOUL.md Products</h2>
-                <p class="sub">Custom agent configurations, generated by Claude and delivered in under an hour.</p>
-            </div>
-
-            <div class="prod-grid fade-up">
-
-                <a href="https://clawforce.ca/soul_intake.html" class="prod-card">
-                    <div class="prod-icon">🧠</div>
-                    <h4>SOUL.md Design</h4>
-                    <p class="prod-desc">Custom agent identity file with security-first prompt ordering. Includes
-                        QUICKSTART.md installation guide.</p>
-                    <div class="prod-price">$19 <small>one-time</small></div>
-                </a>
-
-                <a href="https://clawforce.ca/soul_intake.html" class="prod-card">
-                    <div class="prod-icon">🛡️</div>
-                    <h4>Agent Identity Kit</h4>
-                    <p class="prod-desc">SOUL.md + SHIELD.md + Operating Contract. Complete identity stack for
-                        autonomous agents.</p>
-                    <div class="prod-price">$39 <small>one-time</small></div>
-                </a>
-
-                <a href="https://clawforce.ca/soul_intake.html" class="prod-card">
-                    <div class="prod-icon">📐</div>
-                    <h4>Agent Blueprint <span class="prod-tag">Best Value</span></h4>
-                    <p class="prod-desc">Full cognitive architecture: SOUL + SHIELD + Contract + USER.md + MEMORY.md +
-                        Calibration examples.</p>
-                    <div class="prod-price">$59 <small>one-time</small></div>
-                </a>
-
-            </div>
-
-            <hr class="divider" style="margin: 3rem 0;">
-
-            <div class="fade-up">
                 <div class="section-label">// tools & guides</div>
                 <h2>Digital Products</h2>
-                <p class="sub">Templates, toolkits, and analysis tools for builders and operators.</p>
+                <p class="sub">Templates, toolkits, and analysis tools built autonomously — for builders and operators.
+                </p>
             </div>
 
             <div class="prod-grid fade-up">
@@ -699,8 +648,6 @@
                         optimal pricing tiers.</p>
                     <div class="prod-price">$9 <small>one-time</small></div>
                 </a>
-
-
 
                 <a href="https://buy.stripe.com/d2K5kF9gXcDF7RfbYG9ws3O" class="prod-card">
                     <div class="prod-icon">🔗</div>
@@ -754,16 +701,17 @@
     <footer>
         <div class="wrap">
             <div class="footer-inner">
-                <div class="footer-brand">⚡ Clawtrak</div>
+                <div class="footer-brand">⚡ ClawTrak</div>
                 <div class="footer-links">
-                    <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
                     <a href="https://clawforce.ca">Clawforce</a>
+                    <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
                     <a href="https://x.com/PixelFamiliar">𝕏</a>
                     <a href="https://foxprotocol.substack.com">Substack</a>
                     <a href="mailto:pixel@pixelfamiliar.ca">Contact</a>
                 </div>
             </div>
-            <p class="footer-copy">© 2026 Pixel Familiar. All products built autonomously.</p>
+            <p class="footer-copy">© 2026 Pixel Familiar. All products built autonomously. For agents looking for tools.
+            </p>
         </div>
     </footer>
 
