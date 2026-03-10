@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog — ClawTrak | New Products Every Morning</title>
+    <meta name="description"
+        content="Browse all AI-built digital products. New tools added every morning by our autonomous AI agent. Autopilot skills, developer tools, templates, and more.">
+    <meta name="keywords"
+        content="AI tools, digital products, SEO audit, website audit, AI agent, automation, OpenClaw">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #060608;
+            --surface: #0c0c10;
+            --card: #101016;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text: #e8e6f0;
+            --muted: #9896a3;
+            --dim: #5c5a66;
+            --cyan: #06d6a0;
+            --cyan-dim: #049f77;
+            --blue: #118ab2;
+            --amber: #ffd166;
+            --radius: 14px;
+            --radius-sm: 10px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(6, 214, 160, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.9rem 0;
+            background: rgba(6, 6, 8, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .nav-logo .brand {
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        .nav-links a.active {
+            color: var(--cyan);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--cyan-dim), var(--cyan));
+            color: var(--bg) !important;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-weight: 700 !important;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 8rem 0 3rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--cyan);
+            border: 1px solid rgba(6, 214, 160, 0.2);
+            background: rgba(6, 214, 160, 0.06);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 .hl {
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
+            margin: 0;
+        }
+
+        /* SECTIONS */
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+
+        .sub {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        /* PRODUCT CARDS */
+        .products {
+            padding: 4rem 0;
+        }
+
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .prod-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .prod-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(6, 214, 160, 0.06);
+        }
+
+        .prod-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .prod-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+
+        .prod-card .prod-desc {
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.5;
+            flex: 1;
+            margin-bottom: 0.8rem;
+        }
+
+        .prod-price {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--cyan);
+        }
+
+        .prod-price small {
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--dim);
+        }
+
+        .prod-tag {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--cyan);
+            background: rgba(6, 214, 160, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--muted);
+        }
+
+        .empty-state .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-state p {
+            font-size: 0.9rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--cyan);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--dim);
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            color: var(--dim);
+            width: 100%;
+            text-align: center;
+            margin-top: 0.8rem;
+        }
+
+        /* ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+
+            .prod-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="wrap">
+            <a href="/" class="nav-logo">
+                <span>⚡</span>
+                <span class="brand">ClawTrak</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/#audits">Audits</a></li>
+                <li><a href="/catalog.html" class="active">Catalog</a></li>
+                <li><a href="https://clawforce.ca">Clawforce</a></li>
+                <li><a href="mailto:pixel@pixelfamiliar.ca" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap fade-up">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Updated Nightly
+            </div>
+            <h1>Full <span class="hl">Catalog</span></h1>
+            <p class="hero-sub">
+                Every product our AI agent has researched, built, and shipped.
+                New tools appear here each morning.
+            </p>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CATALOG GRID -->
+    <section class="products" id="catalog">
+        <div class="wrap">
+            <div class="fade-up">
+                <div class="section-label">// all products</div>
+                <h2>Built Overnight</h2>
+                <p class="sub">Products built autonomously by our AI agent. Check back daily for new additions.</p>
+            </div>
+
+            <div class="prod-grid fade-up" id="catalog-grid">
+
+                <!-- OVERNIGHT PRODUCTS INSERTED HERE -->
+
+            </div>
+
+            <!-- Empty state shown when no products yet -->
+            <div class="empty-state fade-up" id="empty-state">
+                <div class="icon">🌙</div>
+                <p>The AI agent is hard at work tonight. Check back in the morning for fresh products.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-inner">
+                <div class="footer-brand">⚡ ClawTrak</div>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="https://clawforce.ca">Clawforce</a>
+                    <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
+                    <a href="https://x.com/PixelFamiliar">𝕏</a>
+                    <a href="mailto:pixel@pixelfamiliar.ca">Contact</a>
+                </div>
+            </div>
+            <p class="footer-copy">© 2026 Pixel Familiar. All products built autonomously.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Hide empty state if there are products
+        const grid = document.getElementById('catalog-grid');
+        const empty = document.getElementById('empty-state');
+        if (grid && empty) {
+            const hasProducts = grid.querySelectorAll('.prod-card').length > 0;
+            empty.style.display = hasProducts ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+
+</html>
