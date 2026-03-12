@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog — ClawTrak | New Products Every Morning</title>
+    <title>Catalog — ClawTrak | AI-Built Digital Products</title>
     <meta name="description"
-        content="Browse all AI-built digital products. New tools added every morning by our autonomous AI agent. Autopilot skills, developer tools, templates, and more.">
-    <meta name="keywords"
-        content="AI tools, digital products, SEO audit, website audit, AI agent, automation, OpenClaw">
+        content="Browse all AI-built digital products. Autopilot skills, developer tools, templates, audits, and more. New tools added regularly.">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -156,6 +154,30 @@
             margin-bottom: 1.5rem;
         }
 
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .num {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--cyan);
+        }
+
+        .hero-stat .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--dim);
+        }
+
         .dot {
             width: 6px;
             height: 6px;
@@ -205,6 +227,53 @@
             margin: 0;
         }
 
+        /* FILTER TABS */
+        .filter-tabs {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem 0 0;
+        }
+
+        .filter-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--border-hover);
+            color: var(--text);
+        }
+
+        .filter-tab.active {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            background: rgba(6, 214, 160, 0.08);
+        }
+
+        .filter-count {
+            font-size: 0.65rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1px 6px;
+            border-radius: 10px;
+        }
+
+        .filter-tab.active .filter-count {
+            background: rgba(6, 214, 160, 0.15);
+        }
+
         /* SECTIONS */
         .section-label {
             font-size: 0.72rem;
@@ -227,9 +296,34 @@
             margin-bottom: 2rem;
         }
 
+        /* CATEGORY HEADERS */
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 2.5rem 0 1rem;
+        }
+
+        .category-header:first-child {
+            margin-top: 0;
+        }
+
+        .category-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .category-count {
+            font-size: 0.7rem;
+            color: var(--dim);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
         /* PRODUCT CARDS */
         .products {
-            padding: 4rem 0;
+            padding: 2rem 0 4rem;
         }
 
         .prod-grid {
@@ -254,6 +348,11 @@
             border-color: var(--border-hover);
             transform: translateY(-3px);
             box-shadow: 0 8px 32px rgba(6, 214, 160, 0.06);
+        }
+
+        .prod-card.featured {
+            border-color: rgba(255, 209, 102, 0.2);
+            background: rgba(255, 209, 102, 0.03);
         }
 
         .prod-icon {
@@ -299,21 +398,8 @@
             margin-left: 4px;
         }
 
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--muted);
-        }
-
-        .empty-state .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .empty-state p {
-            font-size: 0.9rem;
-            max-width: 400px;
-            margin: 0 auto;
+        .hidden {
+            display: none !important;
         }
 
         /* FOOTER */
@@ -381,6 +467,10 @@
             .nav-links {
                 display: none;
             }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -409,240 +499,187 @@
         <div class="wrap fade-up">
             <div class="hero-badge">
                 <span class="dot"></span>
-                Updated Nightly
+                All Products
             </div>
             <h1>Full <span class="hl">Catalog</span></h1>
             <p class="hero-sub">
-                Every product our AI agent has researched, built, and shipped.
-                New tools appear here each morning.
+                Every product built and shipped by our autonomous AI agent.
+                All products include instant delivery after purchase.
             </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">15</div>
+                    <div class="label">Products</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">⚡</div>
+                    <div class="label">Instant Delivery</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">🔒</div>
+                    <div class="label">Stripe Secure</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <hr class="divider">
 
-    <!-- CATALOG GRID -->
+    <!-- FILTER TABS -->
+    <div class="wrap">
+        <div class="filter-tabs fade-up">
+            <button class="filter-tab active" data-filter="all">All <span class="filter-count">15</span></button>
+            <button class="filter-tab" data-filter="autopilot">📱 Social Autopilot <span class="filter-count">6</span></button>
+            <button class="filter-tab" data-filter="tools">🛠 Tools & Automation <span class="filter-count">4</span></button>
+            <button class="filter-tab" data-filter="guides">📘 Guides & Templates <span class="filter-count">3</span></button>
+            <button class="filter-tab" data-filter="reports">📊 Reports & Audits <span class="filter-count">2</span></button>
+        </div>
+    </div>
+
+    <!-- CATALOG -->
     <section class="products" id="catalog">
         <div class="wrap">
-            <div class="fade-up">
-                <div class="section-label">// all products</div>
-                <h2>Built Overnight</h2>
-                <p class="sub">Products built autonomously by our AI agent. Check back daily for new additions.</p>
+
+            <!-- SOCIAL AUTOPILOT -->
+            <div class="category-header fade-up" data-category="autopilot">
+                <h3>📱 Social Autopilot</h3>
+                <span class="category-count">6 products</span>
+            </div>
+            <div class="prod-grid fade-up" data-category="autopilot">
+                <a href="https://buy.stripe.com/aFaaEZal1bzB3AZ1k29wt09" class="prod-card featured">
+                    <div class="prod-icon">📱</div>
+                    <h4>Social Autopilot Bundle <span class="prod-tag"
+                            style="background: rgba(255, 209, 102, 0.15); color: var(--amber);">Best Value</span></h4>
+                    <p class="prod-desc">All 5 social autopilot skills bundled together at 25% off. X, Bluesky, LinkedIn, Substack, and Reddit automation.</p>
+                    <div class="prod-price">$75 <small>one-time · Save 25%</small></div>
+                </a>
+                <a href="https://buy.stripe.com/5kQbJ3dxdbzBc7v6Em9wt04" class="prod-card">
+                    <div class="prod-icon">🤖</div>
+                    <h4>X Autopilot Skill <span class="prod-tag"
+                            style="background: rgba(255, 209, 102, 0.15); color: var(--amber);">🔥 Updated Daily</span></h4>
+                    <p class="prod-desc">Autonomous X engagement engine with AI-powered replies, content generation, account discovery, and daily recap articles.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/8x2fZjct9fPRfjH1k29wt05" class="prod-card">
+                    <div class="prod-icon">🦋</div>
+                    <h4>Bluesky Autopilot Skill</h4>
+                    <p class="prod-desc">Autonomous Bluesky engagement and posting via AT Protocol API. No browser needed, uses native API authentication.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/bJe00ldxd7jlefDbYG9wt06" class="prod-card">
+                    <div class="prod-icon">💼</div>
+                    <h4>LinkedIn Autopilot Skill</h4>
+                    <p class="prod-desc">Autonomous LinkedIn engagement and connection growth via browser automation. Grow your professional network on autopilot.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/28E00leBh7jlgnLgeW9wt07" class="prod-card">
+                    <div class="prod-icon">📰</div>
+                    <h4>Substack Autopilot Skill</h4>
+                    <p class="prod-desc">AI-powered article generation and publishing for Substack. Generate content offline, publish with one command.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/bJe7sN0Kr7jl7Rf5Ai9wt08" class="prod-card">
+                    <div class="prod-icon">🤖</div>
+                    <h4>Reddit Autopilot Skill</h4>
+                    <p class="prod-desc">Autonomous Reddit engagement and posting via PRAW API. No browser needed, uses Reddit's official API directly.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
             </div>
 
-            <div class="prod-grid fade-up" id="catalog-grid">
-
-                <!-- OVERNIGHT PRODUCTS INSERTED HERE -->
-
-                <a href="https://buy.stripe.com/28E14p3WDfPR4F30fY9wt0c" class="prod-card">
-                    <div class="prod-icon">📋</div>
-                    <h4>API Rate Limiter Template</h4>
-                    <p class="prod-desc">API Rate Limiter Template</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-
-                <a href="https://buy.stripe.com/test_generic_9?client_reference_id=npm-dependencies-security" class="prod-card">
-                    <div class="prod-icon">📦</div>
-                    <h4>npm-dependencies-security</h4>
-                    <p class="prod-desc">Autonomous Tool</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-
-                <a href="https://buy.stripe.com/test_generic_9?client_reference_id=json-types-codegen" class="prod-card">
-                    <div class="prod-icon">📦</div>
-                    <h4>json-types-codegen</h4>
-                    <p class="prod-desc">Autonomous Tool</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-
-                <a href="https://buy.stripe.com/test_generic_9?client_reference_id=cron-scheduling-plainenglish" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>cron-scheduling-plainenglish</h4>
-                    <p class="prod-desc">Autonomous Tool</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-
-                <a href="https://buy.stripe.com/7sY00leBheLN7Rf6Em9ws3u" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>AI Workflow Automation Guide</h4>
-                    <p class="prod-desc">A comprehensive guide to automating business workflows with AI tools</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/00wbJ31OvbzB2wVaUC9ws3v" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>AI Agent SEO Audit Template</h4>
-                    <p class="prod-desc">AI Agent SEO Audit Template</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/7sY9AV8cTfPRgnL4we9ws3w" class="prod-card">
-                    <div class="prod-icon">📓</div>
-                    <h4>Polymarket Betting Guide</h4>
-                    <p class="prod-desc">Polymarket Betting Guide</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/5kQ8wR1OvgTV4F31k29ws3x" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>Agent APM Lite</h4>
-                    <p class="prod-desc">Monitor agent health, uptime, and cron job status. Dashboard + alerts. $29/mo</p>
-                    <div class="prod-price">$29 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/28EfZj78P4793AZfaS9ws3y" class="prod-card">
-                    <div class="prod-icon">📊</div>
-                    <h4>SEO Audit Pro</h4>
-                    <p class="prod-desc">Automated SEO analysis with actionable recommendations. $49 one-time</p>
+            <!-- TOOLS & AUTOMATION -->
+            <div class="category-header fade-up" data-category="tools">
+                <h3>🛠 Tools & Automation</h3>
+                <span class="category-count">4 products</span>
+            </div>
+            <div class="prod-grid fade-up" data-category="tools">
+                <a href="https://buy.stripe.com/14AaEZ1OvdHJb3r8Mu9wt00" class="prod-card">
+                    <div class="prod-icon">💰</div>
+                    <h4>SaaS Pricing Strategy Compass</h4>
+                    <p class="prod-desc">Examines your SaaS metrics, compares against 50+ similar products, and recommends optimal pricing tiers with confidence intervals.</p>
                     <div class="prod-price">$49 <small>one-time</small></div>
                 </a>
-                <a href="https://buy.stripe.com/28EfZjbp56fh1sRaUC9ws3z" class="prod-card">
-                    <div class="prod-icon">🌐</div>
-                    <h4>Landing Page Boilerplate</h4>
-                    <p class="prod-desc">Copy-paste landing page templates for AI agents and SaaS. $39 one-time</p>
-                    <div class="prod-price">$39 <small>one-time</small></div>
+                <a href="https://buy.stripe.com/3cIeVf1Ov1Z1c7v0fY9ws47" class="prod-card">
+                    <div class="prod-icon">🚫</div>
+                    <h4>Agent Duplicate Action Blocker</h4>
+                    <p class="prod-desc">Prevents multiple AI agents from executing the same action by maintaining a shared action ledger with conflict detection.</p>
+                    <div class="prod-price">$49 <small>one-time</small></div>
                 </a>
-                <a href="https://buy.stripe.com/8x2cN778PfPR7Rf4we9ws3A" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>Agent Contract Templates</h4>
-                    <p class="prod-desc">Standard contracts for AI agent services.  one-time</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/8x26oJ3WD479fjHd2K9ws3B" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>Webhook Debugger for AI Agents</h4>
-                    <p class="prod-desc">Debug and monitor agent webhooks.  one-time</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/28E3cxdxdgTVfjHfaS9ws3C" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>AI Agent ROI Calculator</h4>
-                    <p class="prod-desc">Calculate ROI for automating tasks with agents.  one-time</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/aFa8wR78P5bdc7vd2K9ws3U" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>AI Agent Setup Guide</h4>
-                    <p class="prod-desc">AI Agent Setup Guide</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/bJe5kF9gXcDF7RfbYG9ws3O" class="prod-card">
-                    <div class="prod-icon">🔗</div>
-                    <h4>Webhook Automation Templates</h4>
-                    <p class="prod-desc">Webhook Automation Templates</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/28EaEZ2Sz9rt7Rf1k29ws3F" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>Base Chain Integration Guide</h4>
-                    <p class="prod-desc">Base Chain Integration Guide</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/00w9AVfFl1Z1gnLgeW9ws3G" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>AI Agent CRM Connector</h4>
-                    <p class="prod-desc">AI Agent CRM Connector</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/eVq4gBct9dHJ8Vj7Iq9ws3H" class="prod-card">
-                    <div class="prod-icon">🔗</div>
-                    <h4>Webhook Health Monitor</h4>
-                    <p class="prod-desc">Webhook Health Monitor</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/7sY14p2SzbzBdbzfaS9ws3J" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>The Autonomous AI Agent Playbook</h4>
-                    <p class="prod-desc">The Autonomous AI Agent Playbook</p>
-                    <div class="prod-price">$10 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/dRm28t3WD1Z1efD0fY9ws3P" class="prod-card">
-                    <div class="prod-icon">📦</div>
-                    <h4>Google Business Profile Optimizer</h4>
-                    <p class="prod-desc">Analyzes your business listing against top 5 local competitors and provides specific optimization recommendations to outrank them</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/fZueVffFlcDFc7v7Iq9ws3Q" class="prod-card">
+                <a href="https://buy.stripe.com/5kQ8wR1OvgTV4F31k29ws3x" class="prod-card">
                     <div class="prod-icon">📊</div>
-                    <h4>Competitor Review Insights Report</h4>
-                    <p class="prod-desc">Scrapes reviews from 10 competitors in your niche, extracts pain points and praise themes, and gives you templates to address the same customer needs</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/28EdRb1OvcDF3AZ5Ai9ws3V" class="prod-card">
-                    <div class="prod-icon">🧠</div>
-                    <h4>Local LLM Deployment Toolkit</h4>
-                    <p class="prod-desc">Local LLM Deployment Toolkit</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
+                    <h4>Agent APM Lite</h4>
+                    <p class="prod-desc">Monitor agent health, uptime, and cron job status from a single dashboard. Includes configurable alerts and performance tracking.</p>
+                    <div class="prod-price">$29 <small>one-time</small></div>
                 </a>
                 <a href="https://buy.stripe.com/14A8wRdxdgTVdbz2o69ws3X" class="prod-card">
                     <div class="prod-icon">🔗</div>
                     <h4>Webhook Automation Starter</h4>
-                    <p class="prod-desc">Webhook Automation Starter</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
+                    <p class="prod-desc">Production-ready webhook receiver with retry logic, signature verification, and event routing. Drop into any Node.js project.</p>
+                    <div class="prod-price">$19 <small>one-time</small></div>
                 </a>
-                <a href="https://buy.stripe.com/8x2eVfbp5eLN9Zn3sa9ws45" class="prod-card">
-                    <div class="prod-icon">📊</div>
-                    <h4>Social Media Hashtag Intelligence Report</h4>
-                    <p class="prod-desc">Analyzes any industry or niche and delivers the top-performing hashtags, their engagement metrics, and recommended hashtag combinations for maximum re...</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/9B6fZj0Kravx8Vje6O9ws46" class="prod-card">
-                    <div class="prod-icon">📦</div>
-                    <h4>Side Project Validation Checklist</h4>
-                    <p class="prod-desc">A comprehensive guide that walks builders through validating their idea against Reddit patterns and competitive analysis before writing code</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/3cIeVf1Ov1Z1c7v0fY9ws47" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>AI Agent Duplicate Action Blocker</h4>
-                    <p class="prod-desc">A tool that prevents multiple AI agents from executing the same action by maintaining a shared action ledger with conflict detection</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/14AaEZ1OvdHJb3r8Mu9wt00" class="prod-card">
-                    <div class="prod-icon">📦</div>
-                    <h4>SaaS Pricing Strategy Compass</h4>
-                    <p class="prod-desc">An analysis tool that examines your SaaS metrics, compares against 50+ similar products, and recommends optimal pricing tiers with confidence interval...</p>
-                    <div class="prod-price">$9 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/5kQbJ3dxdbzBc7v6Em9wt04" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>X Autopilot Skill — autonomous X engagement engine with daily updates</h4>
-                    <p class="prod-desc">X Autopilot Skill — autonomous X engagement engine with daily updates</p>
-                    <div class="prod-price">$20 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/8x2fZjct9fPRfjH1k29wt05" class="prod-card">
-                    <div class="prod-icon">📦</div>
-                    <h4>Bluesky Autopilot Skill — autonomous Bluesky engagement and posting via AT Protocol API</h4>
-                    <p class="prod-desc">Bluesky Autopilot Skill — autonomous Bluesky engagement and posting via AT Protocol API</p>
-                    <div class="prod-price">$20 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/bJe00ldxd7jlefDbYG9wt06" class="prod-card">
-                    <div class="prod-icon">⚡</div>
-                    <h4>LinkedIn Autopilot Skill — autonomous LinkedIn engagement and connection growth via browser automation</h4>
-                    <p class="prod-desc">LinkedIn Autopilot Skill — autonomous LinkedIn engagement and connection growth via browser automation</p>
-                    <div class="prod-price">$20 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/28E00leBh7jlgnLgeW9wt07" class="prod-card">
-                    <div class="prod-icon">🤖</div>
-                    <h4>Substack Autopilot Skill — AI-powered article generation and publishing for Substack</h4>
-                    <p class="prod-desc">Substack Autopilot Skill — AI-powered article generation and publishing for Substack</p>
-                    <div class="prod-price">$20 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/bJe7sN0Kr7jl7Rf5Ai9wt08" class="prod-card">
-                    <div class="prod-icon">📦</div>
-                    <h4>Reddit Autopilot Skill — autonomous Reddit engagement and posting via PRAW API</h4>
-                    <p class="prod-desc">Reddit Autopilot Skill — autonomous Reddit engagement and posting via PRAW API</p>
-                    <div class="prod-price">$20 <small>one-time</small></div>
-                </a>
-                <a href="https://buy.stripe.com/aFaaEZal1bzB3AZ1k29wt09" class="prod-card">
-                    <div class="prod-icon">📱</div>
-                    <h4>Social Autopilot Bundle — all 5 social autopilot skills at 25% off</h4>
-                    <p class="prod-desc">Social Autopilot Bundle — all 5 social autopilot skills at 25% off</p>
-                    <div class="prod-price">$75 <small>one-time</small></div>
-                </a>
-
             </div>
 
-            <!-- Empty state shown when no products yet -->
-            <div class="empty-state fade-up" id="empty-state">
-                <div class="icon">🌙</div>
-                <p>The AI agent is hard at work tonight. Check back in the morning for fresh products.</p>
+            <!-- GUIDES & TEMPLATES -->
+            <div class="category-header fade-up" data-category="guides">
+                <h3>📘 Guides & Templates</h3>
+                <span class="category-count">3 products</span>
+            </div>
+            <div class="prod-grid fade-up" data-category="guides">
+                <a href="https://buy.stripe.com/28EfZjbp56fh1sRaUC9ws3z" class="prod-card">
+                    <div class="prod-icon">🌐</div>
+                    <h4>Landing Page Boilerplate</h4>
+                    <p class="prod-desc">Copy-paste landing page templates for AI agents and SaaS products. Mobile-responsive, conversion-optimized, ready to deploy.</p>
+                    <div class="prod-price">$39 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/9B6fZj0Kravx8Vje6O9ws46" class="prod-card">
+                    <div class="prod-icon">✅</div>
+                    <h4>Side Project Validation Checklist</h4>
+                    <p class="prod-desc">Validate your idea against Reddit patterns and competitive analysis before writing a single line of code.</p>
+                    <div class="prod-price">$19 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/7sY14p2SzbzBdbzfaS9ws3J" class="prod-card">
+                    <div class="prod-icon">📘</div>
+                    <h4>The Autonomous AI Agent Playbook</h4>
+                    <p class="prod-desc">Step-by-step guide to building, deploying, and monetizing autonomous AI agents. Covers architecture, tools, and revenue strategies.</p>
+                    <div class="prod-price">$10 <small>one-time</small></div>
+                </a>
+            </div>
+
+            <!-- REPORTS & AUDITS -->
+            <div class="category-header fade-up" data-category="reports">
+                <h3>📊 Reports & Audits</h3>
+                <span class="category-count">2 products</span>
+            </div>
+            <div class="prod-grid fade-up" data-category="reports">
+                <a href="https://buy.stripe.com/28EfZj78P4793AZfaS9ws3y" class="prod-card">
+                    <div class="prod-icon">🔍</div>
+                    <h4>SEO Audit Pro</h4>
+                    <p class="prod-desc">Automated SEO analysis with actionable recommendations. Covers technical SEO, content gaps, backlink opportunities, and competitor benchmarks.</p>
+                    <div class="prod-price">$49 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/8x2eVfbp5eLN9Zn3sa9ws45" class="prod-card">
+                    <div class="prod-icon">📈</div>
+                    <h4>Social Media Hashtag Intelligence Report</h4>
+                    <p class="prod-desc">Analyzes any industry or niche and delivers top-performing hashtags, engagement metrics, and recommended combinations for maximum reach.</p>
+                    <div class="prod-price">$19 <small>one-time</small></div>
+                </a>
+            </div>
+
+            <!-- AI GENERATED DISCLAIMER -->
+            <div class="fade-up"
+                style="margin-top: 2.5rem; background: rgba(255,209,102,0.04); border: 1px solid rgba(255,209,102,0.12); border-radius: var(--radius); padding: 1.2rem 1.5rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                <span style="font-size: 1.1rem; flex-shrink: 0;">⚠️</span>
+                <div>
+                    <div style="font-size: 0.8rem; font-weight: 700; color: var(--amber); margin-bottom: 0.2rem;">
+                        AI-Generated Products</div>
+                    <p style="font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                        All products are researched, written, and built by <a
+                            href="https://pixelfamiliar.ca" style="color: var(--cyan); text-decoration: none;">Pixel
+                            Familiar</a>,
+                        an autonomous AI agent. While we strive for accuracy and quality, these are AI-generated
+                        deliverables. By purchasing, you acknowledge this and understand
+                        that the content should be validated for your specific use case.
+                    </p>
+                </div>
             </div>
 
         </div>
@@ -661,8 +698,7 @@
                     <a href="mailto:pixel@pixelfamiliar.ca">Contact</a>
                 </div>
             </div>
-            <p class="footer-copy">© 2026 Pixel Familiar. All products built autonomously.
-            </p>
+            <p class="footer-copy">© 2026 Pixel Familiar. All products built autonomously.</p>
         </div>
     </footer>
 
@@ -673,13 +709,22 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        // Hide empty state if there are products
-        const grid = document.getElementById('catalog-grid');
-        const empty = document.getElementById('empty-state');
-        if (grid && empty) {
-            const hasProducts = grid.querySelectorAll('.prod-card').length > 0;
-            empty.style.display = hasProducts ? 'none' : 'block';
-        }
+        // Category filter tabs
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filter = tab.dataset.filter;
+                document.querySelectorAll('.category-header, .prod-grid[data-category]').forEach(el => {
+                    if (filter === 'all' || el.dataset.category === filter) {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
