@@ -132,6 +132,15 @@
             font-weight: 700 !important;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         /* HERO */
         .hero {
             padding: 8rem 0 3rem;
@@ -476,7 +485,7 @@
             transform: translateY(0);
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
 
             .prod-grid,
             .service-grid {
@@ -485,6 +494,32 @@
 
             .nav-links {
                 display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(6, 6, 8, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 1.5rem 2rem;
+                border-bottom: 1px solid var(--border);
+                gap: 1rem;
+            }
+
+            .prod-card[style*="grid-column"] {
+                grid-column: auto !important;
+            }
+
+            .prod-card[style*="grid-column"] > div[style*="display: flex"] {
+                flex-direction: column !important;
             }
         }
     </style>
@@ -498,6 +533,7 @@
                 <span>⚡</span>
                 <span class="brand">ClawTrak</span>
             </a>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="#products">Products</a></li>
                 <li><a href="#audits">Audits</a></li>
