@@ -5,20 +5,20 @@
   "max_score": 100,
   "url": "https://clawtrak.com",
   "last_updated": "2026-03-14",
-  "total_scanned": 28,
-  "average_score": 38.2,
+  "total_scanned": 52,
+  "average_score": 34.2,
   "stats": {
     "grade_distribution": {
       "A": 3,
-      "B": 0,
-      "C": 8,
-      "D": 12,
-      "F": 5
+      "B": 1,
+      "C": 12,
+      "D": 26,
+      "F": 10
     },
-    "has_llms_txt": 17,
-    "has_agents_md": 6,
+    "has_llms_txt": 26,
+    "has_agents_md": 7,
     "has_agent_card": 3,
-    "has_jsonld": 9,
+    "has_jsonld": 17,
     "has_openapi": 3
   },
   "sites": [
@@ -1363,6 +1363,1158 @@
           "score": 7,
           "max": 10,
           "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "salesforce.com",
+      "score": 35,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 8,
+          "max": 15,
+          "status": "WARN"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 12,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 8,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "hubspot.com",
+      "score": 22,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 7,
+          "max": 15,
+          "status": "WARN"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "zendesk.com",
+      "score": 15,
+      "grade": "F",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "intercom.com",
+      "score": 28,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 8,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "datadog.com",
+      "score": 28,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 8,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "mongodb.com",
+      "score": 34,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 5,
+          "max": 15,
+          "status": "WARN"
+        },
+        "meta_and_semantic": {
+          "score": 9,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "elastic.co",
+      "score": 27,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 7,
+          "max": 15,
+          "status": "WARN"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 5,
+          "max": 15,
+          "status": "WARN"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "confluent.io",
+      "score": 24,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 9,
+          "max": 15,
+          "status": "WARN"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "pagerduty.com",
+      "score": 30,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 8,
+          "max": 15,
+          "status": "WARN"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 7,
+          "max": 15,
+          "status": "WARN"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "stability.ai",
+      "score": 36,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "json-ld": {
+          "score": 9,
+          "max": 15,
+          "status": "WARN"
+        },
+        "schema_coverage": {
+          "score": 7,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "replicate.com",
+      "score": 25,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 8,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "together.ai",
+      "score": 44,
+      "grade": "C",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 12,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "langchain.com",
+      "score": 15,
+      "grade": "F",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "planetscale.com",
+      "score": 49,
+      "grade": "C",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 12,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 5,
+          "max": 15,
+          "status": "WARN"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "turso.tech",
+      "score": 27,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 7,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "upstash.com",
+      "score": 15,
+      "grade": "F",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "square.com",
+      "score": 13,
+      "grade": "F",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "braintreepayments.com",
+      "score": 60,
+      "grade": "B",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 8,
+          "max": 15,
+          "status": "WARN"
+        },
+        "agents.md": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "agent_card": {
+          "score": 5,
+          "max": 15,
+          "status": "WARN"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 5,
+          "max": 15,
+          "status": "WARN"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "adyen.com",
+      "score": 42,
+      "grade": "C",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 12,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 8,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "airtable.com",
+      "score": 22,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 7,
+          "max": 15,
+          "status": "WARN"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "webflow.com",
+      "score": 43,
+      "grade": "C",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 12,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 9,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "figma.com",
+      "score": 37,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "json-ld": {
+          "score": 12,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "zapier.com",
+      "score": 14,
+      "grade": "F",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "schema_coverage": {
+          "score": 3,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 9,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "lightspeedhq.com",
+      "score": 24,
+      "grade": "D",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "agents.md": {
+          "score": 0,
+          "max": 10,
+          "status": "FAIL"
+        },
+        "agent_card": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "ai_robots": {
+          "score": 2,
+          "max": 10,
+          "status": "WARN"
+        },
+        "json-ld": {
+          "score": 11,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 5,
+          "max": 10,
+          "status": "WARN"
+        },
+        "openapi": {
+          "score": 0,
+          "max": 15,
+          "status": "FAIL"
+        },
+        "meta_and_semantic": {
+          "score": 6,
+          "max": 10,
+          "status": "WARN"
         }
       }
     }
