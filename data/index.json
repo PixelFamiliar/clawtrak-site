@@ -5,21 +5,21 @@
   "max_score": 100,
   "url": "https://clawtrak.com",
   "last_updated": "2026-03-14",
-  "total_scanned": 26,
-  "average_score": 32.0,
+  "total_scanned": 28,
+  "average_score": 37.8,
   "stats": {
     "grade_distribution": {
-      "A": 0,
+      "A": 3,
       "B": 0,
-      "C": 9,
+      "C": 8,
       "D": 12,
       "F": 5
     },
-    "has_llms_txt": 15,
-    "has_agents_md": 4,
-    "has_agent_card": 0,
-    "has_jsonld": 7,
-    "has_openapi": 0
+    "has_llms_txt": 17,
+    "has_agents_md": 6,
+    "has_agent_card": 3,
+    "has_jsonld": 9,
+    "has_openapi": 3
   },
   "sites": [
     {
@@ -1224,8 +1224,8 @@
     },
     {
       "domain": "clawtrak.com",
-      "score": 57,
-      "grade": "C",
+      "score": 95,
+      "grade": "A",
       "scanned": "2026-03-14",
       "checks": {
         "llms.txt": {
@@ -1239,9 +1239,9 @@
           "status": "PASS"
         },
         "agent_card": {
-          "score": 0,
+          "score": 15,
           "max": 15,
-          "status": "FAIL"
+          "status": "PASS"
         },
         "ai_robots": {
           "score": 10,
@@ -1254,14 +1254,110 @@
           "status": "PASS"
         },
         "schema_coverage": {
-          "score": 3,
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "openapi": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "meta_and_semantic": {
+          "score": 8,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "pixelfamiliar.ca",
+      "score": 96,
+      "grade": "A",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "agent_card": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "ai_robots": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "json-ld": {
+          "score": 12,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "openapi": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "meta_and_semantic": {
+          "score": 9,
+          "max": 10,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "domain": "clawforce.ca",
+      "score": 93,
+      "grade": "A",
+      "scanned": "2026-03-14",
+      "checks": {
+        "llms.txt": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "agents.md": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "agent_card": {
+          "score": 15,
+          "max": 15,
+          "status": "PASS"
+        },
+        "ai_robots": {
+          "score": 10,
+          "max": 10,
+          "status": "PASS"
+        },
+        "json-ld": {
+          "score": 14,
+          "max": 15,
+          "status": "PASS"
+        },
+        "schema_coverage": {
+          "score": 7,
           "max": 10,
           "status": "WARN"
         },
         "openapi": {
-          "score": 0,
+          "score": 15,
           "max": 15,
-          "status": "FAIL"
+          "status": "PASS"
         },
         "meta_and_semantic": {
           "score": 7,
