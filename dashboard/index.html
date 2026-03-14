@@ -497,7 +497,7 @@
 
 <!-- Data Layer -->
 <script>
-    const API_BASE = 'https://api.clawtrak.com';
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:21100' : 'https://api.clawtrak.com';
     const urlParams = new URLSearchParams(window.location.search);
     const SITE_ID = urlParams.get('site') || 'demo';
     const DAYS = parseInt(urlParams.get('days') || '7');
