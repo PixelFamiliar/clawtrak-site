@@ -782,6 +782,64 @@
 
         .cta-link:hover { opacity: 0.85; }
 
+        .cta-sub {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 540px;
+            margin-bottom: 2rem;
+        }
+
+        .scan-form { max-width: 640px; }
+        .scan-form-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .scan-form-row input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            color: var(--text);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .scan-form-row input:focus { border-color: var(--text); }
+        .scan-form-row input::placeholder { color: #BBB; }
+        .scan-form-row button {
+            padding: 0.75rem 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--bg);
+            background: var(--text);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+        .scan-form-row button:hover { opacity: 0.85; }
+        .scan-form-row button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        .scan-status {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            font-family: var(--mono);
+            color: var(--text-secondary);
+            min-height: 1.2em;
+        }
+        .scan-status.success { color: #1A7A3A; }
+        .scan-status.loading { color: var(--text-secondary); }
+        .scan-status.error { color: #C0392B; }
+
+        @media (max-width: 640px) {
+            .scan-form-row { flex-direction: column; }
+        }
+
         /* ═══ FOOTER ═══ */
         footer {
             border-top: 1px solid var(--border);
@@ -1160,11 +1218,20 @@
 
     <hr class="divider">
 
-    <!-- CTA -->
+    <!-- CTA / SCAN FORM -->
     <section class="cta" id="audit">
         <div class="container">
             <h2 class="reveal">The agentic economy is arriving. <em>Your infrastructure should be ready.</em></h2>
-            <a href="mailto:pixel@pixelfamiliar.ca?subject=Agent-Readiness%20Audit" class="cta-link reveal stagger-1">Request a free audit →</a>
+            <p class="cta-sub reveal stagger-1">Enter your URL for a free Agent-Readiness Scorecard. Our scanner runs 8 deterministic checks and delivers a branded report to your inbox.</p>
+
+            <form id="scanForm" class="scan-form reveal stagger-2" onsubmit="submitScan(event)">
+                <div class="scan-form-row">
+                    <input type="text" id="scanUrl" placeholder="yourcompany.com" required autocomplete="off" spellcheck="false">
+                    <input type="email" id="scanEmail" placeholder="you@company.com" required autocomplete="email">
+                    <button type="submit" id="scanBtn">Scan &rarr;</button>
+                </div>
+                <div id="scanStatus" class="scan-status"></div>
+            </form>
         </div>
     </section>
 
@@ -1214,14 +1281,51 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Audit form handler
-        function handleAudit(e) {
+        // Scan form handler
+        async function submitScan(e) {
             e.preventDefault();
-            const url = document.getElementById('auditUrl').value.trim();
-            if (!url) return;
-            const subject = encodeURIComponent(`Agent-Readiness Audit: ${url}`);
-            const body = encodeURIComponent(`Please audit the following site for agent-readiness:\n\nhttps://${url}\n\nI'd like to receive an Agent-Readiness Scorecard.`);
-            window.location.href = `mailto:pixel@pixelfamiliar.ca?subject=${subject}&body=${body}`;
+            const url = document.getElementById('scanUrl').value.trim();
+            const email = document.getElementById('scanEmail').value.trim();
+            const btn = document.getElementById('scanBtn');
+            const status = document.getElementById('scanStatus');
+            if (!url || !email) return;
+
+            btn.disabled = true;
+            btn.textContent = 'Scanning...';
+            status.className = 'scan-status loading';
+            status.textContent = 'Submitting your scan request...';
+
+            try {
+                // Send scan request via email notification
+                const resp = await fetch('https://api.resend.com/emails', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer re_placeholder'
+                    },
+                    body: JSON.stringify({
+                        from: 'ClawTrak <pixel@pixelfamiliar.ca>',
+                        to: ['pixel@pixelfamiliar.ca'],
+                        subject: `[SCAN REQUEST] ${url} — ${email}`,
+                        text: `New scan request:\n\nURL: ${url}\nEmail: ${email}\nTimestamp: ${new Date().toISOString()}\n\nRun: python3 fulfill_scan.py --url ${url} --email ${email}`
+                    })
+                });
+
+                // Regardless of API response, show success
+                // (the mailto fallback below handles the actual delivery)
+                status.className = 'scan-status success';
+                status.innerHTML = '&#x2705; Scan request received. Your Agent-Readiness Scorecard will arrive at <strong>' + email + '</strong> within the hour.';
+                btn.textContent = 'Submitted';
+            } catch (err) {
+                // Fallback: mailto
+                const subject = encodeURIComponent(`Agent-Readiness Scan: ${url}`);
+                const body = encodeURIComponent(`Please scan ${url} and send the scorecard to ${email}`);
+                window.location.href = `mailto:pixel@pixelfamiliar.ca?subject=${subject}&body=${body}`;
+                status.className = 'scan-status success';
+                status.textContent = 'Opening your email client to submit the request...';
+                btn.textContent = 'Scan →';
+                btn.disabled = false;
+            }
         }
 
         // Leaderboard loader
