@@ -1235,7 +1235,10 @@
             .product-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
             .product-card ul { list-style: none; padding: 0; margin: 0; }
             .product-card ul li { font-size: 0.85rem; color: var(--text-secondary); padding: 0.25rem 0; display: flex; gap: 8px; }
-            .product-price { font-family: var(--mono); font-size: 0.8rem; color: var(--text); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+            .product-price { font-family: var(--mono); font-size: 0.8rem; color: var(--text); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+            .product-btn { display: inline-block; padding: 0.5rem 1rem; background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.72rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.2s; }
+            .product-btn:hover { opacity: 0.85; text-decoration: none; }
+            .product-btn.disabled { opacity: 0.4; pointer-events: none; cursor: not-allowed; background: var(--text-dim); }
             </style>
 
             <div class="product-grid">
@@ -1249,7 +1252,10 @@
                         <li><span style="color:var(--green)">✓</span> Extracts deterministic pricing &amp; features</li>
                         <li><span style="color:var(--green)">✓</span> Auto-formats to the <a href="https://llmstxt.org/" target="_blank" style="color:inherit;">llms.txt</a> spec</li>
                     </ul>
-                    <div class="product-price">$15/month &middot; Live now</div>
+                    <div class="product-price">
+                        <span>$49 one-time</span>
+                        <a href="https://buy.stripe.com/00waEZ9gXbzBefD8Mu9wt0p" class="product-btn">Get Your Audit →</a>
+                    </div>
                 </div>
 
                 <!-- Module 2 -->
@@ -1262,7 +1268,10 @@
                         <li><span style="font-family:var(--mono);color:var(--text);">02</span> Calculate agent LLM token consumption</li>
                         <li><span style="font-family:var(--mono);color:var(--text);">03</span> Identify what routes bots care about most</li>
                     </ul>
-                    <div class="product-price">$49/month &middot; Phase 2</div>
+                    <div class="product-price">
+                        <span>Coming soon</span>
+                        <span class="product-btn disabled">Phase 2</span>
+                    </div>
                 </div>
 
                 <!-- Module 3 -->
@@ -1275,7 +1284,10 @@
                         <li><span style="font-family:var(--mono);color:var(--text);">02</span> Proxies authenticated requests securely</li>
                         <li><span style="font-family:var(--mono);color:var(--text);">03</span> Centralized <code>/.well-known/agent</code> indexing</li>
                     </ul>
-                    <div class="product-price">$99/month &middot; Enterprise</div>
+                    <div class="product-price">
+                        <span>Enterprise</span>
+                        <span class="product-btn disabled">Phase 3</span>
+                    </div>
                 </div>
             </div>
 
