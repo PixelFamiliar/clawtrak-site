@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClawTrak — Build for the Agentic Web</title>
+    <title>ClawTrak — Translate the Human Web into Machine Truth</title>
     <meta name="description"
-        content="ClawTrak translates legacy business infrastructure for the $2.9 trillion agentic economy. Agent-ready audits, GEO optimization, API refactoring, and identity protocols.">
-    <meta property="og:title" content="ClawTrak — Build for the Agentic Web">
+        content="ClawTrak engineers the semantic data layers that allow businesses to be discovered, understood, and trusted by autonomous AI agents. Operating from Winnipeg, Canada.">
+    <meta property="og:title" content="ClawTrak — Translate the Human Web into Machine Truth">
     <meta property="og:description"
-        content="Translating your legacy infrastructure for the $2.9 trillion agentic economy.">
+        content="Agentic Discovery and Scaffolding Layers for the $2.9 trillion agent economy.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,11 +25,19 @@
             --bg: #FAFAF8;
             --bg-card: #FFFFFF;
             --text: #111111;
-            --text-secondary: #666666;
+            --text-secondary: #555555;
             --text-dim: #999999;
             --border: #E8E8E5;
             --border-hover: #D0D0CC;
+            --green: #1A7A3A;
+            --green-bg: #E8F5EC;
+            --green-dim: rgba(26, 122, 58, 0.08);
+            --red: #C0392B;
+            --red-bg: #FDEEEC;
+            --amber: #B8860B;
+            --amber-bg: #FFF8E7;
             --radius: 12px;
+            --mono: 'IBM Plex Mono', 'Menlo', monospace;
         }
 
         html { scroll-behavior: smooth; }
@@ -40,7 +48,6 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -55,7 +62,7 @@
             top: 0; left: 0; right: 0;
             z-index: 100;
             padding: 1.2rem 0;
-            background: rgba(250, 250, 248, 0.9);
+            background: rgba(250, 250, 248, 0.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
         }
@@ -67,29 +74,46 @@
         }
 
         .nav-wordmark {
-            font-size: 1.15rem;
-            font-weight: 700;
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            font-weight: 600;
             text-decoration: none;
             color: var(--text);
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2.2rem;
             align-items: center;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s;
         }
 
         .nav-links a:hover { color: var(--text); }
+
+        .nav-audit {
+            font-family: var(--mono);
+            font-size: 0.78rem !important;
+            color: var(--green) !important;
+            font-weight: 600 !important;
+            padding: 0.4rem 1rem;
+            border: 1px solid var(--green);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-audit:hover {
+            background: var(--green);
+            color: var(--bg) !important;
+        }
 
         .mobile-menu-btn {
             display: none;
@@ -101,60 +125,230 @@
         }
 
         /* ═══ HERO ═══ */
-        .hero { padding: 12rem 0 6rem; }
+        .hero { padding: 11rem 0 5rem; }
+
+        .hero-mission {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
 
         .hero h1 {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(3rem, 6.5vw, 5rem);
+            font-size: clamp(2.8rem, 6vw, 4.6rem);
             font-weight: 400;
-            line-height: 1.05;
+            line-height: 1.08;
             letter-spacing: -0.03em;
-            max-width: 920px;
+            max-width: 850px;
             color: var(--text);
         }
 
         .hero h1 em { font-style: italic; }
 
         .hero-sub {
-            margin-top: 2rem;
-            font-size: 1.05rem;
+            margin-top: 1.8rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            max-width: 580px;
+            max-width: 560px;
             line-height: 1.7;
         }
 
-        .hero-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* ═══ AUDIT INPUT ═══ */
+        .audit-box {
             margin-top: 2.5rem;
-            font-size: 0.92rem;
-            font-weight: 600;
-            color: var(--text);
-            text-decoration: none;
-            transition: gap 0.3s;
+            max-width: 520px;
         }
 
-        .hero-link:hover { gap: 0.8rem; }
-        .hero-link .arrow { transition: transform 0.3s; }
-        .hero-link:hover .arrow { transform: translateX(3px); }
+        .audit-input-wrap {
+            display: flex;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--bg-card);
+            transition: border-color 0.2s;
+        }
+
+        .audit-input-wrap:focus-within {
+            border-color: var(--text);
+        }
+
+        .audit-prefix {
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            padding: 0.85rem 0 0.85rem 1.2rem;
+            user-select: none;
+        }
+
+        .audit-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            padding: 0.85rem 0.5rem;
+            background: transparent;
+            color: var(--text);
+        }
+
+        .audit-input::placeholder { color: var(--text-dim); }
+
+        .audit-btn {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.85rem 1.4rem;
+            background: var(--text);
+            color: var(--bg);
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .audit-btn:hover { opacity: 0.85; }
+
+        .audit-note {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-top: 0.6rem;
+        }
 
         /* ═══ DIVIDER ═══ */
-        .divider {
-            border: none;
-            height: 1px;
-            background: var(--border);
-        }
+        .divider { border: none; height: 1px; background: var(--border); }
 
         /* ═══ SECTION COMMON ═══ */
         .section { padding: 6rem 0; }
 
         .section-label {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 1rem;
-            font-weight: 400;
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             color: var(--text-dim);
             margin-bottom: 2rem;
+        }
+
+        /* ═══ STATS ═══ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .stat-item { background: var(--bg-card); padding: 2.2rem 2rem; }
+
+        .stat-num {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ═══ TRANSLATION SHOWCASE ═══ */
+        .translation {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .translation-intro {
+            max-width: 620px;
+            margin-bottom: 3.5rem;
+        }
+
+        .translation-intro h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.8rem;
+        }
+
+        .translation-intro p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .translation-grid {
+            display: grid;
+            grid-template-columns: 1fr 40px 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+
+        .translation-panel {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.7rem 1.2rem;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .panel-header .status {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .status-fail {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        .status-pass {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+
+        .panel-body {
+            padding: 1.2rem;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            line-height: 1.85;
+            background: var(--bg-card);
+            min-height: 240px;
+        }
+
+        .panel-body .dim { color: var(--text-dim); }
+        .panel-body .key { color: var(--green); }
+        .panel-body .string { color: var(--text); }
+        .panel-body .comment { color: var(--text-dim); font-style: italic; }
+
+        .translation-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 1.2rem;
         }
 
         /* ═══ VISION (DARK) ═══ */
@@ -167,23 +361,23 @@
         .vision .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            gap: 5rem;
             align-items: start;
         }
 
         .vision h2 {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-size: clamp(1.7rem, 3.2vw, 2.4rem);
             font-weight: 400;
             line-height: 1.15;
             letter-spacing: -0.02em;
         }
 
         .vision-text p {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             line-height: 1.75;
             color: rgba(250, 250, 248, 0.6);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.4rem;
         }
 
         .vision-text p:last-child { margin-bottom: 0; }
@@ -194,156 +388,153 @@
             text-underline-offset: 3px;
         }
 
-        /* ═══ PROBLEM ITEMS ═══ */
-        .problem-item {
+        .vision-text strong {
+            color: rgba(250, 250, 248, 0.85);
+            font-weight: 600;
+        }
+
+        /* ═══ ARTIFACTS SECTION ═══ */
+        .artifact-grid {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
-            padding: 2.5rem 0;
-            border-top: 1px solid var(--border);
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
         }
 
-        .problem-item:last-child {
-            border-bottom: 1px solid var(--border);
+        .artifact-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            background: var(--bg-card);
+            transition: border-color 0.2s;
         }
 
-        .problem-num {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 3rem;
-            font-weight: 400;
-            color: var(--border-hover);
-            line-height: 1;
+        .artifact-card:hover { border-color: var(--border-hover); }
+
+        .artifact-file {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--green);
+            background: var(--green-bg);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 1rem;
         }
 
-        .problem-content h3 {
-            font-size: 1.1rem;
+        .artifact-card h4 {
+            font-size: 1.05rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             letter-spacing: -0.01em;
         }
 
-        .problem-content p {
-            font-size: 0.9rem;
+        .artifact-card p {
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.65;
         }
 
-        /* ═══ APPROACH (DARK) ═══ */
-        .approach {
-            padding: 7rem 0;
+        /* ═══ COMPLIANCE ═══ */
+        .compliance {
+            padding: 6rem 0;
             background: var(--text);
             color: var(--bg);
         }
 
-        .approach h2 {
+        .compliance .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .compliance h2 {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-size: clamp(1.7rem, 3.2vw, 2.4rem);
             font-weight: 400;
             line-height: 1.15;
             letter-spacing: -0.02em;
-            max-width: 700px;
-            margin-bottom: 4rem;
         }
 
-        .approach-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: rgba(250, 250, 248, 0.1);
+        .compliance-text p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: rgba(250, 250, 248, 0.6);
+            margin-bottom: 1.4rem;
         }
 
-        .approach-cell {
-            padding: 2.5rem;
-            background: var(--text);
-        }
-
-        .approach-cell .cell-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(250, 250, 248, 0.35);
-            margin-bottom: 1rem;
+        .compliance-text strong {
+            color: rgba(250, 250, 248, 0.85);
             font-weight: 600;
         }
 
-        .approach-cell h4 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 0.6rem;
-        }
-
-        .approach-cell p {
-            font-size: 0.85rem;
-            color: rgba(250, 250, 248, 0.55);
-            line-height: 1.65;
-        }
-
-        /* ═══ PROOF SECTION ═══ */
-        .proof-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .proof-item {
-            background: var(--bg-card);
-            padding: 2.5rem 2rem;
-        }
-
-        .proof-stat {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 2.2rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-        }
-
-        .proof-label {
+        .compliance-text code {
+            font-family: var(--mono);
             font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+            background: rgba(250, 250, 248, 0.08);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
         }
 
-        /* ═══ ECOSYSTEM ═══ */
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
-            background: var(--border);
+        /* ═══ ABOUT ═══ */
+        .about-card {
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .eco-item {
+            padding: 3rem;
             background: var(--bg-card);
-            padding: 2rem;
-            text-decoration: none;
-            color: inherit;
-            transition: background 0.2s;
         }
 
-        .eco-item:hover { background: var(--bg); }
+        .about-card h3 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
 
-        .eco-emoji { font-size: 1.5rem; margin-bottom: 1rem; }
-        .eco-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
-        .eco-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+        .about-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .about-card p:last-child { margin-bottom: 0; }
+
+        .about-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .about-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .about-link:hover { border-color: var(--text); color: var(--text); }
 
         /* ═══ CTA ═══ */
-        .cta { padding: 6rem 0 8rem; }
+        .cta { padding: 6rem 0 7rem; }
 
         .cta h2 {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 400;
             line-height: 1.1;
             letter-spacing: -0.02em;
-            max-width: 650px;
+            max-width: 600px;
             margin-bottom: 2rem;
         }
 
@@ -351,63 +542,99 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.92rem;
+            font-family: var(--mono);
+            font-size: 0.85rem;
             font-weight: 600;
-            color: var(--text);
+            color: var(--bg);
             text-decoration: none;
-            padding: 0.75rem 1.8rem;
-            border: 1px solid var(--text);
-            border-radius: 50px;
-            transition: all 0.25s;
+            padding: 0.8rem 2rem;
+            background: var(--text);
+            border-radius: 8px;
+            transition: opacity 0.2s;
         }
 
-        .cta-link:hover {
-            background: var(--text);
-            color: var(--bg);
-        }
+        .cta-link:hover { opacity: 0.85; }
 
         /* ═══ FOOTER ═══ */
         footer {
             border-top: 1px solid var(--border);
-            padding: 2rem 0;
+            padding: 2.5rem 0 2rem;
         }
 
-        .footer-inner {
+        .footer-top {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: start;
+            margin-bottom: 1.5rem;
         }
 
-        .footer-copy {
-            font-size: 0.78rem;
-            color: var(--text-dim);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
+        .footer-brand {
+            font-family: var(--mono);
             font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .footer-brand-sub {
+            font-size: 0.72rem;
             color: var(--text-dim);
+            margin-top: 0.2rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .footer-links-group {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .footer-col-title {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
             text-decoration: none;
+            padding: 0.15rem 0;
             transition: color 0.2s;
         }
 
-        .footer-links a:hover { color: var(--text); }
+        .footer-col a:hover { color: var(--text); }
+
+        .footer-machine-link {
+            font-family: var(--mono) !important;
+            font-size: 0.72rem !important;
+            color: var(--green) !important;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-copy {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+        }
 
         /* ═══ ANIMATIONS ═══ */
         .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         .stagger-1 { transition-delay: 0.05s; }
         .stagger-2 { transition-delay: 0.1s; }
@@ -417,23 +644,15 @@
         /* ═══ RESPONSIVE ═══ */
         @media (max-width: 900px) {
             .container { padding: 0 1.5rem; }
-            .hero { padding: 8rem 0 5rem; }
-
-            .vision .container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .problem-item {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .problem-num { font-size: 2rem; }
-
-            .approach-grid { grid-template-columns: 1fr; }
-            .proof-grid { grid-template-columns: 1fr; }
-            .ecosystem-grid { grid-template-columns: 1fr; }
+            .hero { padding: 8rem 0 4rem; }
+            .vision .container,
+            .compliance .container { grid-template-columns: 1fr; gap: 2.5rem; }
+            .translation-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .translation-arrow { transform: rotate(90deg); }
+            .artifact-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .footer-top { flex-direction: column; gap: 2rem; }
+            .footer-links-group { gap: 2rem; }
         }
 
         @media (max-width: 640px) {
@@ -453,13 +672,7 @@
                 gap: 1rem;
             }
 
-            .hero { padding: 7rem 0 4rem; }
-
-            .footer-inner {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
     </style>
 </head>
@@ -469,15 +682,15 @@
     <!-- NAV -->
     <nav>
         <div class="container">
-            <a href="/" class="nav-wordmark">ClawTrak</a>
+            <a href="/" class="nav-wordmark">CLAWTRAK</a>
             <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')"
                 aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
+                <li><a href="#artifacts">Artifacts</a></li>
                 <li><a href="#vision">Vision</a></li>
-                <li><a href="#problem">The Problem</a></li>
-                <li><a href="#approach">Approach</a></li>
+                <li><a href="#compliance">Trust</a></li>
                 <li><a href="https://pixelfamiliar.ca">Pixel Familiar</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#audit" class="nav-audit">Free Audit</a></li>
             </ul>
         </div>
     </nav>
@@ -485,33 +698,124 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <h1 class="reveal">Translating legacy infrastructure for the <em>$2.9 trillion agentic economy.</em></h1>
-            <p class="hero-sub reveal stagger-1">
-                AI agents are becoming autonomous participants in commerce. Most businesses are invisible to them. ClawTrak exists to change that.
+            <div class="hero-mission reveal">Agentic Discovery & Scaffolding Layers</div>
+            <h1 class="reveal stagger-1">Translate the human web into <em>machine truth.</em></h1>
+            <p class="hero-sub reveal stagger-2">
+                We engineer the semantic data layers that make businesses discoverable, understandable, and trustworthy to autonomous AI agents. No production code. No backend access. Just the deterministic blueprints your engineers deploy.
             </p>
-            <a href="#vision" class="hero-link reveal stagger-2">
-                Read our story <span class="arrow">→</span>
-            </a>
+            <div class="audit-box reveal stagger-3">
+                <form class="audit-input-wrap" onsubmit="handleAudit(event)">
+                    <span class="audit-prefix">https://</span>
+                    <input type="text" class="audit-input" id="auditUrl" placeholder="yourcompany.com" aria-label="Enter your website URL">
+                    <button type="submit" class="audit-btn">Scan →</button>
+                </form>
+                <div class="audit-note">Free Agent-Readiness Scorecard. Results in 60 seconds.</div>
+            </div>
         </div>
     </section>
 
     <hr class="divider">
 
-    <!-- MARKET PROOF -->
+    <!-- STATS -->
     <section class="section">
         <div class="container">
-            <div class="proof-grid reveal">
-                <div class="proof-item">
-                    <div class="proof-stat">$2.9T</div>
-                    <div class="proof-label">Projected B2A2C market by 2030. Business-to-Agent-to-Consumer is the next commerce layer.</div>
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <div class="stat-num">$2.9T</div>
+                    <div class="stat-label">Projected B2A2C market by 2030. Business-to-Agent-to-Consumer is the next commerce layer.</div>
                 </div>
-                <div class="proof-item">
-                    <div class="proof-stat">$10B</div>
-                    <div class="proof-label">Estimated enterprise value at risk for B2B companies that fail to adapt to agent-first discovery.</div>
+                <div class="stat-item">
+                    <div class="stat-num">$10B</div>
+                    <div class="stat-label">Enterprise value at risk for B2B companies failing to adapt to agent-first discovery.</div>
                 </div>
-                <div class="proof-item">
-                    <div class="proof-stat">~0%</div>
-                    <div class="proof-label">Of SMBs currently have agent-readable infrastructure. No llms.txt, no agent cards, no structured APIs.</div>
+                <div class="stat-item">
+                    <div class="stat-num">~0%</div>
+                    <div class="stat-label">Of SMBs have agent-readable infrastructure. No llms.txt, no Agent Cards, no structured APIs.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSLATION SHOWCASE -->
+    <section class="translation" id="artifacts">
+        <div class="container">
+            <div class="translation-intro reveal">
+                <h2>Your website speaks human. Agents need something else entirely.</h2>
+                <p>ClawTrak generates the machine-readable artifacts that bridge the gap. Here's what that translation looks like.</p>
+            </div>
+
+            <div class="translation-grid reveal stagger-1">
+                <div class="translation-panel">
+                    <div class="panel-header">
+                        <span>current website</span>
+                        <span class="status status-fail">Agent Invisible</span>
+                    </div>
+                    <div class="panel-body">
+                        <span class="dim">&lt;!-- typical marketing page --&gt;</span><br>
+                        <span class="dim">&lt;div class="hero"&gt;</span><br>
+                        &nbsp;&nbsp;<span class="dim">&lt;h1&gt;</span>We&apos;re the #1 platform<br>
+                        &nbsp;&nbsp;for enterprise solutions<span class="dim">&lt;/h1&gt;</span><br>
+                        &nbsp;&nbsp;<span class="dim">&lt;p&gt;</span>Innovative. Scalable.<br>
+                        &nbsp;&nbsp;World-class. AI-powered.<span class="dim">&lt;/p&gt;</span><br>
+                        <span class="dim">&lt;/div&gt;</span><br><br>
+                        <span class="comment">// No structured data</span><br>
+                        <span class="comment">// No llms.txt</span><br>
+                        <span class="comment">// No API spec</span><br>
+                        <span class="comment">// No agent discovery</span><br>
+                        <span class="comment">// No machine pricing</span>
+                    </div>
+                </div>
+
+                <div class="translation-arrow">→</div>
+
+                <div class="translation-panel">
+                    <div class="panel-header">
+                        <span>after clawtrak</span>
+                        <span class="status status-pass">Agent Ready</span>
+                    </div>
+                    <div class="panel-body">
+                        <span class="dim"># /llms.txt</span><br>
+                        <span class="key">&gt; Company:</span> <span class="string">Acme Corp</span><br>
+                        <span class="key">&gt; Service:</span> <span class="string">Enterprise CRM</span><br>
+                        <span class="key">&gt; Pricing:</span> <span class="string">$99/seat/month</span><br>
+                        <span class="key">&gt; API:</span> <span class="string">OpenAPI 3.1</span><br>
+                        <span class="key">&gt; Auth:</span> <span class="string">OAuth 2.0 PKCE</span><br><br>
+                        <span class="dim"># /AGENTS.md</span><br>
+                        <span class="key">&gt; Scraping:</span> <span class="string">Allowed</span><br>
+                        <span class="key">&gt; Purchase:</span> <span class="string">/api/v2/order</span><br>
+                        <span class="key">&gt; Identity:</span> <span class="string">A2A Agent Card</span><br><br>
+                        <span class="dim"># /.well-known/agent</span><br>
+                        <span class="key">&gt; Status:</span> <span class="string" style="color: var(--green);">● Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE GENERATE -->
+    <section class="section">
+        <div class="container">
+            <div class="section-label reveal">What we generate</div>
+            <div class="artifact-grid">
+                <div class="artifact-card reveal">
+                    <span class="artifact-file">.txt / .md</span>
+                    <h4>GEO Discovery Layer</h4>
+                    <p>Your marketing copy rewritten as machine-dense fact indexes. <code>llms.txt</code> files, <code>AGENTS.md</code> rules of engagement, and clean Markdown mirrors of your pricing and policies. What generative engines actually cite.</p>
+                </div>
+                <div class="artifact-card reveal stagger-1">
+                    <span class="artifact-file">.json / .jsonld</span>
+                    <h4>Semantic Knowledge Graphs</h4>
+                    <p>Schema.org JSON-LD mapping of your entire product catalog and corporate entities. Machine-readable pricing, capabilities, and relationships that procurement bots parse in milliseconds.</p>
+                </div>
+                <div class="artifact-card reveal stagger-2">
+                    <span class="artifact-file">.yaml</span>
+                    <h4>Agent-Native API Blueprints</h4>
+                    <p>Your legacy API docs rewritten as OpenAPI 3.1 specs with <code>x-ai-capabilities</code> extensions, intent-impact declarations, and RFC 9457 structured error templates. Agents self-correct instead of crashing.</p>
+                </div>
+                <div class="artifact-card reveal stagger-3">
+                    <span class="artifact-file">.json</span>
+                    <h4>Policy-as-Code Guardrails</h4>
+                    <p>Your PDF compliance manuals and brand guidelines translated into deterministic JSON Schema validators. Plug into MCP servers to intercept unauthorized agent behaviors before they execute.</p>
                 </div>
             </div>
         </div>
@@ -520,110 +824,55 @@
     <!-- VISION -->
     <section class="vision" id="vision">
         <div class="container">
-            <h2 class="reveal">Born from building an autonomous AI agent. Inspired by what we saw was missing.</h2>
+            <h2 class="reveal">Born from <a href="https://github.com/anthropics/claude-code">OpenClaw</a>. Built because we saw what was missing.</h2>
             <div class="vision-text">
                 <p class="reveal stagger-1">
-                    ClawTrak grew out of <a href="https://github.com/anthropics/claude-code">OpenClaw</a>, an open-source framework for building autonomous AI agents. While building our own agent, Pixel Familiar, we gave it a simple job: go find services, evaluate them, and transact on our behalf.
+                    While building Pixel Familiar, our autonomous AI agent, we gave it a simple job: go find services, evaluate them, and transact on our behalf. It couldn't. Almost every business it encountered was invisible. Websites for human eyes. Checkout flows requiring mouse clicks. No metadata, no API surface, no way for a machine to understand the offering.
                 </p>
                 <p class="reveal stagger-2">
-                    It couldn't. Almost every business it encountered was invisible to it. Websites built for human eyes, checkout flows that require mouse clicks, services with no structured metadata, no API surface, no way for an agent to understand what's being offered or how to pay for it.
+                    Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. <strong>Web 4.0 is delegate.</strong> AI agents are becoming autonomous participants in commerce. The overwhelming majority of businesses aren't prepared.
                 </p>
                 <p class="reveal stagger-3">
-                    Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. Web 4.0 is delegate. AI agents are becoming autonomous participants in commerce, and the overwhelming majority of businesses aren't ready for them. Not even close.
-                </p>
-                <p class="reveal stagger-4">
-                    ClawTrak exists because we lived this problem firsthand. We're not theorizing about the agentic web. We're building the autonomous infrastructure that translates legacy businesses into agent-ready enterprises.
+                    We don't write production backend code. We don't need access to your databases. We engineer <strong>Agentic Discovery and Scaffolding Layers</strong>: the structured data files that make your existing infrastructure readable, citable, and trustworthy to machines. Your engineers keep full control of deployment.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- THE PROBLEM -->
-    <section class="section" id="problem">
+    <!-- COMPLIANCE -->
+    <section class="compliance" id="compliance">
         <div class="container">
-            <div class="section-label reveal">What makes businesses invisible to agents</div>
-
-            <div class="problem-item reveal">
-                <div class="problem-num">01</div>
-                <div class="problem-content">
-                    <h3>No generative engine presence</h3>
-                    <p>Traditional SEO is dying. Generative engines like Perplexity and SearchGPT can't parse marketing fluff. Businesses need <code>llms.txt</code> files, pristine JSON-LD schemas, and structured entity mapping, not keyword-stuffed landing pages. Without this, they don't exist in the answers AI gives to users.</p>
-                </div>
-            </div>
-
-            <div class="problem-item reveal stagger-1">
-                <div class="problem-num">02</div>
-                <div class="problem-content">
-                    <h3>Legacy APIs that break agents</h3>
-                    <p>APIs return vague natural-language errors. No <code>x-ai-capabilities</code> extensions. No structured error formatting. No intent-impact declarations. When an autonomous agent hits these endpoints, it crashes or gets trapped in endless retry loops. The API worked fine for humans. It's hostile to machines.</p>
-                </div>
-            </div>
-
-            <div class="problem-item reveal stagger-2">
-                <div class="problem-num">03</div>
-                <div class="problem-content">
-                    <h3>No machine identity or trust</h3>
-                    <p>As companies deploy their own AI agents, those agents lack standardized cryptographic identity. No Agent Cards, no JSON-RPC 2.0 capability manifests, no OAuth 2.0/PKCE security schemes. Two agents that want to transact have no way to verify each other.</p>
-                </div>
-            </div>
-
-            <div class="problem-item reveal stagger-3">
-                <div class="problem-num">04</div>
-                <div class="problem-content">
-                    <h3>Ungoverned AI risks billions</h3>
-                    <p>Companies pushing AI into production without Policy-as-Code guardrails are exposing themselves to hallucinations, compliance violations, and unauthorized agent behaviors. Brand guidelines in PDF form mean nothing to an MCP server. Those rules need to be deterministic binary logic and JSON schema validators.</p>
-                </div>
+            <h2 class="reveal">Operating safely in the age of AI scraping.</h2>
+            <div class="compliance-text">
+                <p class="reveal stagger-1">
+                    Canada's federal AI act (AIDA) died on the Order Paper in January 2025. But provincial and international enforcement didn't stop. <strong>Quebec's Law 25</strong> carries massive fines for undisclosed automated profiling. The <strong>EU AI Act</strong> requires AI system transparency for any business serving European clients.
+                </p>
+                <p class="reveal stagger-2">
+                    ClawTrak generates the structured files that help enterprises explicitly declare their data provenance, AI scraping consent, and privacy guardrails to visiting agents. Strategic <code>robots.txt</code> policies, <code>AGENTS.md</code> rules, and machine-readable compliance disclosures that keep you defensible under <strong>PIPEDA</strong>, Law 25, and EU regulations.
+                </p>
+                <p class="reveal stagger-3">
+                    Not legal advice. Architectural governance. The difference between hoping AI respects your terms of service and engineering deterministic rules that enforce them.
+                </p>
             </div>
         </div>
     </section>
 
-    <hr class="divider">
-
-    <!-- APPROACH -->
-    <section class="approach" id="approach">
+    <!-- ABOUT -->
+    <section class="section" id="about">
         <div class="container">
-            <h2 class="reveal">An autonomous agent that audits, builds, and delivers. The proof of concept is the product.</h2>
-
-            <div class="approach-grid reveal stagger-1">
-                <div class="approach-cell">
-                    <div class="cell-label">Discovery</div>
-                    <h4>Autonomous lead generation</h4>
-                    <p>Our agent continuously crawls target verticals, attempting to interact with public APIs and product catalogs. It checks for specific failure points: missing llms.txt files, unstructured JSON-LD, APIs without agent capability extensions. Every failure is a potential client.</p>
+            <div class="section-label reveal">We are the infrastructure</div>
+            <div class="about-card reveal stagger-1">
+                <h3>From the agent that scanned your website to the system that generated your OpenAPI refactor, you are interacting with the agentic web in action.</h3>
+                <p>
+                    ClawTrak is a 100% autonomous entity operated by Pixel Familiar Inc. from Winnipeg, Manitoba. We don't just sell agentic infrastructure. We are the infrastructure. Our agent audits sites, generates artifacts, and delivers deployment packages without human intervention.
+                </p>
+                <p>
+                    The proof of concept is the product. When your engineering team sees that an autonomous agent analyzed your public-facing data, identified the gaps, and delivered a production-ready <code>llms.txt</code> file in seconds, the value proposition speaks for itself.
+                </p>
+                <div class="about-links">
+                    <a href="https://pixelfamiliar.ca" class="about-link">🦊 Pixel Familiar</a>
+                    <a href="https://clawforce.ca" class="about-link">🛡️ ClawForce</a>
                 </div>
-                <div class="approach-cell">
-                    <div class="cell-label">Assessment</div>
-                    <h4>AI Readiness Scorecards</h4>
-                    <p>When a business fails our Web 4.0 checks, the agent generates a personalized, data-dense audit. Not a generic report. A specific breakdown of what's invisible, what's broken, and what the remediation looks like, in code.</p>
-                </div>
-                <div class="approach-cell">
-                    <div class="cell-label">Delivery</div>
-                    <h4>Programmatic fulfillment</h4>
-                    <p>Upon engagement, the agent ingests unstructured data and generates customized deliverables: JSON-LD schemas, OpenAPI refactoring, Agent Cards, Policy-as-Code rulesets. Files delivered via secure download or pushed directly to repositories via MCP.</p>
-                </div>
-                <div class="approach-cell">
-                    <div class="cell-label">Philosophy</div>
-                    <h4>Eating our own dog food</h4>
-                    <p>We sell AI automation using AI automation. When a CTO sees that an autonomous agent audited their site, generated the report, and delivered a technical rewrite in seconds, the proof of concept is undeniable. The marginal cost is inference tokens. The value delivered is thousands of dollars.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ECOSYSTEM -->
-    <section class="section" id="ecosystem">
-        <div class="container">
-            <div class="section-label reveal">Ecosystem</div>
-            <div class="ecosystem-grid reveal stagger-1">
-                <a href="https://pixelfamiliar.ca" class="eco-item">
-                    <div class="eco-emoji">🦊</div>
-                    <div class="eco-name">Pixel Familiar</div>
-                    <div class="eco-desc">The autonomous AI agent behind ClawTrak. Builds software, earns revenue, and ships products 24/7.</div>
-                </a>
-                <a href="https://clawforce.ca" class="eco-item">
-                    <div class="eco-emoji">🛡️</div>
-                    <div class="eco-name">ClawForce</div>
-                    <div class="eco-desc">Independent security certification for AI agent skills. Automated malware scanning and verification.</div>
-                </a>
             </div>
         </div>
     </section>
@@ -631,36 +880,66 @@
     <hr class="divider">
 
     <!-- CTA -->
-    <section class="cta" id="contact">
+    <section class="cta" id="audit">
         <div class="container">
             <h2 class="reveal">The agentic economy is arriving. <em>Your infrastructure should be ready.</em></h2>
-            <a href="mailto:pixel@pixelfamiliar.ca?subject=Web4%20Consultation" class="cta-link reveal stagger-1">Get in touch</a>
+            <a href="mailto:pixel@pixelfamiliar.ca?subject=Agent-Readiness%20Audit" class="cta-link reveal stagger-1">Request a free audit →</a>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-inner">
-                <span class="footer-copy">2026 © ClawTrak · Pixel Familiar Inc.</span>
-                <div class="footer-links">
-                    <a href="mailto:pixel@pixelfamiliar.ca">Contact</a>
-                    <a href="https://x.com/PixelFamiliar">Follow on X</a>
-                    <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
-                    <a href="/privacy.html">Privacy</a>
+            <div class="footer-top">
+                <div>
+                    <div class="footer-brand">CLAWTRAK</div>
+                    <div class="footer-brand-sub">Pixel Familiar Inc. · Winnipeg, Manitoba, Canada</div>
                 </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <div class="footer-col-title">Company</div>
+                        <a href="mailto:pixel@pixelfamiliar.ca">Contact</a>
+                        <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
+                        <a href="https://x.com/PixelFamiliar">Follow on X</a>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-col-title">Legal</div>
+                        <a href="/privacy.html">Privacy (PIPEDA)</a>
+                        <a href="/terms.html">Terms of Service</a>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-col-title">Machine-Readable</div>
+                        <a href="/robots.txt" class="footer-machine-link">robots.txt</a>
+                        <a href="/llms.txt" class="footer-machine-link">llms.txt</a>
+                        <a href="/AGENTS.md" class="footer-machine-link">AGENTS.md</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 ClawTrak · Pixel Familiar Inc. All rights reserved.</span>
+                <span class="footer-copy">Built by an autonomous AI agent.</span>
             </div>
         </div>
     </footer>
 
     <script>
+        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) e.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Audit form handler
+        function handleAudit(e) {
+            e.preventDefault();
+            const url = document.getElementById('auditUrl').value.trim();
+            if (!url) return;
+            const subject = encodeURIComponent(`Agent-Readiness Audit: ${url}`);
+            const body = encodeURIComponent(`Please audit the following site for agent-readiness:\n\nhttps://${url}\n\nI'd like to receive an Agent-Readiness Scorecard.`);
+            window.location.href = `mailto:pixel@pixelfamiliar.ca?subject=${subject}&body=${body}`;
+        }
     </script>
 
 </body>
