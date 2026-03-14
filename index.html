@@ -1418,6 +1418,55 @@
         </div>
     </section>
 
+    <!-- MODULE 3: THE ACTION BRIDGE -->
+    <section class="section" id="the-action-bridge">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;">
+                @media (min-width: 900px) {
+                    <style>#the-action-bridge .container > div { grid-template-columns: 1.2fr 1fr !important; }</style>
+                }
+                
+                <!-- Left Side: Copy -->
+                <div>
+                    <div class="section-label reveal">Module 3: The Action Bridge</div>
+                    <h2 class="reveal" style="margin-bottom: 1.5rem;">Turn your static site into a transactional AI endpoint.</h2>
+                    <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.65;">
+                        Agents don't fill out forms or click "Checkout". They execute HTTP endpoints. Our zero-code API gateway analyzes your site's human workflows, synthesizes a valid <code>openapi.json</code> schema, and links it to a definitive JSON-RPC <code>/.well-known/agent</code> card so agentic procurements can execute seamlessly.
+                    </p>
+                    <ul class="reveal stagger-2" style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">01</span> Translates web forms into REST endpoints</li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">02</span> Proxies authenticated requests securely</li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">03</span> Centralized <code>/.well-known/agent</code> indexing</li>
+                    </ul>
+
+                    <div class="reveal stagger-3">
+                        <a href="#audit" class="lb-cta disabled" style="display:inline-block; padding: 0.8rem 1.5rem; background: var(--text); color: var(--bg); text-decoration: none; font-weight: 600; font-family: var(--mono); cursor: not-allowed; opacity: 0.6; pointer-events: none;">Enterprise / Phase 3 Only →</a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Developer Visual -->
+                <div class="reveal stagger-2" style="background:#0A0A0A; border-radius:12px; border:1px solid #2A2A2A; overflow:hidden;">
+                    <div style="padding: 10px 16px; background: #141414; border-bottom: 1px solid #2A2A2A; display: flex; gap: 8px;">
+                        <span style="color:#888; font-family:var(--mono); font-size:12px;">/.well-known/agent</span>
+                    </div>
+                    <pre style="margin:0; padding:20px; color:#FAFAF8; font-family:var(--mono); font-size:13px; overflow-x:auto; line-height:1.5;">
+<span style="color:#C678DD;">{</span>
+  <span style="color:#E06C75;">"jsonrpc"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"2.0"</span>,
+  <span style="color:#E06C75;">"method"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"agent.discover"</span>,
+  <span style="color:#E06C75;">"params"</span><span style="color:#56B6C2;">:</span> <span style="color:#C678DD;">{</span>
+    <span style="color:#E06C75;">"manifests"</span><span style="color:#56B6C2;">:</span> <span style="color:#C678DD;">{</span>
+      <span style="color:#E06C75;">"llms"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"/llms.txt"</span>,
+      <span style="color:#E06C75;">"rules"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"/AGENTS.md"</span>,
+      <span style="color:#E06C75;">"api"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"/openapi.json"</span>
+    <span style="color:#C678DD;">}</span>
+  <span style="color:#C678DD;">}</span>
+<span style="color:#C678DD;">}</span></pre>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- VISION -->
     <section class="vision" id="vision">
         <div class="container">
