@@ -88,7 +88,14 @@
             align-items: center;
         }
 
-        .nav-logo {
+        .clawtrak-logo {
+            width: 24px;
+            height: 24px;
+            color: var(--cyan);
+            margin-right: 8px;
+        }
+
+        .nav-brand {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -98,7 +105,7 @@
             color: var(--text);
         }
 
-        .nav-logo .brand {
+        .nav-wordmark {
             background: linear-gradient(135deg, var(--cyan), var(--blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -799,9 +806,14 @@
 
     <nav>
         <div class="wrap">
-            <a href="/" class="nav-logo" aria-label="ClawTrak Home">
-                <span aria-hidden="true">⚡</span>
-                <span class="brand">ClawTrak</span>
+            <a href="/" class="nav-brand">
+                <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h2"/>
+                    <path d="M17 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-2"/>
+                    <path d="M12 9v6"/>
+                    <path d="M9 12h6"/>
+                </svg>
+                <span class="nav-wordmark">CLAWTRAK</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#audits">Audits</a></li>
@@ -1032,7 +1044,15 @@
     <footer>
         <div class="wrap">
             <div class="footer-inner">
-                <div class="footer-brand">⚡ ClawTrak</div>
+                    <a href="#" class="footer-brand">
+                        <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h2"/>
+                            <path d="M17 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-2"/>
+                            <path d="M12 9v6"/>
+                            <path d="M9 12h6"/>
+                        </svg>
+                        <span class="nav-wordmark">CLAWTRAK</span>
+                    </a>
                 <div class="footer-links">
                     <a href="#audits">Audits</a>
                     <a href="#products">Products</a>
