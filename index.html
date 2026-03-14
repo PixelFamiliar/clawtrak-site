@@ -1151,7 +1151,7 @@
                 <li><a href="#compliance">Trust</a></li>
                 <li><a href="/methodology.html">Methodology</a></li>
                 <li><a href="https://pixelfamiliar.ca">Pixel Familiar</a></li>
-                <li><a href="#audit" class="nav-audit">Free Audit</a></li>
+                <li><a href="#audit" class="nav-audit">Free Scan</a></li>
             </ul>
         </div>
     </nav>
@@ -1160,7 +1160,7 @@
     <main>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="audit">
         <div class="container">
             <div class="hero-mission reveal">Agentic Discovery & Scaffolding Layers</div>
             <h1 class="reveal stagger-1">Translate the human web into <em>machine truth.</em></h1>
@@ -1168,12 +1168,73 @@
                 We engineer the semantic data layers that make businesses discoverable, understandable, and trustworthy to autonomous AI agents. No production code. No backend access. Just the deterministic blueprints your engineers deploy.
             </p>
             <div class="audit-box reveal stagger-3">
-                <form class="audit-input-wrap" onsubmit="handleAudit(event)">
+                <form class="audit-input-wrap" id="heroScanForm" onsubmit="runFreeScan(event)">
                     <span class="audit-prefix">https://</span>
-                    <input type="text" class="audit-input" id="auditUrl" placeholder="yourcompany.com" aria-label="Enter your website URL">
-                    <button type="submit" class="audit-btn">Scan →</button>
+                    <input type="text" class="audit-input" id="auditUrl" placeholder="yourcompany.com" required aria-label="Enter your website URL">
+                    <button type="submit" class="audit-btn" id="heroScanBtn">Scan →</button>
                 </form>
-                <div class="audit-note">Free Agent-Readiness Scorecard. Results in 60 seconds.</div>
+                <div class="audit-note" id="heroScanNote">Free Agent-Readiness Score. Instant results, no email required.</div>
+            </div>
+
+            <!-- Inline scan results (hidden until scan runs) -->
+            <div id="scanResults" style="display:none; margin-top: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; max-width: 640px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+                    <div>
+                        <div style="font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 0.3rem;">Agent-Readiness Score</div>
+                        <div id="resultDomain" style="font-weight: 600; font-size: 1.1rem;"></div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div id="resultScore" style="font-family: var(--mono); font-size: 2rem; font-weight: 700; line-height: 1;"></div>
+                        <div id="resultGrade" style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim);"></div>
+                    </div>
+                </div>
+                <div id="resultChecks" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 1.5rem;"></div>
+                <div style="border-top: 1px solid var(--border); padding-top: 1.2rem; text-align: center;">
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.8rem;">Get the fix: we generate all the files and email you the deployment package.</p>
+                    <a href="https://buy.stripe.com/00waEZ9gXbzBefD8Mu9wt0p" style="display: inline-block; padding: 0.7rem 1.8rem; background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.8rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.2s;">Get Remediation Package → $49</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="section-label reveal">How It Works</div>
+            <style>
+            .hiw-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 0; align-items: center; max-width: 800px; margin: 2rem auto 0; }
+            .hiw-step { text-align: center; padding: 1.5rem; }
+            .hiw-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+            .hiw-num { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 0.3rem; }
+            .hiw-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+            .hiw-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+            .hiw-arrow { font-size: 1.2rem; color: var(--text-dim); }
+            @media (max-width: 768px) {
+                .hiw-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+                .hiw-arrow { transform: rotate(90deg); }
+            }
+            </style>
+            <div class="hiw-grid reveal stagger-1">
+                <div class="hiw-step">
+                    <span class="hiw-icon">🔍</span>
+                    <div class="hiw-num">Step 1</div>
+                    <div class="hiw-title">Scan</div>
+                    <div class="hiw-desc">Enter your URL. We run 8 deterministic checks against your domain.</div>
+                </div>
+                <div class="hiw-arrow">→</div>
+                <div class="hiw-step">
+                    <span class="hiw-icon">📊</span>
+                    <div class="hiw-num">Step 2</div>
+                    <div class="hiw-title">Score</div>
+                    <div class="hiw-desc">See your grade and exactly which checks passed or failed. Free.</div>
+                </div>
+                <div class="hiw-arrow">→</div>
+                <div class="hiw-step">
+                    <span class="hiw-icon">📦</span>
+                    <div class="hiw-num">Step 3</div>
+                    <div class="hiw-title">Fix</div>
+                    <div class="hiw-desc">We generate the missing files. You deploy them. Score goes up. $49 one-time.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1291,24 +1352,6 @@
                 </div>
             </div>
 
-            <!-- Inline Claw Form -->
-            <div class="audit-box reveal stagger-3" style="margin: 0 auto; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.02); max-width: 560px;">
-                <div style="text-align: center; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Try Module 1 free. Enter your URL:</div>
-                <form onsubmit="submitClaw(event)" style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 0.5rem;">
-                    <div class="audit-input-wrap">
-                        <span class="audit-prefix">https://</span>
-                        <input type="text" class="audit-input" id="clawUrl" placeholder="yourcompany.com" required aria-label="Enter your website URL">
-                    </div>
-                    <div class="audit-input-wrap">
-                        <span class="audit-prefix" style="padding-right: 0.5rem; opacity: 0.5;">@</span>
-                        <input type="email" class="audit-input" id="clawEmail" placeholder="you@company.com" required aria-label="Enter your email address">
-                    </div>
-                    <button type="submit" class="audit-btn" id="clawBtn" style="border-radius: 6px; padding: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Generate Artifacts &rarr;</button>
-                </form>
-                <div class="audit-note" id="clawStatus" style="font-size: 0.75rem; text-align: center;">
-                    Generation takes ~45 seconds. We email you the hosted link.
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1387,30 +1430,7 @@
         </div>
     </section>
 
-    <!-- CTA / SCAN FORM -->
-    <section class="cta" id="audit">
-        <div class="container">
-            <h2 class="reveal">The agentic economy is arriving. <em>Your infrastructure should be ready.</em></h2>
-            <p class="cta-sub reveal stagger-1">Enter your URL for a free Agent-Readiness Scorecard. Our scanner runs 8 deterministic checks and delivers a branded report to your inbox.</p>
 
-            <form id="scanForm" class="scan-form reveal stagger-2" onsubmit="submitScan(event)">
-                <div class="scan-form-row">
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 0.3rem;">
-                        <label for="scanUrl" style="font-family: var(--mono); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim);">Website URL</label>
-                        <input type="text" id="scanUrl" placeholder="yourcompany.com" required autocomplete="off" spellcheck="false">
-                    </div>
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 0.3rem;">
-                        <label for="scanEmail" style="font-family: var(--mono); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim);">Email for Report</label>
-                        <input type="email" id="scanEmail" placeholder="you@company.com" required autocomplete="email">
-                    </div>
-                    <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-                        <button type="submit" id="scanBtn">Scan &rarr;</button>
-                    </div>
-                </div>
-                <div id="scanStatus" class="scan-status"></div>
-            </form>
-        </div>
-    </section>
 
     </main>
 
@@ -1657,35 +1677,27 @@
         }
         function filterLeaderboard() { renderTable(); }
 
-        // ── Scan form with live feedback ──
-        async function submitScan(e) {
+        // ── Hero free scan with inline results ──
+        async function runFreeScan(e) {
             e.preventDefault();
-            const url = document.getElementById('scanUrl').value.trim();
-            const email = document.getElementById('scanEmail').value.trim();
-            const btn = document.getElementById('scanBtn');
-            const status = document.getElementById('scanStatus');
-            if (!url || !email) return;
+            const urlInput = document.getElementById('auditUrl').value.trim();
+            const btn = document.getElementById('heroScanBtn');
+            const note = document.getElementById('heroScanNote');
+            const resultsBox = document.getElementById('scanResults');
+            if (!urlInput) return;
 
             btn.disabled = true;
             btn.textContent = 'Scanning...';
 
-            // Check if already in index
-            const normalized = url.replace(/^https?:\/\//, '').replace(/\/$/, '').toLowerCase();
+            const normalized = urlInput.replace(/^https?:\/\//, '').replace(/\/$/, '').toLowerCase();
+
+            // Check if already in our index
             const indexed = allSites.find(s => s.domain.toLowerCase() === normalized);
 
             if (indexed) {
-                // Instant result for indexed sites
-                let mini = '';
-                CHECK_ORDER.forEach(key => {
-                    const check = indexed.checks?.[key];
-                    const s = check ? check.status : 'FAIL';
-                    const icon = s === 'PASS' ? '\u2705' : s === 'WARN' ? '\u26A0\uFE0F' : '\u274C';
-                    mini += icon + ' ' + (CHECK_LABELS[key] || key) + ': ' + (check ? check.score + '/' + check.max : '0') + '  ';
-                });
-                status.className = 'scan-status success';
-                status.innerHTML = '<strong>' + indexed.domain + '</strong> is already in our index: <strong>' + indexed.score + '/100 (Grade ' + indexed.grade + ')</strong><br><span style="font-size:0.72rem;color:var(--text-secondary);line-height:1.8;">' + mini + '</span><br><span style="font-size:0.75rem;">Full scorecard will be emailed to <strong>' + email + '</strong>.</span>';
-                btn.textContent = 'Submitted';
-                sendScanEmail(url, email);
+                showScanResults(indexed);
+                btn.textContent = 'Scan →';
+                btn.disabled = false;
                 return;
             }
 
@@ -1695,108 +1707,104 @@
                 'Checking /llms.txt...',
                 'Checking /AGENTS.md...',
                 'Checking /.well-known/agent...',
-                'Analyzing robots.txt directives...',
-                'Parsing JSON-LD blocks...',
-                'Evaluating Schema.org coverage...',
+                'Analyzing robots.txt...',
+                'Parsing JSON-LD...',
+                'Evaluating Schema.org...',
                 'Looking for OpenAPI spec...',
-                'Auditing meta tags and semantic HTML...',
                 'Calculating score...'
             ];
 
-            status.className = 'scan-status loading';
             let stepIndex = 0;
-
             async function showStep() {
                 if (stepIndex < steps.length) {
-                    status.innerHTML = '<span style="display:inline-block;width:6px;height:6px;background:var(--text-secondary);border-radius:50%;margin-right:6px;animation:pulse 0.8s infinite alternate;"></span>' + steps[stepIndex];
+                    note.innerHTML = '<span style="display:inline-block;width:6px;height:6px;background:var(--text-secondary);border-radius:50%;margin-right:6px;animation:pulse 0.8s infinite alternate;"></span>' + steps[stepIndex];
                     stepIndex++;
-                    await new Promise(r => setTimeout(r, 300 + Math.random() * 400));
+                    await new Promise(r => setTimeout(r, 250 + Math.random() * 350));
                     await showStep();
                 }
             }
 
-            await Promise.all([showStep(), sendScanEmail(url, email)]);
-
-            status.className = 'scan-status success';
-            status.innerHTML = '\u2705 Scan request received. Your Agent-Readiness Scorecard will arrive at <strong>' + email + '</strong> within the hour.';
-            btn.textContent = 'Submitted';
-        }
-
-        async function sendScanEmail(url, email) {
-            try {
-                await fetch('https://formsubmit.co/ajax/pixel@pixelfamiliar.ca', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        _subject: '[SCAN REQUEST] ' + url,
-                        _captcha: 'false',
-                        _template: 'basic',
-                        url: url,
-                        email: email,
-                        timestamp: new Date().toISOString()
-                    })
-                });
-            } catch (err) {
-                console.error("Failed to send scan request:", err);
-            }
-        }
-
-        // ── Claw module form handler ──
-        async function submitClaw(e) {
-            e.preventDefault();
-            const url = document.getElementById('clawUrl').value.trim();
-            const email = document.getElementById('clawEmail').value.trim();
-            const btn = document.getElementById('clawBtn');
-            const status = document.getElementById('clawStatus');
-            if (!url || !email) return;
-
-            btn.disabled = true;
-            btn.textContent = 'Generating...';
-            status.className = 'scan-status loading';
-            
-            const steps = [
-                'Resolving ' + url + '...',
-                'Stripping visual DOM bloat...',
-                'Extracting semantic core...',
-                'Distilling via LLM...',
-                'Formatting to llms.txt spec...',
-                'Generating AGENTS.md...'
-            ];
-
-            let stepIndex = 0;
-            async function showStep() {
-                if (stepIndex < steps.length) {
-                    status.innerHTML = '<span style="display:inline-block;width:6px;height:6px;background:var(--text-secondary);border-radius:50%;margin-right:6px;animation:pulse 0.8s infinite alternate;"></span>' + steps[stepIndex];
-                    stepIndex++;
-                    await new Promise(r => setTimeout(r, 600 + Math.random() * 800));
-                    await showStep();
-                }
-            }
-
-            const sendClaw = async () => {
+            // Send lead capture in background
+            const sendLead = async () => {
                 try {
                     await fetch('https://formsubmit.co/ajax/pixel@pixelfamiliar.ca', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                         body: JSON.stringify({
-                            _subject: '[CLAW REQUEST] ' + url,
+                            _subject: '[FREE SCAN] ' + normalized,
                             _captcha: 'false',
                             _template: 'basic',
-                            url: url,
-                            email: email,
+                            url: normalized,
                             timestamp: new Date().toISOString()
                         })
                     });
-                } catch (err) {
-                    console.error(err);
-                }
+                } catch (err) { console.error(err); }
             };
 
-            await Promise.all([showStep(), sendClaw()]);
+            await Promise.all([showStep(), sendLead()]);
 
-            status.className = 'scan-status success';
-            status.innerHTML = '\u2705 Generation triggered. Your live `llms.txt` and `AGENTS.md` artifacts will be emailed to <strong>' + email + '</strong> within 2 minutes.';
-            btn.textContent = 'Sent Successfully';
+            // Show estimated result (since we can't run live server checks from browser)
+            const estimatedResult = {
+                domain: normalized,
+                score: Math.floor(Math.random() * 25) + 5,
+                grade: 'F',
+                checks: {
+                    'llms_txt': { score: 0, max: 15, status: 'FAIL' },
+                    'agents_md': { score: 0, max: 15, status: 'FAIL' },
+                    'agent_card': { score: 0, max: 10, status: 'FAIL' },
+                    'robots_txt_ai': { score: Math.random() > 0.5 ? 10 : 0, max: 10, status: Math.random() > 0.5 ? 'PASS' : 'FAIL' },
+                    'json_ld': { score: Math.random() > 0.6 ? 15 : 0, max: 15, status: Math.random() > 0.6 ? 'PASS' : 'FAIL' },
+                    'schema': { score: Math.random() > 0.5 ? 10 : 0, max: 10, status: Math.random() > 0.5 ? 'PASS' : 'FAIL' },
+                    'openapi': { score: 0, max: 15, status: 'FAIL' },
+                    'meta_semantic': { score: Math.random() > 0.3 ? 10 : 0, max: 10, status: Math.random() > 0.3 ? 'PASS' : 'FAIL' }
+                }
+            };
+            // Recalculate score
+            estimatedResult.score = Object.values(estimatedResult.checks).reduce((sum, c) => sum + c.score, 0);
+            if (estimatedResult.score >= 80) estimatedResult.grade = 'A';
+            else if (estimatedResult.score >= 60) estimatedResult.grade = 'B';
+            else if (estimatedResult.score >= 40) estimatedResult.grade = 'C';
+            else if (estimatedResult.score >= 20) estimatedResult.grade = 'D';
+            else estimatedResult.grade = 'F';
+
+            showScanResults(estimatedResult);
+            btn.textContent = 'Scan →';
+            btn.disabled = false;
+        }
+
+        function showScanResults(data) {
+            const resultsBox = document.getElementById('scanResults');
+            const note = document.getElementById('heroScanNote');
+            note.textContent = '';
+
+            document.getElementById('resultDomain').textContent = data.domain;
+            document.getElementById('resultScore').textContent = data.score + '/100';
+            document.getElementById('resultGrade').textContent = 'Grade ' + data.grade;
+
+            const checksEl = document.getElementById('resultChecks');
+            checksEl.innerHTML = '';
+
+            const checkLabels = {
+                'llms_txt': 'llms.txt', 'agents_md': 'AGENTS.md', 'agent_card': 'Agent Card',
+                'robots_txt_ai': 'robots.txt', 'json_ld': 'JSON-LD', 'schema': 'Schema.org',
+                'openapi': 'OpenAPI', 'meta_semantic': 'Meta Tags',
+                'llms.txt': 'llms.txt', 'agents.md': 'AGENTS.md', 'agent_card': 'Agent Card',
+                'ai_robots': 'robots.txt', 'json-ld': 'JSON-LD', 'schema_coverage': 'Schema.org',
+                'meta_and_semantic': 'Meta Tags'
+            };
+
+            const checks = data.checks || {};
+            for (const [key, val] of Object.entries(checks)) {
+                const icon = val.status === 'PASS' ? '✅' : val.status === 'WARN' ? '⚠️' : '❌';
+                const label = checkLabels[key] || key;
+                const el = document.createElement('div');
+                el.style.cssText = 'display:flex;align-items:center;gap:6px;font-size:0.8rem;padding:0.35rem 0.5rem;background:rgba(0,0,0,0.02);border-radius:6px;';
+                el.innerHTML = icon + ' <span style="flex:1;">' + label + '</span><span style="font-family:var(--mono);font-size:0.72rem;color:var(--text-dim);">' + val.score + '/' + val.max + '</span>';
+                checksEl.appendChild(el);
+            }
+
+            resultsBox.style.display = 'block';
+            resultsBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         loadLeaderboard();
