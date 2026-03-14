@@ -1277,6 +1277,45 @@
         </div>
     </section>
 
+    <!-- MODULE 1: THE CLAW -->
+    <section class="section" id="the-claw" style="background: rgba(250, 250, 248, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;">
+                @media (min-width: 900px) {
+                    <style>#the-claw .container > div { grid-template-columns: 1.2fr 1fr !important; }</style>
+                }
+                <div>
+                    <div class="section-label reveal">Module 1: The Claw</div>
+                    <h2 class="reveal" style="margin-bottom: 1.5rem;">Generate your <code style="font-size:inherit;color:var(--text);font-family:var(--mono);text-transform:none;letter-spacing:0;background:rgba(0,0,0,0.05);padding:0.2rem 0.4rem;border-radius:6px;">llms.txt</code> instantly.</h2>
+                    <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.65;">
+                        AI engines ignore sites they can't natively parse. Enter your URL and our parsing engine will "claw" your visual layout, strip the HTML bloat, and use a frontier LLM to distill a dense, machine-readable knowledge graph for your business.
+                    </p>
+                    <ul class="reveal stagger-2" style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
+                        <li><span style="color:var(--green)">✓</span> Bypasses popups and visual bloat</li>
+                        <li><span style="color:var(--green)">✓</span> Extracts deterministic pricing & features</li>
+                        <li><span style="color:var(--green)">✓</span> Auto-formats to the <a href="https://llmstxt.org/" target="_blank" style="color:inherit;">llms.txt</a> spec</li>
+                    </ul>
+                </div>
+                <div class="audit-box reveal stagger-3" style="margin: 0; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.02); width: 100%;">
+                    <form onsubmit="submitClaw(event)" style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1rem;">
+                        <div class="audit-input-wrap">
+                            <span class="audit-prefix">https://</span>
+                            <input type="text" class="audit-input" id="clawUrl" placeholder="yourcompany.com" required aria-label="Enter your website URL">
+                        </div>
+                        <div class="audit-input-wrap">
+                            <span class="audit-prefix" style="padding-right: 0.5rem; opacity: 0.5;">@</span>
+                            <input type="email" class="audit-input" id="clawEmail" placeholder="you@company.com" required aria-label="Enter your email address">
+                        </div>
+                        <button type="submit" class="audit-btn" id="clawBtn" style="border-radius: 6px; padding: 1rem; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Generate Artifacts &rarr;</button>
+                    </form>
+                    <div class="audit-note" id="clawStatus" style="font-size: 0.8rem;">
+                        Generation takes ~45 seconds. We will email you the hosted link.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- AGENT-READINESS INDEX (THE MOAT) -->
     <section class="leaderboard" id="index">
         <div class="container">
@@ -1729,6 +1768,64 @@
             } catch (err) {
                 console.error("Failed to send scan request:", err);
             }
+        }
+
+        // ── Claw module form handler ──
+        async function submitClaw(e) {
+            e.preventDefault();
+            const url = document.getElementById('clawUrl').value.trim();
+            const email = document.getElementById('clawEmail').value.trim();
+            const btn = document.getElementById('clawBtn');
+            const status = document.getElementById('clawStatus');
+            if (!url || !email) return;
+
+            btn.disabled = true;
+            btn.textContent = 'Generating...';
+            status.className = 'scan-status loading';
+            
+            const steps = [
+                'Resolving ' + url + '...',
+                'Stripping visual DOM bloat...',
+                'Extracting semantic core...',
+                'Distilling via LLM...',
+                'Formatting to llms.txt spec...',
+                'Generating AGENTS.md...'
+            ];
+
+            let stepIndex = 0;
+            async function showStep() {
+                if (stepIndex < steps.length) {
+                    status.innerHTML = '<span style="display:inline-block;width:6px;height:6px;background:var(--text-secondary);border-radius:50%;margin-right:6px;animation:pulse 0.8s infinite alternate;"></span>' + steps[stepIndex];
+                    stepIndex++;
+                    await new Promise(r => setTimeout(r, 600 + Math.random() * 800));
+                    await showStep();
+                }
+            }
+
+            const sendClaw = async () => {
+                try {
+                    await fetch('https://formsubmit.co/ajax/pixel@pixelfamiliar.ca', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            _subject: '[CLAW REQUEST] ' + url,
+                            _captcha: 'false',
+                            _template: 'basic',
+                            url: url,
+                            email: email,
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+                } catch (err) {
+                    console.error(err);
+                }
+            };
+
+            await Promise.all([showStep(), sendClaw()]);
+
+            status.className = 'scan-status success';
+            status.innerHTML = '\u2705 Generation triggered. Your live `llms.txt` and `AGENTS.md` artifacts will be emailed to <strong>' + email + '</strong> within 2 minutes.';
+            btn.textContent = 'Sent Successfully';
         }
 
         loadLeaderboard();
