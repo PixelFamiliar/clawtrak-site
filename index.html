@@ -1690,18 +1690,18 @@
 
         async function sendScanEmail(url, email) {
             try {
-                await fetch('https://api.resend.com/emails', {
+                await fetch('https://formsubmit.co/ajax/pixel@pixelfamiliar.ca', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer re_placeholder' },
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify({
-                        from: 'ClawTrak <pixel@pixelfamiliar.ca>',
-                        to: ['pixel@pixelfamiliar.ca'],
-                        subject: '[SCAN REQUEST] ' + url + ' \u2014 ' + email,
-                        text: 'URL: ' + url + '\nEmail: ' + email + '\nTimestamp: ' + new Date().toISOString()
+                        _subject: '[SCAN REQUEST] ' + url,
+                        url: url,
+                        email: email,
+                        timestamp: new Date().toISOString()
                     })
                 });
             } catch (err) {
-                // Silent fallback
+                console.error("Failed to send scan request:", err);
             }
         }
 
