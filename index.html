@@ -1168,6 +1168,30 @@
         </div>
     </section>
 
+    <!-- THE AGENTIC SHIFT MARKET -->
+    <section class="section">
+        <div class="container">
+            <div class="section-label reveal">The Addressable Market</div>
+            <h2 class="reveal">200 Million websites need to be converted.</h2>
+            <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 650px; line-height: 1.65;">
+                The transition from the traditional human-centric web (designed for eyeballs and mouse clicks) to the <strong>Agentic Web</strong> (designed for autonomous AI agents to read and execute) is the largest infrastructural shift since mobile-responsive design.
+            </p>
+
+            <div class="artifact-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="artifact-card reveal stagger-2">
+                    <span class="artifact-file" style="background: rgba(220, 38, 38, 0.08); color: #dc2626;">High Urgency</span>
+                    <h4 style="margin-bottom: 0.8rem;">Tier 1: The Transactional Web</h4>
+                    <p><strong>~45 Million Websites.</strong> E-commerce stores, SaaS apps, travel booking, and local services. These sites require <strong>Read/Write conversion</strong>. Agents must search dynamic inventory, bypass CAPTCHAs, and securely execute payments. If blocked, businesses instantly lose sales to agent-friendly competitors.</p>
+                </div>
+                <div class="artifact-card reveal stagger-3">
+                    <span class="artifact-file" style="background: rgba(217, 119, 6, 0.08); color: #d97706;">Medium Urgency</span>
+                    <h4 style="margin-bottom: 0.8rem;">Tier 2: The Informational Web</h4>
+                    <p><strong>~150 Million Websites.</strong> News publishers, corporate hubs, wikis, and blogs. These sites require <strong>Read-Only conversion</strong>. They must strip visual Javascript bloat and provide clean semantic data natively so AI search engines (like Perplexity or SearchGPT) can ingest and cite their content without hallucinating.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- TRANSLATION SHOWCASE -->
     <section class="translation" id="artifacts">
         <div class="container">
@@ -1695,6 +1719,8 @@
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify({
                         _subject: '[SCAN REQUEST] ' + url,
+                        _captcha: 'false',
+                        _template: 'basic',
                         url: url,
                         email: email,
                         timestamp: new Date().toISOString()
