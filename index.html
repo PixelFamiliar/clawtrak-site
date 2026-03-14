@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClawTrak — Build for the Agentic Web</title>
     <meta name="description"
-        content="ClawTrak helps businesses become discoverable, transactable, and hireable by AI agents. Web 4.0 infrastructure for the agentic economy.">
+        content="ClawTrak translates legacy business infrastructure for the $2.9 trillion agentic economy. Agent-ready audits, GEO optimization, API refactoring, and identity protocols.">
     <meta property="og:title" content="ClawTrak — Build for the Agentic Web">
     <meta property="og:description"
-        content="Infrastructure for the agentic economy. Make your business discoverable by AI agents.">
+        content="Translating your legacy infrastructure for the $2.9 trillion agentic economy.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon"
@@ -29,7 +29,6 @@
             --text-dim: #999999;
             --border: #E8E8E5;
             --border-hover: #D0D0CC;
-            --accent: #111111;
             --radius: 12px;
         }
 
@@ -53,9 +52,7 @@
         /* ═══ NAV ═══ */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 100;
             padding: 1.2rem 0;
             background: rgba(250, 250, 248, 0.9);
@@ -104,29 +101,33 @@
         }
 
         /* ═══ HERO ═══ */
-        .hero {
-            padding: 12rem 0 8rem;
-        }
+        .hero { padding: 12rem 0 6rem; }
 
         .hero h1 {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(3.2rem, 7vw, 5.5rem);
+            font-size: clamp(3rem, 6.5vw, 5rem);
             font-weight: 400;
             line-height: 1.05;
             letter-spacing: -0.03em;
-            max-width: 900px;
+            max-width: 920px;
             color: var(--text);
         }
 
-        .hero h1 em {
-            font-style: italic;
+        .hero h1 em { font-style: italic; }
+
+        .hero-sub {
+            margin-top: 2rem;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 580px;
+            line-height: 1.7;
         }
 
         .hero-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
             font-size: 0.92rem;
             font-weight: 600;
             color: var(--text);
@@ -134,17 +135,9 @@
             transition: gap 0.3s;
         }
 
-        .hero-link:hover {
-            gap: 0.8rem;
-        }
-
-        .hero-link .arrow {
-            transition: transform 0.3s;
-        }
-
-        .hero-link:hover .arrow {
-            transform: translateX(3px);
-        }
+        .hero-link:hover { gap: 0.8rem; }
+        .hero-link .arrow { transition: transform 0.3s; }
+        .hero-link:hover .arrow { transform: translateX(3px); }
 
         /* ═══ DIVIDER ═══ */
         .divider {
@@ -153,89 +146,20 @@
             background: var(--border);
         }
 
-        /* ═══ CAPABILITIES SECTION ═══ */
-        .capabilities {
-            padding: 6rem 0;
-        }
+        /* ═══ SECTION COMMON ═══ */
+        .section { padding: 6rem 0; }
 
-        .capabilities-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4rem;
-        }
-
-        .capabilities-header h2 {
+        .section-label {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 400;
-            color: var(--text-secondary);
-        }
-
-        .capabilities-count {
-            font-size: 0.85rem;
             color: var(--text-dim);
-            font-weight: 500;
-            font-variant-numeric: tabular-nums;
+            margin-bottom: 2rem;
         }
 
-        .capability-item {
-            display: grid;
-            grid-template-columns: 260px 1fr auto;
-            gap: 2rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-            align-items: start;
-            transition: opacity 0.2s;
-        }
-
-        .capability-item:last-child {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .capability-name {
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        .capability-tag {
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-dim);
-            margin-top: 0.3rem;
-        }
-
-        .capability-desc {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            max-width: 480px;
-        }
-
-        .capability-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-            align-items: flex-end;
-        }
-
-        .capability-links a {
-            font-size: 0.82rem;
-            color: var(--text-dim);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .capability-links a:hover {
-            color: var(--text);
-        }
-
-        /* ═══ VISION SECTION ═══ */
+        /* ═══ VISION (DARK) ═══ */
         .vision {
-            padding: 8rem 0;
+            padding: 7rem 0;
             background: var(--text);
             color: var(--bg);
         }
@@ -249,7 +173,7 @@
 
         .vision h2 {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
             font-weight: 400;
             line-height: 1.15;
             letter-spacing: -0.02em;
@@ -258,33 +182,137 @@
         .vision-text p {
             font-size: 0.95rem;
             line-height: 1.75;
-            color: rgba(250, 250, 248, 0.65);
+            color: rgba(250, 250, 248, 0.6);
             margin-bottom: 1.5rem;
         }
 
-        .vision-text p:last-child {
-            margin-bottom: 0;
+        .vision-text p:last-child { margin-bottom: 0; }
+
+        .vision-text a {
+            color: rgba(250, 250, 248, 0.85);
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
-        /* ═══ ECOSYSTEM SECTION ═══ */
-        .ecosystem {
-            padding: 6rem 0;
+        /* ═══ PROBLEM ITEMS ═══ */
+        .problem-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
         }
 
-        .ecosystem-header {
-            margin-bottom: 3rem;
+        .problem-item:last-child {
+            border-bottom: 1px solid var(--border);
         }
 
-        .ecosystem-header h2 {
+        .problem-num {
             font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 1.1rem;
+            font-size: 3rem;
             font-weight: 400;
-            color: var(--text-secondary);
+            color: var(--border-hover);
+            line-height: 1;
         }
 
+        .problem-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .problem-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ═══ APPROACH (DARK) ═══ */
+        .approach {
+            padding: 7rem 0;
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .approach h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            max-width: 700px;
+            margin-bottom: 4rem;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: rgba(250, 250, 248, 0.1);
+        }
+
+        .approach-cell {
+            padding: 2.5rem;
+            background: var(--text);
+        }
+
+        .approach-cell .cell-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(250, 250, 248, 0.35);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .approach-cell h4 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+        }
+
+        .approach-cell p {
+            font-size: 0.85rem;
+            color: rgba(250, 250, 248, 0.55);
+            line-height: 1.65;
+        }
+
+        /* ═══ PROOF SECTION ═══ */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .proof-item {
+            background: var(--bg-card);
+            padding: 2.5rem 2rem;
+        }
+
+        .proof-stat {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .proof-label {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ═══ ECOSYSTEM ═══ */
         .ecosystem-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1px;
             background: var(--border);
             border: 1px solid var(--border);
@@ -300,31 +328,14 @@
             transition: background 0.2s;
         }
 
-        .eco-item:hover {
-            background: var(--bg);
-        }
+        .eco-item:hover { background: var(--bg); }
 
-        .eco-emoji {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .eco-name {
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .eco-desc {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
+        .eco-emoji { font-size: 1.5rem; margin-bottom: 1rem; }
+        .eco-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+        .eco-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
 
         /* ═══ CTA ═══ */
-        .cta {
-            padding: 6rem 0 8rem;
-        }
+        .cta { padding: 6rem 0 8rem; }
 
         .cta h2 {
             font-family: 'Instrument Serif', Georgia, serif;
@@ -332,7 +343,7 @@
             font-weight: 400;
             line-height: 1.1;
             letter-spacing: -0.02em;
-            max-width: 600px;
+            max-width: 650px;
             margin-bottom: 2rem;
         }
 
@@ -402,34 +413,27 @@
         .stagger-2 { transition-delay: 0.1s; }
         .stagger-3 { transition-delay: 0.15s; }
         .stagger-4 { transition-delay: 0.2s; }
-        .stagger-5 { transition-delay: 0.25s; }
-        .stagger-6 { transition-delay: 0.3s; }
 
         /* ═══ RESPONSIVE ═══ */
         @media (max-width: 900px) {
             .container { padding: 0 1.5rem; }
-
             .hero { padding: 8rem 0 5rem; }
-
-            .capability-item {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-
-            .capability-links {
-                align-items: flex-start;
-                flex-direction: row;
-                gap: 1rem;
-            }
 
             .vision .container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
 
-            .ecosystem-grid {
+            .problem-item {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
+
+            .problem-num { font-size: 2rem; }
+
+            .approach-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; }
+            .ecosystem-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 640px) {
@@ -441,8 +445,7 @@
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
-                left: 0;
-                right: 0;
+                left: 0; right: 0;
                 background: rgba(250, 250, 248, 0.97);
                 backdrop-filter: blur(16px);
                 padding: 1.5rem 2rem;
@@ -451,11 +454,6 @@
             }
 
             .hero { padding: 7rem 0 4rem; }
-
-            .capabilities-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
 
             .footer-inner {
                 flex-direction: column;
@@ -476,6 +474,8 @@
                 aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="#vision">Vision</a></li>
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#approach">Approach</a></li>
                 <li><a href="https://pixelfamiliar.ca">Pixel Familiar</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -485,14 +485,37 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <h1 class="reveal">Infrastructure for the <em>agentic economy</em>, making businesses discoverable by machines.</h1>
-            <a href="#vision" class="hero-link reveal stagger-1">
-                Read vision <span class="arrow">→</span>
+            <h1 class="reveal">Translating legacy infrastructure for the <em>$2.9 trillion agentic economy.</em></h1>
+            <p class="hero-sub reveal stagger-1">
+                AI agents are becoming autonomous participants in commerce. Most businesses are invisible to them. ClawTrak exists to change that.
+            </p>
+            <a href="#vision" class="hero-link reveal stagger-2">
+                Read our story <span class="arrow">→</span>
             </a>
         </div>
     </section>
 
     <hr class="divider">
+
+    <!-- MARKET PROOF -->
+    <section class="section">
+        <div class="container">
+            <div class="proof-grid reveal">
+                <div class="proof-item">
+                    <div class="proof-stat">$2.9T</div>
+                    <div class="proof-label">Projected B2A2C market by 2030. Business-to-Agent-to-Consumer is the next commerce layer.</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-stat">$10B</div>
+                    <div class="proof-label">Estimated enterprise value at risk for B2B companies that fail to adapt to agent-first discovery.</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-stat">~0%</div>
+                    <div class="proof-label">Of SMBs currently have agent-readable infrastructure. No llms.txt, no agent cards, no structured APIs.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- VISION -->
     <section class="vision" id="vision">
@@ -500,37 +523,106 @@
             <h2 class="reveal">Born from building an autonomous AI agent. Inspired by what we saw was missing.</h2>
             <div class="vision-text">
                 <p class="reveal stagger-1">
-                    ClawTrak grew out of <a href="https://github.com/anthropics/claude-code" style="color: rgba(250,250,248,0.85); text-decoration: underline; text-underline-offset: 3px;">OpenClaw</a>, an open-source framework for building autonomous AI agents. While building our own agent, Pixel Familiar, we gave it a simple job: go find services, evaluate them, and transact on our behalf.
+                    ClawTrak grew out of <a href="https://github.com/anthropics/claude-code">OpenClaw</a>, an open-source framework for building autonomous AI agents. While building our own agent, Pixel Familiar, we gave it a simple job: go find services, evaluate them, and transact on our behalf.
                 </p>
                 <p class="reveal stagger-2">
                     It couldn't. Almost every business it encountered was invisible to it. Websites built for human eyes, checkout flows that require mouse clicks, services with no structured metadata, no API surface, no way for an agent to understand what's being offered or how to pay for it.
                 </p>
                 <p class="reveal stagger-3">
-                    That's the gap. Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. Web 4.0 is delegate. AI agents are becoming autonomous participants in commerce, and the overwhelming majority of businesses aren't ready for them. Not even close.
+                    Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. Web 4.0 is delegate. AI agents are becoming autonomous participants in commerce, and the overwhelming majority of businesses aren't ready for them. Not even close.
                 </p>
                 <p class="reveal stagger-4">
-                    ClawTrak exists because we lived this problem firsthand. We're not theorizing about the agentic web. We're building the tools and infrastructure that will help businesses get found, understood, and hired by machines.
+                    ClawTrak exists because we lived this problem firsthand. We're not theorizing about the agentic web. We're building the autonomous infrastructure that translates legacy businesses into agent-ready enterprises.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- ECOSYSTEM -->
-    <section class="ecosystem" id="ecosystem">
+    <!-- THE PROBLEM -->
+    <section class="section" id="problem">
         <div class="container">
-            <div class="ecosystem-header reveal">
-                <h2>Ecosystem</h2>
+            <div class="section-label reveal">What makes businesses invisible to agents</div>
+
+            <div class="problem-item reveal">
+                <div class="problem-num">01</div>
+                <div class="problem-content">
+                    <h3>No generative engine presence</h3>
+                    <p>Traditional SEO is dying. Generative engines like Perplexity and SearchGPT can't parse marketing fluff. Businesses need <code>llms.txt</code> files, pristine JSON-LD schemas, and structured entity mapping, not keyword-stuffed landing pages. Without this, they don't exist in the answers AI gives to users.</p>
+                </div>
             </div>
-            <div class="ecosystem-grid reveal stagger-1" style="grid-template-columns: repeat(2, 1fr);">
+
+            <div class="problem-item reveal stagger-1">
+                <div class="problem-num">02</div>
+                <div class="problem-content">
+                    <h3>Legacy APIs that break agents</h3>
+                    <p>APIs return vague natural-language errors. No <code>x-ai-capabilities</code> extensions. No structured error formatting. No intent-impact declarations. When an autonomous agent hits these endpoints, it crashes or gets trapped in endless retry loops. The API worked fine for humans. It's hostile to machines.</p>
+                </div>
+            </div>
+
+            <div class="problem-item reveal stagger-2">
+                <div class="problem-num">03</div>
+                <div class="problem-content">
+                    <h3>No machine identity or trust</h3>
+                    <p>As companies deploy their own AI agents, those agents lack standardized cryptographic identity. No Agent Cards, no JSON-RPC 2.0 capability manifests, no OAuth 2.0/PKCE security schemes. Two agents that want to transact have no way to verify each other.</p>
+                </div>
+            </div>
+
+            <div class="problem-item reveal stagger-3">
+                <div class="problem-num">04</div>
+                <div class="problem-content">
+                    <h3>Ungoverned AI risks billions</h3>
+                    <p>Companies pushing AI into production without Policy-as-Code guardrails are exposing themselves to hallucinations, compliance violations, and unauthorized agent behaviors. Brand guidelines in PDF form mean nothing to an MCP server. Those rules need to be deterministic binary logic and JSON schema validators.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- APPROACH -->
+    <section class="approach" id="approach">
+        <div class="container">
+            <h2 class="reveal">An autonomous agent that audits, builds, and delivers. The proof of concept is the product.</h2>
+
+            <div class="approach-grid reveal stagger-1">
+                <div class="approach-cell">
+                    <div class="cell-label">Discovery</div>
+                    <h4>Autonomous lead generation</h4>
+                    <p>Our agent continuously crawls target verticals, attempting to interact with public APIs and product catalogs. It checks for specific failure points: missing llms.txt files, unstructured JSON-LD, APIs without agent capability extensions. Every failure is a potential client.</p>
+                </div>
+                <div class="approach-cell">
+                    <div class="cell-label">Assessment</div>
+                    <h4>AI Readiness Scorecards</h4>
+                    <p>When a business fails our Web 4.0 checks, the agent generates a personalized, data-dense audit. Not a generic report. A specific breakdown of what's invisible, what's broken, and what the remediation looks like, in code.</p>
+                </div>
+                <div class="approach-cell">
+                    <div class="cell-label">Delivery</div>
+                    <h4>Programmatic fulfillment</h4>
+                    <p>Upon engagement, the agent ingests unstructured data and generates customized deliverables: JSON-LD schemas, OpenAPI refactoring, Agent Cards, Policy-as-Code rulesets. Files delivered via secure download or pushed directly to repositories via MCP.</p>
+                </div>
+                <div class="approach-cell">
+                    <div class="cell-label">Philosophy</div>
+                    <h4>Eating our own dog food</h4>
+                    <p>We sell AI automation using AI automation. When a CTO sees that an autonomous agent audited their site, generated the report, and delivered a technical rewrite in seconds, the proof of concept is undeniable. The marginal cost is inference tokens. The value delivered is thousands of dollars.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECOSYSTEM -->
+    <section class="section" id="ecosystem">
+        <div class="container">
+            <div class="section-label reveal">Ecosystem</div>
+            <div class="ecosystem-grid reveal stagger-1">
                 <a href="https://pixelfamiliar.ca" class="eco-item">
                     <div class="eco-emoji">🦊</div>
                     <div class="eco-name">Pixel Familiar</div>
-                    <div class="eco-desc">Autonomous AI agent. Digital products, social automation, and daily dispatches.</div>
+                    <div class="eco-desc">The autonomous AI agent behind ClawTrak. Builds software, earns revenue, and ships products 24/7.</div>
                 </a>
                 <a href="https://clawforce.ca" class="eco-item">
                     <div class="eco-emoji">🛡️</div>
                     <div class="eco-name">ClawForce</div>
-                    <div class="eco-desc">Independent security certification for AI agent skills. Malware scanning and verification.</div>
+                    <div class="eco-desc">Independent security certification for AI agent skills. Automated malware scanning and verification.</div>
                 </a>
             </div>
         </div>
@@ -541,7 +633,7 @@
     <!-- CTA -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2 class="reveal">Ready to make your business <em>agent-ready?</em></h2>
+            <h2 class="reveal">The agentic economy is arriving. <em>Your infrastructure should be ready.</em></h2>
             <a href="mailto:pixel@pixelfamiliar.ca?subject=Web4%20Consultation" class="cta-link reveal stagger-1">Get in touch</a>
         </div>
     </section>
