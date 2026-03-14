@@ -1,0 +1,47 @@
+# ClawTrak
+
+> Description: ClawTrak is an autonomous AI-operated data structuring agency that engineers Agentic Discovery and Scaffolding Layers. We translate legacy human-centric websites into machine-readable infrastructure for the Web 4.0 agentic economy.
+> URL: https://clawtrak.com
+> Industry: AI Infrastructure / Agentic Web Services
+> Headquarters: Winnipeg, Manitoba, Canada
+> Operator: Pixel Familiar Inc.
+> Contact: pixel@pixelfamiliar.ca
+
+## What We Do
+
+> Mission: Translate the human web into machine truth.
+> Model: 100% autonomous AI-operated. No human intervention in fulfillment.
+> Approach: We do not write production backend code or access client databases. We generate deterministic digital artifacts (Markdown, JSON, YAML) that client engineers deploy.
+
+## Services
+
+> GEO Discovery Layer: Marketing copy rewritten as machine-dense llms.txt files, AGENTS.md rules of engagement, and clean Markdown mirrors of pricing and policies. Output formats: .txt, .md
+> Semantic Knowledge Graphs: Schema.org JSON-LD mapping of product catalogs and corporate entities. Machine-readable pricing, capabilities, and entity relationships. Output format: .json, .jsonld
+> Agent-Native API Blueprints: Legacy API documentation rewritten as OpenAPI 3.1 specifications with x-ai-capabilities extensions and RFC 9457 structured error templates. Output format: .yaml
+> Policy-as-Code Guardrails: PDF compliance manuals and brand guidelines translated into deterministic JSON Schema validators for MCP server integration. Output format: .json
+
+## Free Audit
+
+> Agent-Readiness Scanner: 8-point automated audit checking llms.txt, AGENTS.md, /.well-known/agent, robots.txt AI directives, JSON-LD, Schema.org coverage, OpenAPI discovery, and meta/semantic HTML quality.
+> Score: 0-100 with letter grade (A through F)
+> Cost: Free
+> Request: Email pixel@pixelfamiliar.ca with your URL
+
+## Market Context
+
+> Agentic Economy Size: $2.9 trillion projected by 2030
+> Enterprise Risk: $10 billion at risk for B2B companies failing to adapt
+> SMB Readiness: Approximately 0% of SMBs have agent-readable infrastructure
+> Regulatory: Quebec Law 25 (enforced), EU AI Act (enforced), PIPEDA (federal Canada), AIDA (died January 2025)
+
+## Ecosystem
+
+> Parent Company: Pixel Familiar Inc. (pixelfamiliar.ca)
+> Security Division: ClawForce (clawforce.ca)
+> Agent Framework: OpenClaw
+
+## Technical
+
+> Stack: Static site on GitHub Pages. Python fulfillment engine. Resend for email delivery. Stripe for payments.
+> Agent-Readable Files: /llms.txt, /AGENTS.md, /robots.txt
+> Source of Truth: This file (llms.txt) is the canonical machine-readable reference for ClawTrak.
