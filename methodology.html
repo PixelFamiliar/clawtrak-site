@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology — ClawTrak Agent-Readiness Index</title>
+    <meta name="description"
+        content="How ClawTrak scores websites for agent-readiness. 8 deterministic checks, transparent methodology, reproducible results.">
+    <meta property="og:title" content="Methodology — ClawTrak Agent-Readiness Index">
+    <meta property="og:description" content="How we score websites for the agentic web. 8 checks, 100 points, zero opinions.">
+    <meta property="og:url" content="https://clawtrak.com/methodology.html">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #FAFAF8;
+            --text: #111;
+            --text-secondary: #666;
+            --border: #E0E0DC;
+            --surface: #F5F5F3;
+            --mono: 'IBM Plex Mono', monospace;
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(250,250,248,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        /* ── CONTENT ── */
+        .hero {
+            padding: 8rem 0 3rem;
+        }
+        .hero .label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 560px;
+        }
+
+        .section { margin-bottom: 3.5rem; }
+        .section h2 {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+        }
+        .section p { color: var(--text-secondary); margin-bottom: 1rem; }
+
+        /* ── CHECK CARDS ── */
+        .check-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .check-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            background: var(--surface);
+        }
+
+        .check-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .check-name {
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .check-weight {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: rgba(0,0,0,0.04);
+            padding: 0.15rem 0.6rem;
+            border-radius: 3px;
+        }
+
+        .check-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 0.6rem;
+        }
+
+        .check-what {
+            font-size: 0.78rem;
+            color: #888;
+            font-family: var(--mono);
+            line-height: 1.5;
+        }
+        .check-what strong { color: var(--text-secondary); }
+
+        /* ── GRADE TABLE ── */
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .grade-table th {
+            text-align: left;
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .grade-table td {
+            padding: 0.6rem 1rem;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .grade-table tr:last-child td { border-bottom: none; }
+
+        .grade-badge {
+            font-family: var(--mono);
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 0.12rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .grade-badge.a { background: #E8F5EC; color: #1A7A3A; }
+        .grade-badge.b { background: #E8F5EC; color: #2D8B4A; }
+        .grade-badge.c { background: #FFF8E1; color: #B8860B; }
+        .grade-badge.d { background: #FDEDEC; color: #C0392B; }
+        .grade-badge.f { background: #FDEDEC; color: #922B21; }
+
+        /* ── PRINCIPLES ── */
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .principle {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .principle h4 {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .principle p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+        }
+        .footer-inner a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px; }
+
+        @media (max-width: 640px) {
+            .principles { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="nav-brand">CLAWTRAK</a>
+        <ul class="nav-links">
+            <li><a href="/#index">Index</a></li>
+            <li><a href="/methodology.html">Methodology</a></li>
+            <li><a href="/#audit">Free Audit</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="hero">
+                <div class="label">Methodology</div>
+                <h1>How we score websites for the agentic web.</h1>
+                <p class="sub">The Agent-Readiness Index uses 8 deterministic checks to evaluate how prepared a website is for autonomous AI agents. No opinions, no subjective analysis. Every check is binary or graduated, every result is reproducible.</p>
+            </div>
+
+            <div class="section">
+                <h2>Scoring principles</h2>
+                <div class="principles">
+                    <div class="principle">
+                        <h4>Deterministic</h4>
+                        <p>Same URL, same score. Every time. No LLM judging, no human reviewers.</p>
+                    </div>
+                    <div class="principle">
+                        <h4>Transparent</h4>
+                        <p>Full methodology published here. Check weights are fixed. Nothing hidden.</p>
+                    </div>
+                    <div class="principle">
+                        <h4>Actionable</h4>
+                        <p>Every failing check has a clear fix. We tell you what's missing and why it matters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grade thresholds</h2>
+                <table class="grade-table">
+                    <thead>
+                        <tr>
+                            <th>Grade</th>
+                            <th>Score Range</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="grade-badge a">A</span></td>
+                            <td>90 &ndash; 100</td>
+                            <td>Agent-ready. AI systems can discover, understand, and transact.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="grade-badge b">B</span></td>
+                            <td>70 &ndash; 89</td>
+                            <td>Partially ready. Core artifacts in place, gaps remain.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="grade-badge c">C</span></td>
+                            <td>50 &ndash; 69</td>
+                            <td>Some machine-readable data. Significant gaps limiting automation.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="grade-badge d">D</span></td>
+                            <td>30 &ndash; 49</td>
+                            <td>Mostly invisible. Agents struggle to understand the business.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="grade-badge f">F</span></td>
+                            <td>0 &ndash; 29</td>
+                            <td>Invisible to agents. No machine-readable infrastructure.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>The 8 checks</h2>
+                <p>Total possible score: 100 points. Each check has a fixed weight reflecting its importance to autonomous agent workflows.</p>
+
+                <div class="check-grid">
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">1. llms.txt</span>
+                            <span class="check-weight">15 pts</span>
+                        </div>
+                        <p class="check-desc">A machine-dense text file at the root of your domain that tells LLMs and generative search engines what your business does, what you offer, and how to interact with you.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> File existence at /llms.txt, minimum line count (5+), presence of key sections (Description, URL, products/services).
+                        </div>
+                    </div>
+
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">2. AGENTS.md</span>
+                            <span class="check-weight">10 pts</span>
+                        </div>
+                        <p class="check-desc">A rules-of-engagement file that tells visiting AI agents what they can and cannot do on your site. Rate limits, data access policies, preferred interaction patterns.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> File existence at /AGENTS.md, valid structure, explicit permission or restriction declarations.
+                        </div>
+                    </div>
+
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">3. Agent Card</span>
+                            <span class="check-weight">15 pts</span>
+                        </div>
+                        <p class="check-desc">A JSON document at /.well-known/agent that declares your service's capabilities, authentication requirements, and supported protocols for A2A (agent-to-agent) communication.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> Valid JSON at /.well-known/agent, presence of name, capabilities, and authentication fields. Bonus for declaring supported protocols.
+                        </div>
+                    </div>
+
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">4. AI Robots Directives</span>
+                            <span class="check-weight">10 pts</span>
+                        </div>
+                        <p class="check-desc">Your robots.txt should explicitly address AI crawlers: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and others. Whether you allow or deny them, the signal itself matters.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> robots.txt existence, explicit rules for AI-specific user agents (GPTBot, ChatGPT-User, ClaudeBot, etc.). 12+ agents covered = full score.
+                        </div>
+                    </div>
+
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">5. JSON-LD Structured Data</span>
+                            <span class="check-weight">15 pts</span>
+                        </div>
+                        <p class="check-desc">JSON-LD blocks embedded in your HTML that declare who you are, what you sell, and how to reach you in a format machines parse natively. The foundation of semantic web identity.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> Number of valid JSON-LD script blocks (3+ for full marks), presence of high-value types (Organization, Product, Service, Offer). Multiple blocks scored higher than arrays.
+                        </div>
+                    </div>
+
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">6. Schema.org Coverage</span>
+                            <span class="check-weight">10 pts</span>
+                        </div>
+                        <p class="check-desc">Beyond basic JSON-LD: how deeply your page uses Schema.org vocabulary. Microdata, RDFa, and diverse type coverage signal a mature machine-readable presence.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> Number of unique Schema.org types referenced (Organization, Service, Product, WebSite, FAQ, etc.). 3+ important types = full score.
+                        </div>
+                    </div>
+
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">7. OpenAPI / Swagger</span>
+                            <span class="check-weight">15 pts</span>
+                        </div>
+                        <p class="check-desc">A machine-readable API specification that allows agents to discover and interact with your endpoints programmatically. The bridge between human documentation and autonomous execution.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> Existence of OpenAPI/Swagger spec at common paths (/openapi.json, /swagger.json, etc.), valid structure, presence of x-ai-capabilities extensions and documented paths.
+                        </div>
+                    </div>
+
+                    <div class="check-card">
+                        <div class="check-header">
+                            <span class="check-name">8. Meta Tags & Semantic HTML</span>
+                            <span class="check-weight">10 pts</span>
+                        </div>
+                        <p class="check-desc">The baseline: meta descriptions, Open Graph tags, proper heading hierarchy, semantic HTML elements, and image alt text. The foundation that generative search engines consume.</p>
+                        <div class="check-what">
+                            <strong>What we check:</strong> meta description, OG tags (4+), single h1, semantic HTML elements (main, header, footer, nav, article — 4+ needed), alt text on images.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Scanner details</h2>
+                <p>The scanner makes real HTTP requests to each target URL. It respects robots.txt for its own crawling, uses a 10-second timeout per request, and checks common alternative paths for specifications (e.g., /api/docs, /docs/api, /swagger.json).</p>
+                <p>Scores are cached and updated when domains are re-scanned. The public index at <a href="/data/index.json" style="color:var(--text); text-decoration:underline; text-underline-offset:3px;">/data/index.json</a> contains full check-level data for every indexed site.</p>
+                <p>The OpenAPI specification for the ClawTrak data endpoints is available at <a href="/openapi.json" style="color:var(--text); text-decoration:underline; text-underline-offset:3px;">/openapi.json</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <span>&copy; 2026 ClawTrak &middot; Pixel Familiar Inc.</span>
+                <span><a href="/">Home</a> &middot; <a href="/#index">Index</a> &middot; <a href="/#audit">Free Audit</a></span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

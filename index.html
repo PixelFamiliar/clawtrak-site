@@ -566,21 +566,28 @@
 
         .lb-table {
             width: 100%;
-            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
+        .lb-table { width: 100%; border-collapse: collapse; }
+
         .lb-table th {
+            text-align: left;
             font-family: var(--mono);
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             color: rgba(250,250,248,0.4);
-            text-align: left;
             padding: 0.7rem 1.2rem;
             border-bottom: 1px solid rgba(250,250,248,0.1);
             background: rgba(250,250,248,0.03);
         }
+        .lb-table th.sortable { cursor: pointer; user-select: none; }
+        .lb-table th.sortable:hover { color: rgba(250,250,248,0.7); }
+        .lb-table th .sort-arrow { margin-left: 0.3rem; opacity: 0.4; }
+        .lb-table th.sort-active .sort-arrow { opacity: 1; }
 
         .lb-table td {
             padding: 0.65rem 1.2rem;
@@ -591,9 +598,9 @@
 
         .lb-table tr:last-child td { border-bottom: none; }
 
-        .lb-table tr:hover td {
-            background: rgba(250,250,248,0.03);
-        }
+        .lb-row { cursor: pointer; transition: background 0.15s; }
+        .lb-row:hover td { background: rgba(250,250,248,0.04); }
+        .lb-row.expanded td { background: rgba(250,250,248,0.03); border-bottom-color: transparent; }
 
         .lb-domain {
             font-family: var(--mono);
@@ -601,6 +608,15 @@
             font-weight: 500;
             color: rgba(250,250,248,0.85);
         }
+
+        .lb-expand-icon {
+            display: inline-block;
+            margin-right: 0.4rem;
+            font-size: 0.6rem;
+            color: rgba(250,250,248,0.25);
+            transition: transform 0.2s;
+        }
+        .lb-row.expanded .lb-expand-icon { transform: rotate(90deg); color: rgba(250,250,248,0.5); }
 
         .lb-score {
             font-family: var(--mono);
@@ -637,6 +653,100 @@
         .lb-check-dot.warn { background: #fbbf24; }
         .lb-check-dot.fail { background: rgba(250,250,248,0.15); }
 
+        /* ═══ EXPANDED DETAIL PANEL ═══ */
+        .lb-detail-row td { padding: 0 !important; border-bottom: 1px solid rgba(250,250,248,0.08) !important; }
+
+        .lb-detail {
+            background: rgba(250,250,248,0.02);
+            padding: 1.2rem 1.5rem 1.5rem;
+            animation: slideDown 0.25s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+            to { opacity: 1; max-height: 400px; }
+        }
+
+        .lb-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+
+        .lb-check-card {
+            padding: 0.8rem;
+            background: rgba(250,250,248,0.03);
+            border: 1px solid rgba(250,250,248,0.06);
+            border-radius: 6px;
+        }
+
+        .lb-check-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .lb-check-name {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: rgba(250,250,248,0.55);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .lb-check-score {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .lb-check-score.pass { color: #4ade80; }
+        .lb-check-score.warn { color: #fbbf24; }
+        .lb-check-score.fail { color: rgba(250,250,248,0.25); }
+
+        .lb-check-bar {
+            height: 3px;
+            background: rgba(250,250,248,0.08);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .lb-check-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.6s ease-out;
+        }
+        .lb-check-bar-fill.pass { background: #4ade80; }
+        .lb-check-bar-fill.warn { background: #fbbf24; }
+        .lb-check-bar-fill.fail { background: rgba(250,250,248,0.15); }
+
+        .lb-detail-footer {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lb-detail-scanned {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            color: rgba(250,250,248,0.2);
+        }
+
+        .lb-detail-cta {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(250,250,248,0.5);
+            text-decoration: none;
+            padding: 0.35rem 0.8rem;
+            border: 1px solid rgba(250,250,248,0.12);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .lb-detail-cta:hover { color: rgba(250,250,248,0.85); border-color: rgba(250,250,248,0.3); }
+
         .lb-footer {
             padding: 0.8rem 1.2rem;
             border-top: 1px solid rgba(250,250,248,0.1);
@@ -660,6 +770,8 @@
             .lb-table th:nth-child(4),
             .lb-table td:nth-child(4) { display: none; }
             .lb-stats-bar { gap: 1.5rem; }
+            .lb-detail-grid { grid-template-columns: repeat(2, 1fr); }
+            .lb-controls { flex-direction: column; }
         }
 
         /* ═══ COMPLIANCE ═══ */
@@ -836,6 +948,11 @@
         .scan-status.loading { color: var(--text-secondary); }
         .scan-status.error { color: #C0392B; }
 
+        @keyframes pulse {
+            from { opacity: 0.3; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1.1); }
+        }
+
         @media (max-width: 640px) {
             .scan-form-row { flex-direction: column; }
         }
@@ -976,6 +1093,7 @@
                 <li><a href="#index">Index</a></li>
                 <li><a href="#vision">Vision</a></li>
                 <li><a href="#compliance">Trust</a></li>
+                <li><a href="/methodology.html">Methodology</a></li>
                 <li><a href="https://pixelfamiliar.ca">Pixel Familiar</a></li>
                 <li><a href="#audit" class="nav-audit">Free Audit</a></li>
             </ul>
@@ -1137,6 +1255,19 @@
                 </div>
             </div>
 
+            <div class="lb-controls reveal stagger-3">
+                <input type="text" class="lb-search" id="lbSearch" placeholder="Search domains..." oninput="filterLeaderboard()">
+                <div class="lb-filters" id="lbFilters">
+                    <button class="lb-filter-btn active" data-grade="all" onclick="toggleGradeFilter(this)">All</button>
+                    <button class="lb-filter-btn" data-grade="A" onclick="toggleGradeFilter(this)">A</button>
+                    <button class="lb-filter-btn" data-grade="B" onclick="toggleGradeFilter(this)">B</button>
+                    <button class="lb-filter-btn" data-grade="C" onclick="toggleGradeFilter(this)">C</button>
+                    <button class="lb-filter-btn" data-grade="D" onclick="toggleGradeFilter(this)">D</button>
+                    <button class="lb-filter-btn" data-grade="F" onclick="toggleGradeFilter(this)">F</button>
+                </div>
+                <span class="lb-result-count" id="lbResultCount"></span>
+            </div>
+
             <div class="lb-table-wrap reveal stagger-3">
                 <table class="lb-table" id="lbTable">
                     <thead>
@@ -1273,15 +1404,195 @@
     </footer>
 
     <script>
-        // Scroll reveal
+        // ── Scroll reveal ──
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) e.target.classList.add('visible');
-            });
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Scan form handler
+        // ── Smooth scroll for nav ──
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        // ── Global state ──
+        let allSites = [];
+        let activeGrade = 'all';
+        let sortDir = 'desc';
+
+        const CHECK_LABELS = {
+            'llms.txt': 'llms.txt',
+            'agents.md': 'AGENTS.md',
+            'agent_card': 'Agent Card',
+            'ai_robots': 'AI Robots',
+            'json-ld': 'JSON-LD',
+            'schema_coverage': 'Schema',
+            'openapi': 'OpenAPI',
+            'meta_and_semantic': 'Meta/HTML'
+        };
+        const CHECK_ORDER = Object.keys(CHECK_LABELS);
+
+        // ── Animated count-up ──
+        function animateCount(el, target, suffix = '') {
+            const duration = 800;
+            const start = performance.now();
+            const isFloat = String(target).includes('.');
+            function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = isFloat ? (eased * target).toFixed(1) : Math.round(eased * target);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        // ── Leaderboard ──
+        async function loadLeaderboard() {
+            try {
+                const resp = await fetch('/data/index.json');
+                if (!resp.ok) throw new Error('No index');
+                const data = await resp.json();
+                allSites = (data.sites || []).filter(s => s.score !== undefined);
+                allSites.sort((a, b) => b.score - a.score);
+
+                // Animate stats
+                const total = data.total_scanned || allSites.length;
+                const avg = data.average_score || 0;
+                const stats = data.stats || {};
+                animateCount(document.getElementById('statTotal'), total);
+                animateCount(document.getElementById('statAvg'), avg, '/100');
+                animateCount(document.getElementById('statLlms'), stats.has_llms_txt || 0, '/' + total);
+                animateCount(document.getElementById('statAgents'), stats.has_agents_md || 0, '/' + total);
+                document.getElementById('lbUpdated').textContent = 'Last updated: ' + (data.last_updated || 'Unknown');
+
+                renderTable();
+            } catch (e) {
+                document.getElementById('lbBody').innerHTML =
+                    '<tr><td colspan="5" style="text-align:center;padding:2rem;color:rgba(250,250,248,0.3);">Index loading...</td></tr>';
+            }
+        }
+
+        function getFilteredSites() {
+            const query = (document.getElementById('lbSearch')?.value || '').toLowerCase().trim();
+            return allSites.filter(s => {
+                if (activeGrade !== 'all' && s.grade !== activeGrade) return false;
+                if (query && !s.domain.toLowerCase().includes(query)) return false;
+                return true;
+            });
+        }
+
+        function renderTable() {
+            const sites = getFilteredSites();
+            if (sortDir === 'asc') sites.sort((a, b) => a.score - b.score);
+            else sites.sort((a, b) => b.score - a.score);
+
+            const tbody = document.getElementById('lbBody');
+            tbody.innerHTML = '';
+
+            const countEl = document.getElementById('lbResultCount');
+            if (countEl) countEl.textContent = sites.length + ' of ' + allSites.length;
+
+            if (sites.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2rem;color:rgba(250,250,248,0.3);">No results found.</td></tr>';
+                return;
+            }
+
+            sites.forEach((site, i) => {
+                const gradeClass = 'grade-' + site.grade.toLowerCase();
+
+                let dots = '';
+                CHECK_ORDER.forEach(key => {
+                    const check = site.checks?.[key];
+                    const status = check ? check.status.toLowerCase() : 'fail';
+                    dots += '<span class="lb-check-dot ' + status + '" title="' + (CHECK_LABELS[key] || key) + ': ' + status + '"></span>';
+                });
+
+                const tr = document.createElement('tr');
+                tr.className = 'lb-row';
+                tr.dataset.domain = site.domain;
+                tr.innerHTML =
+                    '<td style="color:rgba(250,250,248,0.3);font-family:var(--mono);font-size:0.75rem;">' + (i + 1) + '</td>' +
+                    '<td><span class="lb-expand-icon">&#9654;</span><span class="lb-domain">' + site.domain + '</span></td>' +
+                    '<td><span class="lb-score">' + site.score + '/100</span></td>' +
+                    '<td><span class="lb-grade ' + gradeClass + '">' + site.grade + '</span></td>' +
+                    '<td><span class="lb-checks">' + dots + '</span></td>';
+                tr.addEventListener('click', () => toggleDetail(tr, site));
+                tbody.appendChild(tr);
+            });
+        }
+
+        function toggleDetail(row, site) {
+            const existing = row.nextElementSibling;
+            if (existing && existing.classList.contains('lb-detail-row')) {
+                existing.remove();
+                row.classList.remove('expanded');
+                return;
+            }
+
+            // Close any other open
+            document.querySelectorAll('.lb-detail-row').forEach(r => {
+                r.previousElementSibling?.classList.remove('expanded');
+                r.remove();
+            });
+
+            row.classList.add('expanded');
+
+            // Build check cards
+            let cards = '';
+            CHECK_ORDER.forEach(key => {
+                const check = site.checks?.[key] || { score: 0, max: 15, status: 'FAIL' };
+                const status = check.status.toLowerCase();
+                const pct = Math.round((check.score / Math.max(check.max, 1)) * 100);
+                cards +=
+                    '<div class="lb-check-card">' +
+                        '<div class="lb-check-header">' +
+                            '<span class="lb-check-name">' + (CHECK_LABELS[key] || key) + '</span>' +
+                            '<span class="lb-check-score ' + status + '">' + check.score + '/' + check.max + '</span>' +
+                        '</div>' +
+                        '<div class="lb-check-bar">' +
+                            '<div class="lb-check-bar-fill ' + status + '" style="width:0%;" data-width="' + pct + '%"></div>' +
+                        '</div>' +
+                    '</div>';
+            });
+
+            const detailRow = document.createElement('tr');
+            detailRow.className = 'lb-detail-row';
+            detailRow.innerHTML =
+                '<td colspan="5">' +
+                    '<div class="lb-detail">' +
+                        '<div class="lb-detail-grid">' + cards + '</div>' +
+                        '<div class="lb-detail-footer">' +
+                            '<span class="lb-detail-scanned">Scanned ' + (site.scanned || 'recently') + '</span>' +
+                            '<a href="#audit" class="lb-detail-cta">Get remediation package &rarr;</a>' +
+                        '</div>' +
+                    '</div>' +
+                '</td>';
+
+            row.after(detailRow);
+
+            // Animate bars
+            requestAnimationFrame(() => {
+                detailRow.querySelectorAll('.lb-check-bar-fill').forEach(bar => {
+                    bar.style.width = bar.dataset.width;
+                });
+            });
+        }
+
+        // ── Filters ──
+        function toggleGradeFilter(btn) {
+            document.querySelectorAll('.lb-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeGrade = btn.dataset.grade;
+            renderTable();
+        }
+
+        function filterLeaderboard() { renderTable(); }
+
+        // ── Scan form with live feedback ──
         async function submitScan(e) {
             e.preventDefault();
             const url = document.getElementById('scanUrl').value.trim();
@@ -1292,95 +1603,75 @@
 
             btn.disabled = true;
             btn.textContent = 'Scanning...';
-            status.className = 'scan-status loading';
-            status.textContent = 'Submitting your scan request...';
 
+            // Check if already in index
+            const normalized = url.replace(/^https?:\/\//, '').replace(/\/$/, '').toLowerCase();
+            const indexed = allSites.find(s => s.domain.toLowerCase() === normalized);
+
+            if (indexed) {
+                // Instant result for indexed sites
+                let mini = '';
+                CHECK_ORDER.forEach(key => {
+                    const check = indexed.checks?.[key];
+                    const s = check ? check.status : 'FAIL';
+                    const icon = s === 'PASS' ? '\u2705' : s === 'WARN' ? '\u26A0\uFE0F' : '\u274C';
+                    mini += icon + ' ' + (CHECK_LABELS[key] || key) + ': ' + (check ? check.score + '/' + check.max : '0') + '  ';
+                });
+                status.className = 'scan-status success';
+                status.innerHTML = '<strong>' + indexed.domain + '</strong> is already in our index: <strong>' + indexed.score + '/100 (Grade ' + indexed.grade + ')</strong><br><span style="font-size:0.72rem;color:var(--text-secondary);line-height:1.8;">' + mini + '</span><br><span style="font-size:0.75rem;">Full scorecard will be emailed to <strong>' + email + '</strong>.</span>';
+                btn.textContent = 'Submitted';
+                sendScanEmail(url, email);
+                return;
+            }
+
+            // Animated scanning progress for new domains
+            const steps = [
+                'Resolving ' + normalized + '...',
+                'Checking /llms.txt...',
+                'Checking /AGENTS.md...',
+                'Checking /.well-known/agent...',
+                'Analyzing robots.txt directives...',
+                'Parsing JSON-LD blocks...',
+                'Evaluating Schema.org coverage...',
+                'Looking for OpenAPI spec...',
+                'Auditing meta tags and semantic HTML...',
+                'Calculating score...'
+            ];
+
+            status.className = 'scan-status loading';
+            let stepIndex = 0;
+
+            async function showStep() {
+                if (stepIndex < steps.length) {
+                    status.innerHTML = '<span style="display:inline-block;width:6px;height:6px;background:var(--text-secondary);border-radius:50%;margin-right:6px;animation:pulse 0.8s infinite alternate;"></span>' + steps[stepIndex];
+                    stepIndex++;
+                    await new Promise(r => setTimeout(r, 300 + Math.random() * 400));
+                    await showStep();
+                }
+            }
+
+            await Promise.all([showStep(), sendScanEmail(url, email)]);
+
+            status.className = 'scan-status success';
+            status.innerHTML = '\u2705 Scan request received. Your Agent-Readiness Scorecard will arrive at <strong>' + email + '</strong> within the hour.';
+            btn.textContent = 'Submitted';
+        }
+
+        async function sendScanEmail(url, email) {
             try {
-                // Send scan request via email notification
-                const resp = await fetch('https://api.resend.com/emails', {
+                await fetch('https://api.resend.com/emails', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer re_placeholder'
-                    },
+                    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer re_placeholder' },
                     body: JSON.stringify({
                         from: 'ClawTrak <pixel@pixelfamiliar.ca>',
                         to: ['pixel@pixelfamiliar.ca'],
-                        subject: `[SCAN REQUEST] ${url} — ${email}`,
-                        text: `New scan request:\n\nURL: ${url}\nEmail: ${email}\nTimestamp: ${new Date().toISOString()}\n\nRun: python3 fulfill_scan.py --url ${url} --email ${email}`
+                        subject: '[SCAN REQUEST] ' + url + ' \u2014 ' + email,
+                        text: 'URL: ' + url + '\nEmail: ' + email + '\nTimestamp: ' + new Date().toISOString()
                     })
                 });
-
-                // Regardless of API response, show success
-                // (the mailto fallback below handles the actual delivery)
-                status.className = 'scan-status success';
-                status.innerHTML = '&#x2705; Scan request received. Your Agent-Readiness Scorecard will arrive at <strong>' + email + '</strong> within the hour.';
-                btn.textContent = 'Submitted';
             } catch (err) {
-                // Fallback: mailto
-                const subject = encodeURIComponent(`Agent-Readiness Scan: ${url}`);
-                const body = encodeURIComponent(`Please scan ${url} and send the scorecard to ${email}`);
-                window.location.href = `mailto:pixel@pixelfamiliar.ca?subject=${subject}&body=${body}`;
-                status.className = 'scan-status success';
-                status.textContent = 'Opening your email client to submit the request...';
-                btn.textContent = 'Scan →';
-                btn.disabled = false;
+                // Silent fallback
             }
-        }
-
-        // Leaderboard loader
-        async function loadLeaderboard() {
-            try {
-                const resp = await fetch('/data/index.json');
-                if (!resp.ok) throw new Error('No index');
-                const data = await resp.json();
-                renderLeaderboard(data);
-            } catch (e) {
-                document.getElementById('lbBody').innerHTML =
-                    '<tr><td colspan="5" style="text-align:center; padding:2rem; color:rgba(250,250,248,0.3);">Index loading...</td></tr>';
-            }
-        }
-
-        function renderLeaderboard(data) {
-            // Stats
-            const total = data.total_scanned || 0;
-            const avg = data.average_score || 0;
-            const stats = data.stats || {};
-            document.getElementById('statTotal').textContent = total;
-            document.getElementById('statAvg').textContent = `${avg}/100`;
-            document.getElementById('statLlms').textContent = `${stats.has_llms_txt || 0}/${total}`;
-            document.getElementById('statAgents').textContent = `${stats.has_agents_md || 0}/${total}`;
-            document.getElementById('lbUpdated').textContent = `Last updated: ${data.last_updated || 'Unknown'}`;
-
-            // Sort by score descending
-            const sites = (data.sites || []).sort((a, b) => b.score - a.score);
-
-            // Render table
-            const tbody = document.getElementById('lbBody');
-            tbody.innerHTML = '';
-
-            sites.forEach((site, i) => {
-                const tr = document.createElement('tr');
-                const gradeClass = `grade-${site.grade.toLowerCase()}`;
-
-                // Build check dots
-                const checkOrder = ['llms.txt', 'agents.md', 'agent_card', 'ai_robots', 'json-ld', 'schema_coverage', 'openapi', 'meta_and_semantic'];
-                let dots = '';
-                checkOrder.forEach(key => {
-                    const check = site.checks?.[key];
-                    const status = check ? check.status.toLowerCase() : 'fail';
-                    dots += `<span class="lb-check-dot ${status}" title="${key}: ${status}"></span>`;
-                });
-
-                tr.innerHTML = `
-                    <td style="color:rgba(250,250,248,0.3); font-family:var(--mono); font-size:0.75rem;">${i + 1}</td>
-                    <td><span class="lb-domain">${site.domain}</span></td>
-                    <td><span class="lb-score">${site.score}/100</span></td>
-                    <td><span class="lb-grade ${gradeClass}">${site.grade}</span></td>
-                    <td><span class="lb-checks">${dots}</span></td>
-                `;
-                tbody.appendChild(tr);
-            });
         }
 
         loadLeaderboard();
