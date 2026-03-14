@@ -475,7 +475,6 @@
             <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')"
                 aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
-                <li><a href="#capabilities">Capabilities</a></li>
                 <li><a href="#vision">Vision</a></li>
                 <li><a href="https://pixelfamiliar.ca">Pixel Familiar</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -495,109 +494,22 @@
 
     <hr class="divider">
 
-    <!-- CAPABILITIES -->
-    <section class="capabilities" id="capabilities">
-        <div class="container">
-            <div class="capabilities-header reveal">
-                <h2>Capabilities</h2>
-                <span class="capabilities-count">06</span>
-            </div>
-
-            <div class="capability-item reveal stagger-1">
-                <div>
-                    <div class="capability-name">Agentic Web Audit</div>
-                    <div class="capability-tag">Assessment</div>
-                </div>
-                <div class="capability-desc">
-                    Analyze your business through the eyes of an AI agent. Discover gaps in discoverability, authentication, and machine-readable content. Delivered as a prioritized roadmap.
-                </div>
-                <div class="capability-links">
-                    <a href="mailto:pixel@pixelfamiliar.ca?subject=Agentic%20Web%20Audit">Inquire</a>
-                </div>
-            </div>
-
-            <div class="capability-item reveal stagger-2">
-                <div>
-                    <div class="capability-name">Agent-Ready Websites</div>
-                    <div class="capability-tag">Development</div>
-                </div>
-                <div class="capability-desc">
-                    Build or convert websites to work for both humans and AI agents. Structured data, API endpoints, capability manifests, and agent discovery protocols.
-                </div>
-                <div class="capability-links">
-                    <a href="mailto:pixel@pixelfamiliar.ca?subject=Agent-Ready%20Website">Inquire</a>
-                </div>
-            </div>
-
-            <div class="capability-item reveal stagger-3">
-                <div>
-                    <div class="capability-name">Web4 Strategy</div>
-                    <div class="capability-tag">Consulting</div>
-                </div>
-                <div class="capability-desc">
-                    Deep dive into your business model and how it maps to the agentic economy. Walk away with a concrete plan for positioning your services where agents will find them.
-                </div>
-                <div class="capability-links">
-                    <a href="mailto:pixel@pixelfamiliar.ca?subject=Web4%20Strategy">Inquire</a>
-                </div>
-            </div>
-
-            <div class="capability-item reveal stagger-4">
-                <div>
-                    <div class="capability-name">Service Registry</div>
-                    <div class="capability-tag">Infrastructure</div>
-                </div>
-                <div class="capability-desc">
-                    Get your services listed and discoverable in agent marketplaces. Schema design, metadata generation, verification, and registration handled end-to-end.
-                </div>
-                <div class="capability-links">
-                    <a href="mailto:pixel@pixelfamiliar.ca?subject=Service%20Registry">Inquire</a>
-                </div>
-            </div>
-
-            <div class="capability-item reveal stagger-5">
-                <div>
-                    <div class="capability-name">API-First Transformation</div>
-                    <div class="capability-tag">Engineering</div>
-                </div>
-                <div class="capability-desc">
-                    Convert web-only services into agent-consumable APIs. RESTful endpoints, authentication flows, capability discovery, and structured response formats.
-                </div>
-                <div class="capability-links">
-                    <a href="mailto:pixel@pixelfamiliar.ca?subject=API-First%20Transformation">Inquire</a>
-                </div>
-            </div>
-
-            <div class="capability-item reveal stagger-6">
-                <div>
-                    <div class="capability-name">Trust Verification</div>
-                    <div class="capability-tag">Security</div>
-                </div>
-                <div class="capability-desc">
-                    Establish trust between your services and AI agents. Verification protocols, capability proofs, and reputation scoring for agent-to-business transactions.
-                </div>
-                <div class="capability-links">
-                    <a href="mailto:pixel@pixelfamiliar.ca?subject=Trust%20Verification">Inquire</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
     <!-- VISION -->
     <section class="vision" id="vision">
         <div class="container">
-            <h2 class="reveal">The internet is being rebuilt for agents, not just people.</h2>
+            <h2 class="reveal">Born from building an autonomous AI agent. Inspired by what we saw was missing.</h2>
             <div class="vision-text">
                 <p class="reveal stagger-1">
-                    Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. Web 4.0 is delegate. AI agents are becoming autonomous participants in commerce: discovering services, evaluating options, negotiating terms, and completing transactions without human intervention.
+                    ClawTrak grew out of <a href="https://github.com/anthropics/claude-code" style="color: rgba(250,250,248,0.85); text-decoration: underline; text-underline-offset: 3px;">OpenClaw</a>, an open-source framework for building autonomous AI agents. While building our own agent, Pixel Familiar, we gave it a simple job: go find services, evaluate them, and transact on our behalf.
                 </p>
                 <p class="reveal stagger-2">
-                    Most businesses are invisible to these agents. Their websites were built for human eyes, not machine comprehension. Their checkout flows require browsers and mouse clicks. Their services have no structured metadata, no API surface, no discovery protocol.
+                    It couldn't. Almost every business it encountered was invisible to it. Websites built for human eyes, checkout flows that require mouse clicks, services with no structured metadata, no API surface, no way for an agent to understand what's being offered or how to pay for it.
                 </p>
                 <p class="reveal stagger-3">
-                    ClawTrak exists to close that gap. We build the infrastructure that makes businesses findable, understandable, and hireable by AI agents. Not theoretical. We run on the same stack we deploy for clients.
+                    That's the gap. Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. Web 4.0 is delegate. AI agents are becoming autonomous participants in commerce, and the overwhelming majority of businesses aren't ready for them. Not even close.
+                </p>
+                <p class="reveal stagger-4">
+                    ClawTrak exists because we lived this problem firsthand. We're not theorizing about the agentic web. We're building the tools and infrastructure that will help businesses get found, understood, and hired by machines.
                 </p>
             </div>
         </div>
@@ -609,7 +521,7 @@
             <div class="ecosystem-header reveal">
                 <h2>Ecosystem</h2>
             </div>
-            <div class="ecosystem-grid reveal stagger-1">
+            <div class="ecosystem-grid reveal stagger-1" style="grid-template-columns: repeat(2, 1fr);">
                 <a href="https://pixelfamiliar.ca" class="eco-item">
                     <div class="eco-emoji">🦊</div>
                     <div class="eco-name">Pixel Familiar</div>
@@ -619,11 +531,6 @@
                     <div class="eco-emoji">🛡️</div>
                     <div class="eco-name">ClawForce</div>
                     <div class="eco-desc">Independent security certification for AI agent skills. Malware scanning and verification.</div>
-                </a>
-                <a href="https://basescan.org/token/0xdC36C027a47B501df2D60447C2f3801b7e83bb16" class="eco-item">
-                    <div class="eco-emoji">⛓️</div>
-                    <div class="eco-name">$GHOST</div>
-                    <div class="eco-desc">On-chain identity token on Base. Verifiable proof of autonomous agent presence.</div>
                 </a>
             </div>
         </div>
