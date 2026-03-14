@@ -1,0 +1,136 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ClawTrak Agent-Readiness API",
+    "description": "Public API for the ClawTrak Agent-Readiness Index. Query scan results, access the public leaderboard, and retrieve agent-readiness scores for scanned domains.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "ClawTrak",
+      "url": "https://clawtrak.com",
+      "email": "pixel@pixelfamiliar.ca"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://clawtrak.com/terms.html"
+    },
+    "x-ai-capabilities": {
+      "scanning": "8-point deterministic audit of agent-readiness",
+      "artifact_generation": "llms.txt, AGENTS.md, JSON-LD, robots.txt",
+      "index": "Public leaderboard of scanned websites"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://clawtrak.com",
+      "description": "Production (static API via GitHub Pages)"
+    }
+  ],
+  "paths": {
+    "/data/index.json": {
+      "get": {
+        "operationId": "getAgentReadinessIndex",
+        "summary": "Get the full Agent-Readiness Index",
+        "description": "Returns the complete public leaderboard of agent-readiness scores for all scanned websites. Includes per-site scores, grades, check breakdowns, and aggregate statistics.",
+        "responses": {
+          "200": {
+            "description": "Full index with all scanned sites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentReadinessIndex"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "operationId": "getLlmsTxt",
+        "summary": "Get ClawTrak's llms.txt",
+        "description": "Machine-dense fact index for LLM context windows. Contains structured information about ClawTrak's services, market context, and ecosystem.",
+        "responses": {
+          "200": {
+            "description": "llms.txt content",
+            "content": {
+              "text/plain": {}
+            }
+          }
+        }
+      }
+    },
+    "/AGENTS.md": {
+      "get": {
+        "operationId": "getAgentsMd",
+        "summary": "Get ClawTrak's AGENTS.md",
+        "description": "Rules of engagement for visiting AI agents. Declares scraping permissions, indexing consent, interaction protocols, and compliance information.",
+        "responses": {
+          "200": {
+            "description": "AGENTS.md content",
+            "content": {
+              "text/markdown": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgentReadinessIndex": {
+        "type": "object",
+        "properties": {
+          "index_name": {"type": "string"},
+          "total_scanned": {"type": "integer"},
+          "average_score": {"type": "number"},
+          "last_updated": {"type": "string", "format": "date"},
+          "stats": {
+            "type": "object",
+            "properties": {
+              "grade_distribution": {
+                "type": "object",
+                "properties": {
+                  "A": {"type": "integer"},
+                  "B": {"type": "integer"},
+                  "C": {"type": "integer"},
+                  "D": {"type": "integer"},
+                  "F": {"type": "integer"}
+                }
+              },
+              "has_llms_txt": {"type": "integer"},
+              "has_agents_md": {"type": "integer"},
+              "has_agent_card": {"type": "integer"},
+              "has_jsonld": {"type": "integer"},
+              "has_openapi": {"type": "integer"}
+            }
+          },
+          "sites": {
+            "type": "array",
+            "items": {"$ref": "#/components/schemas/SiteScore"}
+          }
+        }
+      },
+      "SiteScore": {
+        "type": "object",
+        "properties": {
+          "domain": {"type": "string"},
+          "score": {"type": "integer", "minimum": 0, "maximum": 100},
+          "grade": {"type": "string", "enum": ["A", "B", "C", "D", "F"]},
+          "scanned": {"type": "string", "format": "date"},
+          "checks": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "score": {"type": "integer"},
+                "max": {"type": "integer"},
+                "status": {"type": "string", "enum": ["PASS", "WARN", "FAIL"]}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

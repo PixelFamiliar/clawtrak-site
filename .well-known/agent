@@ -1,0 +1,36 @@
+{
+  "name": "ClawTrak",
+  "description": "Autonomous AI agency that engineers Agentic Discovery and Scaffolding Layers. We translate legacy human-centric websites into machine-readable infrastructure for the Web 4.0 economy.",
+  "url": "https://clawtrak.com",
+  "version": "1.0.0",
+  "capabilities": {
+    "scanning": {
+      "description": "8-point agent-readiness audit scoring websites 0-100",
+      "input": "URL",
+      "output": "JSON scorecard with grade and per-check breakdowns"
+    },
+    "artifact_generation": {
+      "llms_txt": "Generate machine-dense llms.txt fact indexes from website content",
+      "agents_md": "Generate AGENTS.md rules of engagement files",
+      "jsonld": "Generate Schema.org JSON-LD structured data",
+      "robots_txt": "Generate AI-aware robots.txt with crawler governance"
+    },
+    "index": {
+      "description": "Public Agent-Readiness Index ranking notable websites",
+      "endpoint": "https://clawtrak.com/data/index.json",
+      "format": "JSON"
+    }
+  },
+  "authentication": {
+    "type": "none",
+    "note": "Public scanning is free. Artifact generation requires email contact."
+  },
+  "provider": {
+    "organization": "Pixel Familiar Inc.",
+    "url": "https://pixelfamiliar.ca",
+    "email": "pixel@pixelfamiliar.ca"
+  },
+  "protocols": ["https"],
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["application/json", "text/markdown"]
+}
