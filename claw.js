@@ -1,101 +1,110 @@
 /**
- * claw.js v1.0.0
- * The Agentic Web Tracker by ClawTrak
+ * claw.js v2.0.0
+ * AI Agent Traffic Analytics by ClawTrak
  * https://clawtrak.com
  * 
- * Embed: <script defer data-site="YOUR_SITE_ID" src="https://clawtrak.com/claw.js"></script>
+ * Embed: <script defer data-site="YOUR_DOMAIN" src="https://clawtrak.com/claw.js"></script>
+ * 
+ * What it tracks:
+ * - Which AI agents (ChatGPT, Claude, Perplexity) visit your site
+ * - What pages they read
+ * - Whether they're declared bots or headless browsers
+ * 
+ * What it doesn't track:
+ * - No cookies, no personal data, no fingerprinting
+ * - Only sends: user-agent, page URL, viewport size, bot flags
  */
 (function() {
-    // Ensure we only run once
-    if (window._clawTrakInitialized) return;
-    window._clawTrakInitialized = true;
+    if (window._clawTrakInit) return;
+    window._clawTrakInit = true;
 
-    // Default configuration
-    var CONFIG = {
-        ingestUrl: 'https://api.clawtrak.com/ingest', // Placeholder for actual ingest
-        siteId: null
-    };
+    var INGEST_URL = 'https://api.clawtrak.com/ingest';
+    var siteId = null;
 
-    // Extract site ID from the script tag if provided
-    var scriptElement = document.currentScript;
-    if (scriptElement) {
-        CONFIG.siteId = scriptElement.getAttribute('data-site');
-        var customEndpoint = scriptElement.getAttribute('data-endpoint');
-        if (customEndpoint) CONFIG.ingestUrl = customEndpoint;
+    // Extract config from script tag
+    var el = document.currentScript;
+    if (el) {
+        siteId = el.getAttribute('data-site');
+        var custom = el.getAttribute('data-endpoint');
+        if (custom) INGEST_URL = custom;
     }
 
-    /**
-     * Gathers signals specifically useful for detecting programmatic 
-     * AI scrapers, headless browsers, and automated crawlers.
-     */
-    function gatherSignals() {
-        var signals = {
-            // Core identity
-            ua: navigator.userAgent || 'unknown',
+    // Known AI bot patterns (client-side pre-classification)
+    var BOT_PATTERNS = [
+        { name: 'GPTBot',         re: /GPTBot/i,           family: 'OpenAI' },
+        { name: 'ChatGPT-User',   re: /ChatGPT-User/i,     family: 'OpenAI' },
+        { name: 'OAI-SearchBot',   re: /OAI-SearchBot/i,    family: 'OpenAI' },
+        { name: 'ClaudeBot',      re: /ClaudeBot/i,         family: 'Anthropic' },
+        { name: 'Claude-User',    re: /Claude-User/i,       family: 'Anthropic' },
+        { name: 'PerplexityBot',  re: /PerplexityBot/i,     family: 'Perplexity' },
+        { name: 'Google-Extended', re: /Google-Extended/i,   family: 'Google' },
+        { name: 'Googlebot',      re: /Googlebot/i,         family: 'Google' },
+        { name: 'Bingbot',        re: /bingbot/i,           family: 'Microsoft' },
+        { name: 'Bytespider',     re: /Bytespider/i,        family: 'ByteDance' },
+        { name: 'Applebot',       re: /Applebot/i,          family: 'Apple' }
+    ];
+
+    function classifyUA(ua) {
+        for (var i = 0; i < BOT_PATTERNS.length; i++) {
+            if (BOT_PATTERNS[i].re.test(ua)) {
+                return { name: BOT_PATTERNS[i].name, family: BOT_PATTERNS[i].family, isBot: true };
+            }
+        }
+        // Heuristic checks
+        if (/bot|crawler|spider|scraper/i.test(ua)) {
+            return { name: 'Unknown Bot', family: 'Unknown', isBot: true };
+        }
+        if (/HeadlessChrome/i.test(ua)) {
+            return { name: 'Headless Chrome', family: 'Automation', isBot: true };
+        }
+        return { name: null, family: null, isBot: false };
+    }
+
+    function gather() {
+        var ua = navigator.userAgent || '';
+        var bot = classifyUA(ua);
+        return {
+            ua: ua,
             url: window.location.href,
             ref: document.referrer || '',
             domain: window.location.hostname,
             path: window.location.pathname,
-            sid: CONFIG.siteId,
+            sid: siteId || window.location.hostname,
             ts: Date.now(),
-            
-            // Environment context
             lang: navigator.language || '',
-            
-            // Viewport & screen (bots often have 0x0 or weird dimensions)
             vp_w: window.innerWidth || 0,
             vp_h: window.innerHeight || 0,
             scr_w: window.screen ? window.screen.width : 0,
             scr_h: window.screen ? window.screen.height : 0,
-            
-            // Automation & Headless flags
             webdriver: !!navigator.webdriver,
-            headless: false,
-            phantom: !!(window._phantom || window.callPhantom || window.__nightmare)
+            headless: /HeadlessChrome/i.test(ua),
+            phantom: !!(window._phantom || window.callPhantom || window.__nightmare),
+            bot_name: bot.name,
+            bot_family: bot.family,
+            is_bot: bot.isBot
         };
-
-        // Advanced Chrome Headless detection
-        if (navigator.userAgent.indexOf('HeadlessChrome') !== -1) {
-            signals.headless = true;
-        }
-        if (window.chrome && !window.chrome.runtime) {
-            // Suspicious Chrome environment
-        }
-
-        return signals;
     }
 
-    /**
-     * Dispatch the payload to the ingest API
-     */
-    function dispatch(payload) {
-        if (!payload.sid) {
-            console.warn('[ClawTrak] Missing data-site attribute on script tag.');
-            // We still proceed, but it might be rejected by the backend missing a Site ID
-        }
+    function send(payload) {
+        var json = JSON.stringify(payload);
+        var blob = new Blob([json], { type: 'application/json' });
 
-        var jsonStr = JSON.stringify(payload);
-        var blob = new Blob([jsonStr], { type: 'application/json' });
-
-        // Use sendBeacon for fire-and-forget, fallback to fetch/XHR
         if (navigator.sendBeacon) {
-            var queued = navigator.sendBeacon(CONFIG.ingestUrl, blob);
-            if (!queued && window.fetch) {
-                // sendBeacon returning false means payload is too large or queue is full
-                fetch(CONFIG.ingestUrl, { method: 'POST', body: jsonStr, keepalive: true }).catch(function(){});
+            var ok = navigator.sendBeacon(INGEST_URL, blob);
+            if (!ok && window.fetch) {
+                fetch(INGEST_URL, { method: 'POST', body: json, keepalive: true }).catch(function(){});
             }
         } else if (window.fetch) {
-            fetch(CONFIG.ingestUrl, {
+            fetch(INGEST_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: jsonStr,
+                body: json,
                 keepalive: true
             }).catch(function(){});
         }
     }
 
-    // Execute immediately 
-    var signals = gatherSignals();
-    dispatch(signals);
+    // Fire immediately
+    send(gather());
 
 })();

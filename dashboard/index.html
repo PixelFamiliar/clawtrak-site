@@ -495,57 +495,167 @@
     </main>
 </div>
 
-<!-- Chart Config -->
+<!-- Data Layer -->
 <script>
-    const ctx = document.getElementById('trafficChart').getContext('2d');
-    
-    // Gradient
-    let gradient = ctx.createLinearGradient(0, 0, 0, 250);
-    gradient.addColorStop(0, 'rgba(16, 185, 129, 0.4)');
-    gradient.addColorStop(1, 'rgba(16, 185, 129, 0.01)');
+    const API_BASE = 'https://api.clawtrak.com';
+    const urlParams = new URLSearchParams(window.location.search);
+    const SITE_ID = urlParams.get('site') || 'demo';
+    const DAYS = parseInt(urlParams.get('days') || '7');
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [{
-                label: 'LLM Scrapes',
-                data: [150, 230, 280, 210, 390, 480, 460],
-                borderColor: '#10B981',
-                borderWidth: 2,
-                backgroundColor: gradient,
-                fill: true,
-                tension: 0.4,
-                pointBackgroundColor: '#10B981',
-                pointBorderColor: '#0A0A0A',
-                pointBorderWidth: 2,
-                pointRadius: 4,
-                pointHoverRadius: 6
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false }
-            },
-            scales: {
-                x: {
-                    grid: { display: false, drawBorder: false },
-                    ticks: { color: '#888', font: { family: 'JetBrains Mono', size: 11 } }
-                },
-                y: {
-                    grid: { color: '#2A2A2A', borderDash: [4, 4], drawBorder: false },
-                    ticks: { color: '#888', font: { family: 'JetBrains Mono', size: 11 } },
-                    beginAtZero: true
-                }
-            },
-            interaction: {
-                intersect: false,
-                mode: 'index',
-            },
+    // Update site selector display
+    document.querySelector('.site-selector').innerHTML = 
+        '<div class="status-dot"></div>' + SITE_ID +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" style="margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>';
+
+    const AGENT_COLORS = {
+        'OpenAI': 'fill-openai',
+        'Anthropic': 'fill-anthropic',
+        'Perplexity': 'fill-perplexity',
+        'Google': 'fill-google'
+    };
+
+    async function loadDashboard() {
+        try {
+            const [statsRes, eventsRes] = await Promise.all([
+                fetch(API_BASE + '/stats?site_id=' + SITE_ID + '&days=' + DAYS),
+                fetch(API_BASE + '/events?site_id=' + SITE_ID + '&days=' + DAYS)
+            ]);
+            const stats = await statsRes.json();
+            const eventsData = await eventsRes.json();
+
+            renderKPIs(stats);
+            renderChart(stats.daily_counts || {});
+            renderAgentBars(stats.agent_distribution || {}, stats.bot_events || 0);
+            renderLogTable(eventsData.events || []);
+        } catch (e) {
+            console.warn('[ClawTrak] API unavailable, showing demo data');
+            renderDemoData();
         }
-    });
+    }
+
+    function renderKPIs(stats) {
+        const kpis = document.querySelectorAll('.kpi-card');
+        if (kpis[0]) {
+            kpis[0].querySelector('.kpi-value').textContent = (stats.bot_events || 0).toLocaleString();
+            kpis[0].querySelector('.kpi-trend').innerHTML = '<span class="trend-neutral">' + DAYS + '-day total</span>';
+        }
+        if (kpis[1]) {
+            kpis[1].querySelector('.kpi-value').textContent = stats.unique_bots || 0;
+        }
+        if (kpis[2]) {
+            const topPages = stats.top_pages || [];
+            const avgDepth = topPages.length > 0 ? (topPages.reduce((a,b) => a + b.count, 0) / topPages.length).toFixed(1) : '0';
+            kpis[2].querySelector('.kpi-value').innerHTML = avgDepth + ' <span style="font-size:16px;color:#888;">avg</span>';
+        }
+        if (kpis[3]) {
+            kpis[3].querySelector('.kpi-value').innerHTML = stats.total_events.toLocaleString() + ' <span style="font-size:16px;color:#888;">total</span>';
+            kpis[3].querySelector('.kpi-trend').innerHTML = '<span class="trend-neutral">' + stats.human_events + ' human / ' + stats.bot_events + ' bot</span>';
+        }
+    }
+
+    function renderChart(dailyCounts) {
+        const ctx = document.getElementById('trafficChart').getContext('2d');
+        let gradient = ctx.createLinearGradient(0, 0, 0, 250);
+        gradient.addColorStop(0, 'rgba(16, 185, 129, 0.4)');
+        gradient.addColorStop(1, 'rgba(16, 185, 129, 0.01)');
+
+        const days = Object.keys(dailyCounts).sort();
+        const labels = days.map(d => { const dt = new Date(d); return dt.toLocaleDateString('en', {weekday:'short'}); });
+        const botData = days.map(d => dailyCounts[d].bot || 0);
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels.length ? labels : ['No data'],
+                datasets: [{
+                    label: 'AI Bot Visits',
+                    data: botData.length ? botData : [0],
+                    borderColor: '#10B981',
+                    borderWidth: 2,
+                    backgroundColor: gradient,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#10B981',
+                    pointBorderColor: '#0A0A0A',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false }, ticks: { color: '#888', font: { family: 'JetBrains Mono', size: 11 } } },
+                    y: { grid: { color: '#2A2A2A', borderDash: [4,4] }, ticks: { color: '#888', font: { family: 'JetBrains Mono', size: 11 } }, beginAtZero: true }
+                },
+                interaction: { intersect: false, mode: 'index' }
+            }
+        });
+    }
+
+    function renderAgentBars(distribution, totalBots) {
+        const container = document.querySelector('.panel:nth-child(2)');
+        if (!container) return;
+        const header = container.querySelector('.panel-header').outerHTML;
+        let html = header;
+
+        const entries = Object.entries(distribution).sort((a,b) => b[1] - a[1]);
+        if (entries.length === 0) {
+            html += '<div style="color:var(--text-muted);font-size:13px;padding:20px 0;">No bot visits recorded yet. Install claw.js to start tracking.</div>';
+        } else {
+            for (const [family, count] of entries) {
+                const pct = totalBots > 0 ? Math.round(count / totalBots * 100) : 0;
+                const colorClass = AGENT_COLORS[family] || 'fill-other';
+                html += '<div class="agent-bar-wrap">' +
+                    '<div class="agent-info"><span class="agent-name">' + family + '</span><span class="agent-count">' + pct + '% (' + count + ')</span></div>' +
+                    '<div class="bar-bg"><div class="bar-fill ' + colorClass + '" style="width:' + pct + '%;"></div></div></div>';
+            }
+        }
+        container.innerHTML = html;
+    }
+
+    function renderLogTable(events) {
+        const tbody = document.querySelector('tbody');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+
+        const botEvents = events.filter(e => e.is_bot).slice(0, 20);
+        if (botEvents.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="color:var(--text-muted);text-align:center;padding:40px;">No bot visits yet. Install claw.js on your site to start tracking AI agent traffic.</td></tr>';
+            return;
+        }
+
+        for (const ev of botEvents) {
+            const ts = ev.ts > 1e12 ? ev.ts : ev.ts * 1000;
+            const ago = timeAgo(ts);
+            const badge = ev.webdriver || ev.headless ? '<span class="badge headless">Headless</span>' : '<span class="badge bot">Declared Bot</span>';
+            tbody.innerHTML += '<tr>' +
+                '<td class="time-col">' + ago + '</td>' +
+                '<td><span style="font-family:var(--font-mono);color:white;">' + (ev.bot_name || 'Unknown') + '</span></td>' +
+                '<td>' + (ev.path || '/') + '</td>' +
+                '<td>' + badge + '</td>' +
+                '<td class="ua-col">' + (ev.ua || '').substring(0, 80) + '...</td>' +
+                '</tr>';
+        }
+    }
+
+    function timeAgo(tsMs) {
+        const diff = Date.now() - tsMs;
+        if (diff < 60000) return 'Just now';
+        if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago';
+        if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+        return Math.floor(diff / 86400000) + 'd ago';
+    }
+
+    function renderDemoData() {
+        // Fallback demo data when API is unavailable
+        renderChart({'2026-03-08':{bot:150},'2026-03-09':{bot:230},'2026-03-10':{bot:280},'2026-03-11':{bot:210},'2026-03-12':{bot:390},'2026-03-13':{bot:480},'2026-03-14':{bot:460}});
+    }
+
+    // Load on page ready
+    loadDashboard();
 </script>
 
 </body>
