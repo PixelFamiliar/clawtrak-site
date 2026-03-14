@@ -6,7 +6,7 @@
   "url": "https://clawtrak.com",
   "last_updated": "2026-03-14",
   "total_scanned": 28,
-  "average_score": 37.8,
+  "average_score": 38.2,
   "stats": {
     "grade_distribution": {
       "A": 3,
@@ -1224,7 +1224,7 @@
     },
     {
       "domain": "clawtrak.com",
-      "score": 95,
+      "score": 98,
       "grade": "A",
       "scanned": "2026-03-14",
       "checks": {
@@ -1249,7 +1249,7 @@
           "status": "PASS"
         },
         "json-ld": {
-          "score": 12,
+          "score": 15,
           "max": 15,
           "status": "PASS"
         },
@@ -1272,7 +1272,7 @@
     },
     {
       "domain": "pixelfamiliar.ca",
-      "score": 96,
+      "score": 99,
       "grade": "A",
       "scanned": "2026-03-14",
       "checks": {
@@ -1297,7 +1297,7 @@
           "status": "PASS"
         },
         "json-ld": {
-          "score": 12,
+          "score": 15,
           "max": 15,
           "status": "PASS"
         },
@@ -1320,7 +1320,7 @@
     },
     {
       "domain": "clawforce.ca",
-      "score": 93,
+      "score": 97,
       "grade": "A",
       "scanned": "2026-03-14",
       "checks": {
@@ -1345,14 +1345,14 @@
           "status": "PASS"
         },
         "json-ld": {
-          "score": 14,
+          "score": 15,
           "max": 15,
           "status": "PASS"
         },
         "schema_coverage": {
-          "score": 7,
+          "score": 10,
           "max": 10,
-          "status": "WARN"
+          "status": "PASS"
         },
         "openapi": {
           "score": 15,
