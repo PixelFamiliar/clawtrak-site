@@ -5,20 +5,20 @@
   "max_score": 100,
   "url": "https://clawtrak.com",
   "last_updated": "2026-03-14",
-  "total_scanned": 28,
-  "average_score": 31.0,
+  "total_scanned": 26,
+  "average_score": 32.0,
   "stats": {
     "grade_distribution": {
       "A": 0,
       "B": 0,
       "C": 9,
-      "D": 13,
-      "F": 6
+      "D": 12,
+      "F": 5
     },
     "has_llms_txt": 15,
     "has_agents_md": 4,
     "has_agent_card": 0,
-    "has_jsonld": 8,
+    "has_jsonld": 7,
     "has_openapi": 0
   },
   "sites": [
@@ -1250,102 +1250,6 @@
         },
         "json-ld": {
           "score": 12,
-          "max": 15,
-          "status": "PASS"
-        },
-        "schema_coverage": {
-          "score": 3,
-          "max": 10,
-          "status": "WARN"
-        },
-        "openapi": {
-          "score": 0,
-          "max": 15,
-          "status": "FAIL"
-        },
-        "meta_and_semantic": {
-          "score": 7,
-          "max": 10,
-          "status": "PASS"
-        }
-      }
-    },
-    {
-      "domain": "pixelfamiliar.ca",
-      "score": 12,
-      "grade": "F",
-      "scanned": "2026-03-14",
-      "checks": {
-        "llms.txt": {
-          "score": 0,
-          "max": 15,
-          "status": "FAIL"
-        },
-        "agents.md": {
-          "score": 0,
-          "max": 10,
-          "status": "FAIL"
-        },
-        "agent_card": {
-          "score": 0,
-          "max": 15,
-          "status": "FAIL"
-        },
-        "ai_robots": {
-          "score": 2,
-          "max": 10,
-          "status": "WARN"
-        },
-        "json-ld": {
-          "score": 0,
-          "max": 15,
-          "status": "FAIL"
-        },
-        "schema_coverage": {
-          "score": 3,
-          "max": 10,
-          "status": "WARN"
-        },
-        "openapi": {
-          "score": 0,
-          "max": 15,
-          "status": "FAIL"
-        },
-        "meta_and_semantic": {
-          "score": 7,
-          "max": 10,
-          "status": "PASS"
-        }
-      }
-    },
-    {
-      "domain": "clawforce.ca",
-      "score": 24,
-      "grade": "D",
-      "scanned": "2026-03-14",
-      "checks": {
-        "llms.txt": {
-          "score": 0,
-          "max": 15,
-          "status": "FAIL"
-        },
-        "agents.md": {
-          "score": 0,
-          "max": 10,
-          "status": "FAIL"
-        },
-        "agent_card": {
-          "score": 0,
-          "max": 15,
-          "status": "FAIL"
-        },
-        "ai_robots": {
-          "score": 0,
-          "max": 10,
-          "status": "FAIL"
-        },
-        "json-ld": {
-          "score": 14,
           "max": 15,
           "status": "PASS"
         },
