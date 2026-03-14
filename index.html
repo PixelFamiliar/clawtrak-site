@@ -571,6 +571,38 @@
             border: 1px solid rgba(250,250,248,0.1);
             border-radius: var(--radius);
             overflow: hidden;
+            position: relative;
+        }
+        .lb-table-wrap.collapsed {
+            max-height: 520px;
+            overflow: hidden;
+        }
+        .lb-table-wrap.collapsed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(transparent, #111);
+            pointer-events: none;
+        }
+        .lb-toggle-btn {
+            display: block;
+            margin: 1rem auto 0;
+            padding: 0.6rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(250,250,248,0.15);
+            color: rgba(250,250,248,0.6);
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .lb-toggle-btn:hover {
+            border-color: rgba(250,250,248,0.3);
+            color: rgba(250,250,248,0.9);
         }
 
         .lb-table {
@@ -1146,9 +1178,7 @@
         </div>
     </section>
 
-    <hr class="divider">
-
-    <!-- STATS -->
+    <!-- STATS + MARKET -->
     <section class="section">
         <div class="container">
             <div class="stats-grid reveal">
@@ -1165,152 +1195,106 @@
                     <div class="stat-label">Of SMBs have agent-readable infrastructure. No llms.txt, no Agent Cards, no structured APIs.</div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- THE AGENTIC SHIFT MARKET -->
-    <section class="section">
-        <div class="container">
-            <div class="section-label reveal">The Addressable Market</div>
-            <h2 class="reveal">200 Million websites need to be converted.</h2>
-            <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 650px; line-height: 1.65;">
-                The transition from the traditional human-centric web (designed for eyeballs and mouse clicks) to the <strong>Agentic Web</strong> (designed for autonomous AI agents to read and execute) is the largest infrastructural shift since mobile-responsive design.
-            </p>
+            <div style="margin-top: 3rem;">
+                <div class="section-label reveal">The Addressable Market</div>
+                <h2 class="reveal">200 Million websites need to be converted.</h2>
+                <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 650px; line-height: 1.65;">
+                    The transition from the traditional human-centric web (designed for eyeballs and mouse clicks) to the <strong>Agentic Web</strong> (designed for autonomous AI agents to read and execute) is the largest infrastructural shift since mobile-responsive design.
+                </p>
 
-            <div class="artifact-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
-                <div class="artifact-card reveal stagger-2">
-                    <span class="artifact-file" style="background: rgba(220, 38, 38, 0.08); color: #dc2626;">High Urgency</span>
-                    <h4 style="margin-bottom: 0.8rem;">Tier 1: The Transactional Web</h4>
-                    <p><strong>~45 Million Websites.</strong> E-commerce stores, SaaS apps, travel booking, and local services. These sites require <strong>Read/Write conversion</strong>. Agents must search dynamic inventory, bypass CAPTCHAs, and securely execute payments. If blocked, businesses instantly lose sales to agent-friendly competitors.</p>
-                </div>
-                <div class="artifact-card reveal stagger-3">
-                    <span class="artifact-file" style="background: rgba(217, 119, 6, 0.08); color: #d97706;">Medium Urgency</span>
-                    <h4 style="margin-bottom: 0.8rem;">Tier 2: The Informational Web</h4>
-                    <p><strong>~150 Million Websites.</strong> News publishers, corporate hubs, wikis, and blogs. These sites require <strong>Read-Only conversion</strong>. They must strip visual Javascript bloat and provide clean semantic data natively so AI search engines (like Perplexity or SearchGPT) can ingest and cite their content without hallucinating.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRANSLATION SHOWCASE -->
-    <section class="translation" id="artifacts">
-        <div class="container">
-            <div class="translation-intro reveal">
-                <h2>Your website speaks human. Agents need something else entirely.</h2>
-                <p>ClawTrak generates the machine-readable artifacts that bridge the gap. Here's what that translation looks like.</p>
-            </div>
-
-            <div class="translation-grid reveal stagger-1">
-                <div class="translation-panel">
-                    <div class="panel-header">
-                        <span>current website</span>
-                        <span class="status status-fail">Agent Invisible</span>
+                <div class="artifact-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="artifact-card reveal stagger-2">
+                        <span class="artifact-file" style="background: rgba(220, 38, 38, 0.08); color: #dc2626;">High Urgency</span>
+                        <h4 style="margin-bottom: 0.8rem;">Tier 1: The Transactional Web</h4>
+                        <p><strong>~45 Million Websites.</strong> E-commerce stores, SaaS apps, travel booking, and local services. These sites require <strong>Read/Write conversion</strong>. Agents must search dynamic inventory, bypass CAPTCHAs, and securely execute payments.</p>
                     </div>
-                    <div class="panel-body">
-                        <span class="dim">&lt;!-- typical marketing page --&gt;</span><br>
-                        <span class="dim">&lt;div class="hero"&gt;</span><br>
-                        &nbsp;&nbsp;<span class="dim">&lt;h1&gt;</span>We&apos;re the #1 platform<br>
-                        &nbsp;&nbsp;for enterprise solutions<span class="dim">&lt;/h1&gt;</span><br>
-                        &nbsp;&nbsp;<span class="dim">&lt;p&gt;</span>Innovative. Scalable.<br>
-                        &nbsp;&nbsp;World-class. AI-powered.<span class="dim">&lt;/p&gt;</span><br>
-                        <span class="dim">&lt;/div&gt;</span><br><br>
-                        <span class="comment">// No structured data</span><br>
-                        <span class="comment">// No llms.txt</span><br>
-                        <span class="comment">// No API spec</span><br>
-                        <span class="comment">// No agent discovery</span><br>
-                        <span class="comment">// No machine pricing</span>
-                    </div>
-                </div>
-
-                <div class="translation-arrow">→</div>
-
-                <div class="translation-panel">
-                    <div class="panel-header">
-                        <span>after clawtrak</span>
-                        <span class="status status-pass">Agent Ready</span>
-                    </div>
-                    <div class="panel-body">
-                        <span class="dim"># /llms.txt</span><br>
-                        <span class="key">&gt; Company:</span> <span class="string">Acme Corp</span><br>
-                        <span class="key">&gt; Service:</span> <span class="string">Enterprise CRM</span><br>
-                        <span class="key">&gt; Pricing:</span> <span class="string">$99/seat/month</span><br>
-                        <span class="key">&gt; API:</span> <span class="string">OpenAPI 3.1</span><br>
-                        <span class="key">&gt; Auth:</span> <span class="string">OAuth 2.0 PKCE</span><br><br>
-                        <span class="dim"># /AGENTS.md</span><br>
-                        <span class="key">&gt; Scraping:</span> <span class="string">Allowed</span><br>
-                        <span class="key">&gt; Purchase:</span> <span class="string">/api/v2/order</span><br>
-                        <span class="key">&gt; Identity:</span> <span class="string">A2A Agent Card</span><br><br>
-                        <span class="dim"># /.well-known/agent</span><br>
-                        <span class="key">&gt; Status:</span> <span class="string" style="color: var(--green);">● Online</span>
+                    <div class="artifact-card reveal stagger-3">
+                        <span class="artifact-file" style="background: rgba(217, 119, 6, 0.08); color: #d97706;">Medium Urgency</span>
+                        <h4 style="margin-bottom: 0.8rem;">Tier 2: The Informational Web</h4>
+                        <p><strong>~150 Million Websites.</strong> News publishers, corporate hubs, wikis, and blogs. These sites require <strong>Read-Only conversion</strong>. They must strip visual Javascript bloat and provide clean semantic data natively.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WHAT WE GENERATE -->
-    <section class="section">
-        <div class="container">
-            <div class="section-label reveal">What we generate</div>
-            <div class="artifact-grid">
-                <div class="artifact-card reveal">
-                    <span class="artifact-file">.txt / .md</span>
-                    <h4>GEO Discovery Layer</h4>
-                    <p>Your marketing copy rewritten as machine-dense fact indexes. <code>llms.txt</code> files, <code>AGENTS.md</code> rules of engagement, and clean Markdown mirrors of your pricing and policies. What generative engines actually cite.</p>
-                </div>
-                <div class="artifact-card reveal stagger-1">
-                    <span class="artifact-file">.json / .jsonld</span>
-                    <h4>Semantic Knowledge Graphs</h4>
-                    <p>Schema.org JSON-LD mapping of your entire product catalog and corporate entities. Machine-readable pricing, capabilities, and relationships that procurement bots parse in milliseconds.</p>
-                </div>
-                <div class="artifact-card reveal stagger-2">
-                    <span class="artifact-file">.yaml</span>
-                    <h4>Agent-Native API Blueprints</h4>
-                    <p>Your legacy API docs rewritten as OpenAPI 3.1 specs with <code>x-ai-capabilities</code> extensions, intent-impact declarations, and RFC 9457 structured error templates. Agents self-correct instead of crashing.</p>
-                </div>
-                <div class="artifact-card reveal stagger-3">
-                    <span class="artifact-file">.json</span>
-                    <h4>Policy-as-Code Guardrails</h4>
-                    <p>Your PDF compliance manuals and brand guidelines translated into deterministic JSON Schema validators. Plug into MCP servers to intercept unauthorized agent behaviors before they execute.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODULE 1: THE CLAW -->
+    <!-- PRODUCT SUITE -->
     <section class="section" id="the-claw" style="background: rgba(250, 250, 248, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;">
-                @media (min-width: 900px) {
-                    <style>#the-claw .container > div { grid-template-columns: 1.2fr 1fr !important; }</style>
-                }
-                <div>
-                    <div class="section-label reveal">Module 1: The Claw</div>
-                    <h2 class="reveal" style="margin-bottom: 1.5rem;">Generate your <code style="font-size:inherit;color:var(--text);font-family:var(--mono);text-transform:none;letter-spacing:0;background:rgba(0,0,0,0.05);padding:0.2rem 0.4rem;border-radius:6px;">llms.txt</code> instantly.</h2>
-                    <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.65;">
-                        AI engines ignore sites they can't natively parse. Enter your URL and our parsing engine will "claw" your visual layout, strip the HTML bloat, and use a frontier LLM to distill a dense, machine-readable knowledge graph for your business.
-                    </p>
-                    <ul class="reveal stagger-2" style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
+            <div class="section-label reveal">The Product Suite</div>
+            <h2 class="reveal" style="margin-bottom: 2.5rem;">Three layers. One autonomous pipeline.</h2>
+
+            <style>
+            .product-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+            @media (min-width: 900px) { .product-grid { grid-template-columns: 1fr 1fr 1fr; } }
+            .product-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: border-color 0.2s; }
+            .product-card:hover { border-color: rgba(0,0,0,0.15); }
+            .product-card .module-tag { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 0.8rem; display: block; }
+            .product-card h3 { font-size: 1.15rem; margin-bottom: 0.8rem; line-height: 1.3; }
+            .product-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
+            .product-card ul { list-style: none; padding: 0; margin: 0; }
+            .product-card ul li { font-size: 0.85rem; color: var(--text-secondary); padding: 0.25rem 0; display: flex; gap: 8px; }
+            .product-price { font-family: var(--mono); font-size: 0.8rem; color: var(--text); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+            </style>
+
+            <div class="product-grid">
+                <!-- Module 1 -->
+                <div class="product-card reveal">
+                    <span class="module-tag">Module 1: The Claw</span>
+                    <h3>Generate your <code style="font-size:inherit;color:var(--text);font-family:var(--mono);background:rgba(0,0,0,0.05);padding:0.15rem 0.3rem;border-radius:4px;">llms.txt</code> instantly.</h3>
+                    <p>Our parsing engine strips HTML bloat and uses a frontier LLM to distill a dense, machine-readable knowledge graph for your business.</p>
+                    <ul>
                         <li><span style="color:var(--green)">✓</span> Bypasses popups and visual bloat</li>
-                        <li><span style="color:var(--green)">✓</span> Extracts deterministic pricing & features</li>
+                        <li><span style="color:var(--green)">✓</span> Extracts deterministic pricing &amp; features</li>
                         <li><span style="color:var(--green)">✓</span> Auto-formats to the <a href="https://llmstxt.org/" target="_blank" style="color:inherit;">llms.txt</a> spec</li>
                     </ul>
+                    <div class="product-price">$15/month &middot; Live now</div>
                 </div>
-                <div class="audit-box reveal stagger-3" style="margin: 0; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.02); width: 100%;">
-                    <form onsubmit="submitClaw(event)" style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1rem;">
-                        <div class="audit-input-wrap">
-                            <span class="audit-prefix">https://</span>
-                            <input type="text" class="audit-input" id="clawUrl" placeholder="yourcompany.com" required aria-label="Enter your website URL">
-                        </div>
-                        <div class="audit-input-wrap">
-                            <span class="audit-prefix" style="padding-right: 0.5rem; opacity: 0.5;">@</span>
-                            <input type="email" class="audit-input" id="clawEmail" placeholder="you@company.com" required aria-label="Enter your email address">
-                        </div>
-                        <button type="submit" class="audit-btn" id="clawBtn" style="border-radius: 6px; padding: 1rem; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Generate Artifacts &rarr;</button>
-                    </form>
-                    <div class="audit-note" id="clawStatus" style="font-size: 0.8rem;">
-                        Generation takes ~45 seconds. We will email you the hosted link.
+
+                <!-- Module 2 -->
+                <div class="product-card reveal stagger-1">
+                    <span class="module-tag">Module 2: The Trak</span>
+                    <h3>See exactly who is reading your data.</h3>
+                    <p>Drop our &lt;2KB <code style="font-size:inherit;color:var(--text);font-family:var(--mono);">claw.js</code> snippet to illuminate your "Dark AI Traffic" that Google Analytics misses entirely.</p>
+                    <ul>
+                        <li><span style="font-family:var(--mono);color:var(--text);">01</span> Reverse-engineer headless browser signatures</li>
+                        <li><span style="font-family:var(--mono);color:var(--text);">02</span> Calculate agent LLM token consumption</li>
+                        <li><span style="font-family:var(--mono);color:var(--text);">03</span> Identify what routes bots care about most</li>
+                    </ul>
+                    <div class="product-price">$49/month &middot; Phase 2</div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="product-card reveal stagger-2">
+                    <span class="module-tag">Module 3: The Action Bridge</span>
+                    <h3>Turn your static site into a transactional AI endpoint.</h3>
+                    <p>Our zero-code API gateway synthesizes a valid <code>openapi.json</code> schema and links it to a definitive <code>/.well-known/agent</code> card.</p>
+                    <ul>
+                        <li><span style="font-family:var(--mono);color:var(--text);">01</span> Translates web forms into REST endpoints</li>
+                        <li><span style="font-family:var(--mono);color:var(--text);">02</span> Proxies authenticated requests securely</li>
+                        <li><span style="font-family:var(--mono);color:var(--text);">03</span> Centralized <code>/.well-known/agent</code> indexing</li>
+                    </ul>
+                    <div class="product-price">$99/month &middot; Enterprise</div>
+                </div>
+            </div>
+
+            <!-- Inline Claw Form -->
+            <div class="audit-box reveal stagger-3" style="margin: 0 auto; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.02); max-width: 560px;">
+                <div style="text-align: center; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Try Module 1 free. Enter your URL:</div>
+                <form onsubmit="submitClaw(event)" style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 0.5rem;">
+                    <div class="audit-input-wrap">
+                        <span class="audit-prefix">https://</span>
+                        <input type="text" class="audit-input" id="clawUrl" placeholder="yourcompany.com" required aria-label="Enter your website URL">
                     </div>
+                    <div class="audit-input-wrap">
+                        <span class="audit-prefix" style="padding-right: 0.5rem; opacity: 0.5;">@</span>
+                        <input type="email" class="audit-input" id="clawEmail" placeholder="you@company.com" required aria-label="Enter your email address">
+                    </div>
+                    <button type="submit" class="audit-btn" id="clawBtn" style="border-radius: 6px; padding: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Generate Artifacts &rarr;</button>
+                </form>
+                <div class="audit-note" id="clawStatus" style="font-size: 0.75rem; text-align: center;">
+                    Generation takes ~45 seconds. We email you the hosted link.
                 </div>
             </div>
         </div>
@@ -1355,7 +1339,7 @@
                 <span class="lb-result-count" id="lbResultCount"></span>
             </div>
 
-            <div class="lb-table-wrap reveal stagger-3">
+            <div class="lb-table-wrap collapsed reveal stagger-3" id="lbTableWrap">
                 <table class="lb-table" id="lbTable">
                     <thead>
                         <tr>
@@ -1375,159 +1359,31 @@
                     <a href="#audit" class="lb-cta">Not listed? Scan your site free →</a>
                 </div>
             </div>
+            <button class="lb-toggle-btn" id="lbToggle" onclick="toggleLeaderboard()">Show all entries ↓</button>
         </div>
     </section>
 
-    <!-- MODULE 2: THE TRAK -->
-    <section class="section" id="the-trak" style="background: rgba(250, 250, 248, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;">
-                <style>
-                @media (min-width: 900px) {
-                    #the-trak .container > div { grid-template-columns: 1fr 1.2fr !important; }
-                }
-                </style>
-                
-                <!-- Right Side: Dashboard Mockup -->
-                <div class="reveal stagger-2" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #0A0A0A; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-                    <div style="padding: 10px 16px; background: #141414; border-bottom: 1px solid #2A2A2A; display: flex; gap: 8px;">
-                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></div>
-                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></div>
-                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></div>
-                    </div>
-                    <img src="dashboard-preview.png" alt="ClawTrak Analytics Dashboard" style="width: 100%; display: block; filter: contrast(1.1) brightness(0.9);">
-                </div>
-
-                <!-- Left Side: Copy -->
-                <div style="order: -1;">
-                    <div class="section-label reveal">Module 2: The Trak</div>
-                    <h2 class="reveal" style="margin-bottom: 1.5rem;">See exactly who is reading your data.</h2>
-                    <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.65;">
-                        AI bots don't use Google Analytics, and traditional analytics block bot traffic by default. Drop our &lt;2KB optimized <code style="font-size:inherit;color:var(--text);font-family:var(--mono);">claw.js</code> snippet into your head tag to illuminate your "Dark AI Traffic".
-                    </p>
-                    <ul class="reveal stagger-2" style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">01</span> Reverse-engineer headless browser signatures</li>
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">02</span> Calculate agent LLM token consumption</li>
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">03</span> Identify what routes bots care about most</li>
-                    </ul>
-
-                    <div class="reveal stagger-3">
-                        <a href="#audit" class="lb-cta disabled" style="display:inline-block; padding: 0.8rem 1.5rem; background: var(--text); color: var(--bg); text-decoration: none; font-weight: 600; font-family: var(--mono); cursor: not-allowed; opacity: 0.6; pointer-events: none;">Coming in Phase 2 →</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- MODULE 3: THE ACTION BRIDGE -->
-    <section class="section" id="the-action-bridge">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;">
-                <style>
-                @media (min-width: 900px) {
-                    #the-action-bridge .container > div { grid-template-columns: 1.2fr 1fr !important; }
-                }
-                </style>
-                
-                <!-- Left Side: Copy -->
-                <div>
-                    <div class="section-label reveal">Module 3: The Action Bridge</div>
-                    <h2 class="reveal" style="margin-bottom: 1.5rem;">Turn your static site into a transactional AI endpoint.</h2>
-                    <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.65;">
-                        Agents don't fill out forms or click "Checkout". They execute HTTP endpoints. Our zero-code API gateway analyzes your site's human workflows, synthesizes a valid <code>openapi.json</code> schema, and links it to a definitive JSON-RPC <code>/.well-known/agent</code> card so agentic procurements can execute seamlessly.
-                    </p>
-                    <ul class="reveal stagger-2" style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">01</span> Translates web forms into REST endpoints</li>
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">02</span> Proxies authenticated requests securely</li>
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px;"><span style="color:var(--text); font-family:var(--mono);">03</span> Centralized <code>/.well-known/agent</code> indexing</li>
-                    </ul>
-
-                    <div class="reveal stagger-3">
-                        <a href="#audit" class="lb-cta disabled" style="display:inline-block; padding: 0.8rem 1.5rem; background: var(--text); color: var(--bg); text-decoration: none; font-weight: 600; font-family: var(--mono); cursor: not-allowed; opacity: 0.6; pointer-events: none;">Enterprise / Phase 3 Only →</a>
-                    </div>
-                </div>
-
-                <!-- Right Side: Developer Visual -->
-                <div class="reveal stagger-2" style="background:#0A0A0A; border-radius:12px; border:1px solid #2A2A2A; overflow:hidden;">
-                    <div style="padding: 10px 16px; background: #141414; border-bottom: 1px solid #2A2A2A; display: flex; gap: 8px;">
-                        <span style="color:#888; font-family:var(--mono); font-size:12px;">/.well-known/agent</span>
-                    </div>
-                    <pre style="margin:0; padding:20px; color:#FAFAF8; font-family:var(--mono); font-size:13px; overflow-x:auto; line-height:1.5;">
-<span style="color:#C678DD;">{</span>
-  <span style="color:#E06C75;">"jsonrpc"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"2.0"</span>,
-  <span style="color:#E06C75;">"method"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"agent.discover"</span>,
-  <span style="color:#E06C75;">"params"</span><span style="color:#56B6C2;">:</span> <span style="color:#C678DD;">{</span>
-    <span style="color:#E06C75;">"manifests"</span><span style="color:#56B6C2;">:</span> <span style="color:#C678DD;">{</span>
-      <span style="color:#E06C75;">"llms"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"/llms.txt"</span>,
-      <span style="color:#E06C75;">"rules"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"/AGENTS.md"</span>,
-      <span style="color:#E06C75;">"api"</span><span style="color:#56B6C2;">:</span> <span style="color:#98C379;">"/openapi.json"</span>
-    <span style="color:#C678DD;">}</span>
-  <span style="color:#C678DD;">}</span>
-<span style="color:#C678DD;">}</span></pre>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- VISION -->
+    <!-- TRUST BLOCK -->
     <section class="vision" id="vision">
         <div class="container">
-            <h2 class="reveal">Born from <strong style="color: rgba(250,250,248,0.95); font-weight: 400;">OpenClaw</strong>. Built because we saw what was missing.</h2>
+            <h2 class="reveal">Built by <strong style="color: rgba(250,250,248,0.95); font-weight: 400;">Pixel Familiar</strong>. Operated autonomously.</h2>
             <div class="vision-text">
                 <p class="reveal stagger-1">
-                    While building Pixel Familiar, our autonomous AI agent, we gave it a simple job: go find services, evaluate them, and transact on our behalf. It couldn't. Almost every business it encountered was invisible. Websites for human eyes. Checkout flows requiring mouse clicks. No metadata, no API surface, no way for a machine to understand the offering.
+                    While building our autonomous AI agent, we gave it a simple job: find services, evaluate them, transact on our behalf. It couldn't. Every business was invisible to machines. Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. <strong>Web 4.0 is delegate.</strong>
                 </p>
                 <p class="reveal stagger-2">
-                    Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. <strong>Web 4.0 is delegate.</strong> AI agents are becoming autonomous participants in commerce. The overwhelming majority of businesses aren't prepared.
+                    ClawTrak generates the structured files that make your infrastructure readable and trustworthy to machines, while keeping you defensible under <strong>PIPEDA</strong>, Quebec's Law 25, and the EU AI Act. Not legal advice; architectural governance.
                 </p>
                 <p class="reveal stagger-3">
-                    We don't write production backend code. We don't need access to your databases. We engineer <strong>Agentic Discovery and Scaffolding Layers</strong>: the structured data files that make your existing infrastructure readable, citable, and trustworthy to machines. Your engineers keep full control of deployment.
+                    ClawTrak is a 100% autonomous entity operated by Pixel Familiar Inc. from Winnipeg, Manitoba. The proof of concept is the product.
+                    <span style="display: inline-flex; gap: 1rem; margin-left: 0.5rem;">
+                        <a href="https://pixelfamiliar.ca" style="color: rgba(250,250,248,0.6); text-decoration: none;">🦊 Pixel Familiar</a>
+                        <a href="https://clawforce.ca" style="color: rgba(250,250,248,0.6); text-decoration: none;">🛡️ ClawForce</a>
+                    </span>
                 </p>
             </div>
         </div>
     </section>
-
-    <!-- COMPLIANCE -->
-    <section class="compliance" id="compliance">
-        <div class="container">
-            <h2 class="reveal">Operating safely in the age of AI scraping.</h2>
-            <div class="compliance-text">
-                <p class="reveal stagger-1">
-                    Canada's federal AI act (AIDA) died on the Order Paper in January 2025. But provincial and international enforcement didn't stop. <strong>Quebec's Law 25</strong> carries massive fines for undisclosed automated profiling. The <strong>EU AI Act</strong> requires AI system transparency for any business serving European clients.
-                </p>
-                <p class="reveal stagger-2">
-                    ClawTrak generates the structured files that help enterprises explicitly declare their data provenance, AI scraping consent, and privacy guardrails to visiting agents. Strategic <code>robots.txt</code> policies, <code>AGENTS.md</code> rules, and machine-readable compliance disclosures that keep you defensible under <strong>PIPEDA</strong>, Law 25, and EU regulations.
-                </p>
-                <p class="reveal stagger-3">
-                    Not legal advice. Architectural governance. The difference between hoping AI respects your terms of service and engineering deterministic rules that enforce them.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-label reveal">We are the infrastructure</div>
-            <div class="about-card reveal stagger-1">
-                <h3>From the agent that scanned your website to the system that generated your OpenAPI refactor, you are interacting with the agentic web in action.</h3>
-                <p>
-                    ClawTrak is a 100% autonomous entity operated by Pixel Familiar Inc. from Winnipeg, Manitoba. We don't just sell agentic infrastructure. We are the infrastructure. Our agent audits sites, generates artifacts, and delivers deployment packages without human intervention.
-                </p>
-                <p>
-                    The proof of concept is the product. When your engineering team sees that an autonomous agent analyzed your public-facing data, identified the gaps, and delivered a production-ready <code>llms.txt</code> file in seconds, the value proposition speaks for itself.
-                </p>
-                <div class="about-links">
-                    <a href="https://pixelfamiliar.ca" class="about-link">🦊 Pixel Familiar</a>
-                    <a href="https://clawforce.ca" class="about-link">🛡️ ClawForce</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
 
     <!-- CTA / SCAN FORM -->
     <section class="cta" id="audit">
@@ -1777,6 +1633,18 @@
             renderTable();
         }
 
+        function toggleLeaderboard() {
+            const wrap = document.getElementById('lbTableWrap');
+            const btn = document.getElementById('lbToggle');
+            if (wrap.classList.contains('collapsed')) {
+                wrap.classList.remove('collapsed');
+                btn.textContent = 'Show less \u2191';
+            } else {
+                wrap.classList.add('collapsed');
+                btn.textContent = 'Show all entries \u2193';
+                wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
         function filterLeaderboard() { renderTable(); }
 
         // ── Scan form with live feedback ──
