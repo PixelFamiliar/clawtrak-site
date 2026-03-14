@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "method": "agent.discover",
+  "params": {
+    "domain": "pixelfamiliar.ca",
+    "manifests": {
+      "llms": "https://clawtrak.com/hosted/pixelfamiliar.ca/llms.txt",
+      "rules": "https://clawtrak.com/hosted/pixelfamiliar.ca/AGENTS.md",
+      "api": "https://clawtrak.com/hosted/pixelfamiliar.ca/openapi.json"
+    }
+  }
+}
