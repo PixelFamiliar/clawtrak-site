@@ -502,6 +502,158 @@
             line-height: 1.65;
         }
 
+        /* ═══ LEADERBOARD ═══ */
+        .leaderboard {
+            padding: 6rem 0;
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .leaderboard h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+
+        .leaderboard-sub {
+            font-size: 0.92rem;
+            color: rgba(250,250,248,0.55);
+            margin-bottom: 2.5rem;
+            max-width: 560px;
+        }
+
+        .lb-stats-bar {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .lb-stat {
+            text-align: left;
+        }
+
+        .lb-stat-num {
+            font-family: var(--mono);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--bg);
+        }
+
+        .lb-stat-label {
+            font-size: 0.72rem;
+            color: rgba(250,250,248,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .lb-table-wrap {
+            border: 1px solid rgba(250,250,248,0.1);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .lb-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .lb-table th {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(250,250,248,0.4);
+            text-align: left;
+            padding: 0.7rem 1.2rem;
+            border-bottom: 1px solid rgba(250,250,248,0.1);
+            background: rgba(250,250,248,0.03);
+        }
+
+        .lb-table td {
+            padding: 0.65rem 1.2rem;
+            font-size: 0.85rem;
+            color: rgba(250,250,248,0.7);
+            border-bottom: 1px solid rgba(250,250,248,0.05);
+        }
+
+        .lb-table tr:last-child td { border-bottom: none; }
+
+        .lb-table tr:hover td {
+            background: rgba(250,250,248,0.03);
+        }
+
+        .lb-domain {
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(250,250,248,0.85);
+        }
+
+        .lb-score {
+            font-family: var(--mono);
+            font-weight: 600;
+        }
+
+        .lb-grade {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.12rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .grade-a { background: rgba(26,122,58,0.2); color: #4ade80; }
+        .grade-b { background: rgba(26,122,58,0.12); color: #86efac; }
+        .grade-c { background: rgba(184,134,11,0.2); color: #fbbf24; }
+        .grade-d { background: rgba(192,57,43,0.15); color: #f87171; }
+        .grade-f { background: rgba(192,57,43,0.2); color: #ef4444; }
+
+        .lb-checks {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .lb-check-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .lb-check-dot.pass { background: #4ade80; }
+        .lb-check-dot.warn { background: #fbbf24; }
+        .lb-check-dot.fail { background: rgba(250,250,248,0.15); }
+
+        .lb-footer {
+            padding: 0.8rem 1.2rem;
+            border-top: 1px solid rgba(250,250,248,0.1);
+            font-size: 0.72rem;
+            color: rgba(250,250,248,0.35);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lb-cta {
+            color: rgba(250,250,248,0.6);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-size: 0.72rem;
+        }
+
+        .lb-cta:hover { color: rgba(250,250,248,0.9); }
+
+        @media (max-width: 900px) {
+            .lb-table th:nth-child(4),
+            .lb-table td:nth-child(4) { display: none; }
+            .lb-stats-bar { gap: 1.5rem; }
+        }
+
         /* ═══ COMPLIANCE ═══ */
         .compliance {
             padding: 6rem 0;
@@ -754,6 +906,7 @@
                 aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="#artifacts">Artifacts</a></li>
+                <li><a href="#index">Index</a></li>
                 <li><a href="#vision">Vision</a></li>
                 <li><a href="#compliance">Trust</a></li>
                 <li><a href="https://pixelfamiliar.ca">Pixel Familiar</a></li>
@@ -888,6 +1041,55 @@
         </div>
     </section>
 
+    <!-- AGENT-READINESS INDEX (THE MOAT) -->
+    <section class="leaderboard" id="index">
+        <div class="container">
+            <div class="section-label" style="color: rgba(250,250,248,0.35);">Agent-Readiness Index</div>
+            <h2 class="reveal">We scanned the web. Here's what we found.</h2>
+            <p class="leaderboard-sub reveal stagger-1">A public, transparent ranking of how prepared notable companies are for autonomous AI agents. Updated continuously.</p>
+
+            <div class="lb-stats-bar reveal stagger-2" id="lbStats">
+                <div class="lb-stat">
+                    <div class="lb-stat-num" id="statTotal">—</div>
+                    <div class="lb-stat-label">Sites Scanned</div>
+                </div>
+                <div class="lb-stat">
+                    <div class="lb-stat-num" id="statAvg">—</div>
+                    <div class="lb-stat-label">Average Score</div>
+                </div>
+                <div class="lb-stat">
+                    <div class="lb-stat-num" id="statLlms">—</div>
+                    <div class="lb-stat-label">Have llms.txt</div>
+                </div>
+                <div class="lb-stat">
+                    <div class="lb-stat-num" id="statAgents">—</div>
+                    <div class="lb-stat-label">Have AGENTS.md</div>
+                </div>
+            </div>
+
+            <div class="lb-table-wrap reveal stagger-3">
+                <table class="lb-table" id="lbTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Domain</th>
+                            <th>Score</th>
+                            <th>Grade</th>
+                            <th>Checks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lbBody">
+                        <tr><td colspan="5" style="text-align:center; padding: 2rem;">Loading index...</td></tr>
+                    </tbody>
+                </table>
+                <div class="lb-footer">
+                    <span id="lbUpdated">Loading...</span>
+                    <a href="#audit" class="lb-cta">Not listed? Scan your site free →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- VISION -->
     <section class="vision" id="vision">
         <div class="container">
@@ -1007,6 +1209,63 @@
             const body = encodeURIComponent(`Please audit the following site for agent-readiness:\n\nhttps://${url}\n\nI'd like to receive an Agent-Readiness Scorecard.`);
             window.location.href = `mailto:pixel@pixelfamiliar.ca?subject=${subject}&body=${body}`;
         }
+
+        // Leaderboard loader
+        async function loadLeaderboard() {
+            try {
+                const resp = await fetch('/data/index.json');
+                if (!resp.ok) throw new Error('No index');
+                const data = await resp.json();
+                renderLeaderboard(data);
+            } catch (e) {
+                document.getElementById('lbBody').innerHTML =
+                    '<tr><td colspan="5" style="text-align:center; padding:2rem; color:rgba(250,250,248,0.3);">Index loading...</td></tr>';
+            }
+        }
+
+        function renderLeaderboard(data) {
+            // Stats
+            const total = data.total_scanned || 0;
+            const avg = data.average_score || 0;
+            const stats = data.stats || {};
+            document.getElementById('statTotal').textContent = total;
+            document.getElementById('statAvg').textContent = `${avg}/100`;
+            document.getElementById('statLlms').textContent = `${stats.has_llms_txt || 0}/${total}`;
+            document.getElementById('statAgents').textContent = `${stats.has_agents_md || 0}/${total}`;
+            document.getElementById('lbUpdated').textContent = `Last updated: ${data.last_updated || 'Unknown'}`;
+
+            // Sort by score descending
+            const sites = (data.sites || []).sort((a, b) => b.score - a.score);
+
+            // Render table
+            const tbody = document.getElementById('lbBody');
+            tbody.innerHTML = '';
+
+            sites.forEach((site, i) => {
+                const tr = document.createElement('tr');
+                const gradeClass = `grade-${site.grade.toLowerCase()}`;
+
+                // Build check dots
+                const checkOrder = ['llms.txt', 'agents.md', 'agent_card', 'ai_robots', 'json-ld', 'schema_coverage', 'openapi', 'meta_and_semantic'];
+                let dots = '';
+                checkOrder.forEach(key => {
+                    const check = site.checks?.[key];
+                    const status = check ? check.status.toLowerCase() : 'fail';
+                    dots += `<span class="lb-check-dot ${status}" title="${key}: ${status}"></span>`;
+                });
+
+                tr.innerHTML = `
+                    <td style="color:rgba(250,250,248,0.3); font-family:var(--mono); font-size:0.75rem;">${i + 1}</td>
+                    <td><span class="lb-domain">${site.domain}</span></td>
+                    <td><span class="lb-score">${site.score}/100</span></td>
+                    <td><span class="lb-grade ${gradeClass}">${site.grade}</span></td>
+                    <td><span class="lb-checks">${dots}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        loadLeaderboard();
     </script>
 
 </body>
