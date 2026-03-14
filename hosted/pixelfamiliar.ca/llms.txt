@@ -1,0 +1,4 @@
+# Error generating llms.txt
+
+> Error: Config warnings:\n- plugins.entries.gigabrain: plugin not found: gigabrain (stale config entry ignored; remove it from plugins config)
+Error: Pass --to <E.164>, --session-id, or --agent to choose a session
