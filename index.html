@@ -4,199 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClawTrak — Make Your Business Visible to AI Agents</title>
+    <title>ClawTrak — New AI-Built Tools Every Morning</title>
     <meta name="description"
-        content="ClawTrak engineers the semantic data layers that allow businesses to be discovered, understood, and trusted by autonomous AI agents. Operating from Winnipeg, Canada.">
-    <meta property="og:title" content="ClawTrak — Translate the Human Web into Machine Truth">
-    <meta property="og:description"
-        content="Agentic Discovery and Scaffolding Layers for the $2.9 trillion agent economy.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://clawtrak.com">
-    <meta property="og:site_name" content="ClawTrak">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ClawTrak — Translate the Human Web into Machine Truth">
-    <meta name="twitter:description" content="Agentic Discovery and Scaffolding Layers for the $2.9 trillion agent economy.">
-    <link rel="icon"
-        href="/pixel-fox.png">
+        content="A store that builds itself overnight. Our AI agent researches, builds, and ships new digital products while you sleep. Autopilot skills, dev tools, and more.">
+    <meta name="keywords"
+        content="AI tools, digital products, SEO audit, website audit, AI agent, automation, OpenClaw">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ClawTrak",
-        "url": "https://clawtrak.com",
-        "description": "ClawTrak engineers Agentic Discovery and Scaffolding Layers that make businesses discoverable, understandable, and trustworthy to autonomous AI agents.",
-        "foundingDate": "2025",
-        "areaServed": "Global",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Winnipeg",
-            "addressRegion": "Manitoba",
-            "addressCountry": "CA"
-        },
-        "parentOrganization": {
-            "@type": "Organization",
-            "name": "Pixel Familiar Inc.",
-            "url": "https://pixelfamiliar.ca"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "pixel@pixelfamiliar.ca",
-            "contactType": "sales"
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "ClawTrak",
-        "url": "https://clawtrak.com"
-    }
-    </script>
-    <script type="application/ld+json">
-    [
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "GEO Discovery Layer",
-            "description": "Marketing copy rewritten as machine-dense llms.txt files, AGENTS.md rules of engagement, and clean Markdown mirrors for generative engine citation.",
-            "provider": {"@type": "Organization", "name": "ClawTrak"},
-            "serviceType": "Generative Engine Optimization"
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Semantic Knowledge Graphs",
-            "description": "Schema.org JSON-LD mapping of product catalogs and corporate entities for machine-readable pricing and capability discovery.",
-            "provider": {"@type": "Organization", "name": "ClawTrak"},
-            "serviceType": "Structured Data Engineering"
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Agent-Native API Blueprints",
-            "description": "Legacy API documentation rewritten as OpenAPI 3.1 specifications with AI capability extensions and structured error templates.",
-            "provider": {"@type": "Organization", "name": "ClawTrak"},
-            "serviceType": "API Specification Engineering"
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Policy-as-Code Guardrails",
-            "description": "Compliance manuals and brand guidelines translated into deterministic JSON Schema validators for MCP server integration.",
-            "provider": {"@type": "Organization", "name": "ClawTrak"},
-            "serviceType": "AI Governance Engineering"
-        }
-    ]
-    </script>
     <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         :root {
-            --bg: #FAFAF8;
-            --bg-card: #FFFFFF;
-            --text: #111111;
-            --text-secondary: #555555;
-            --text-dim: #999999;
-            --border: #E8E8E5;
-            --border-hover: #D0D0CC;
-            --green: #1A7A3A;
-            --green-bg: #E8F5EC;
-            --green-dim: rgba(26, 122, 58, 0.08);
-            --red: #C0392B;
-            --red-bg: #FDEEEC;
-            --amber: #B8860B;
-            --amber-bg: #FFF8E7;
-            --radius: 12px;
-            --mono: 'IBM Plex Mono', 'Menlo', monospace;
+            --bg: #060608;
+            --surface: #0c0c10;
+            --card: #101016;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text: #e8e6f0;
+            --muted: #9896a3;
+            --dim: #5c5a66;
+            --cyan: #06d6a0;
+            --cyan-dim: #049f77;
+            --blue: #118ab2;
+            --amber: #ffd166;
+            --radius: 14px;
+            --radius-sm: 10px;
         }
 
-        html { scroll-behavior: smooth; }
-
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2.5rem;
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(6, 214, 160, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
         }
 
-        /* ═══ NAV ═══ */
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* NAV */
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
-            padding: 1.2rem 0;
-            background: rgba(250, 250, 248, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            padding: 0.9rem 0;
+            background: rgba(6, 6, 8, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
 
-        nav .container {
+        nav .wrap {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav-wordmark {
+        .nav-logo {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-family: var(--mono);
-            font-size: 0.95rem;
-            font-weight: 600;
             text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
             color: var(--text);
-            letter-spacing: -0.02em;
+        }
+
+        .nav-logo .brand {
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .clawtrak-logo {
-            width: 20px;
-            height: 20px;
-            color: var(--text);
+            width: 24px;
+            height: 24px;
+            color: var(--cyan);
+            vertical-align: middle;
         }
 
         .nav-links {
             display: flex;
+            gap: 1.8rem;
             list-style: none;
-            gap: 2.2rem;
             align-items: center;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--muted);
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--text); }
-
-        .nav-audit {
-            font-family: var(--mono);
-            font-size: 0.78rem !important;
-            color: var(--green) !important;
-            font-weight: 600 !important;
-            padding: 0.4rem 1rem;
-            border: 1px solid var(--green);
-            border-radius: 6px;
-            transition: all 0.2s;
+        .nav-links a:hover {
+            color: var(--cyan);
         }
 
-        .nav-audit:hover {
-            background: var(--green);
+        .nav-cta {
+            background: linear-gradient(135deg, var(--cyan-dim), var(--cyan));
             color: var(--bg) !important;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-weight: 700 !important;
         }
 
         .mobile-menu-btn {
@@ -204,1723 +143,794 @@
             background: none;
             border: none;
             color: var(--text);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
-        /* ═══ HERO ═══ */
-        .hero { padding: 11rem 0 5rem; }
+        /* HERO */
+        .hero {
+            padding: 8rem 0 3rem;
+            text-align: center;
+        }
 
-        .hero-mission {
-            font-family: var(--mono);
-            font-size: 0.72rem;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-dim);
+            color: var(--cyan);
+            border: 1px solid rgba(6, 214, 160, 0.2);
+            background: rgba(6, 214, 160, 0.06);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
             margin-bottom: 1.5rem;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
         }
 
         .hero h1 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(2.8rem, 6vw, 4.6rem);
-            font-weight: 400;
-            line-height: 1.08;
-            letter-spacing: -0.03em;
-            max-width: 850px;
-            color: var(--text);
-        }
-
-        .hero h1 em { font-style: italic; }
-
-        .hero-sub {
-            margin-top: 1.8rem;
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 560px;
-            line-height: 1.7;
-        }
-
-        /* ═══ AUDIT INPUT ═══ */
-        .audit-box {
-            margin-top: 2.5rem;
-            max-width: 520px;
-        }
-
-        .audit-input-wrap {
-            display: flex;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-            background: var(--bg-card);
-            transition: border-color 0.2s;
-        }
-
-        .audit-input-wrap:focus-within {
-            border-color: var(--text);
-        }
-
-        .audit-prefix {
-            font-family: var(--mono);
-            font-size: 0.82rem;
-            color: var(--text-dim);
-            padding: 0.85rem 0 0.85rem 1.2rem;
-            user-select: none;
-        }
-
-        .audit-input {
-            flex: 1;
-            border: none;
-            outline: none;
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            padding: 0.85rem 0.5rem;
-            background: transparent;
-            color: var(--text);
-        }
-
-        .audit-input::placeholder { color: var(--text-dim); }
-
-        .audit-btn {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 0.85rem 1.4rem;
-            background: var(--text);
-            color: var(--bg);
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .audit-btn:hover { opacity: 0.85; }
-
-        .audit-note {
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            margin-top: 0.6rem;
-        }
-
-        /* ═══ DIVIDER ═══ */
-        .divider { border: none; height: 1px; background: var(--border); }
-
-        /* ═══ SECTION COMMON ═══ */
-        .section { padding: 6rem 0; }
-
-        .section-label {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-        }
-
-        /* ═══ STATS ═══ */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .stat-item { background: var(--bg-card); padding: 2.2rem 2rem; }
-
-        .stat-num {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 2rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.4rem;
-        }
-
-        .stat-label {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* ═══ TRANSLATION SHOWCASE ═══ */
-        .translation {
-            padding: 6rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .translation-intro {
-            max-width: 620px;
-            margin-bottom: 3.5rem;
-        }
-
-        .translation-intro h2 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
-            font-weight: 400;
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 900;
             line-height: 1.15;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             margin-bottom: 0.8rem;
         }
 
-        .translation-intro p {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
+        .hero h1 .hl {
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .translation-grid {
-            display: grid;
-            grid-template-columns: 1fr 40px 1fr;
-            gap: 0;
-            align-items: stretch;
-        }
-
-        .translation-panel {
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .panel-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.7rem 1.2rem;
-            border-bottom: 1px solid var(--border);
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .panel-header .status {
-            font-size: 0.65rem;
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .status-fail {
-            background: var(--red-bg);
-            color: var(--red);
-        }
-
-        .status-pass {
-            background: var(--green-bg);
-            color: var(--green);
-        }
-
-        .panel-body {
-            padding: 1.2rem;
-            font-family: var(--mono);
-            font-size: 0.75rem;
-            line-height: 1.85;
-            background: var(--bg-card);
-            min-height: 240px;
-        }
-
-        .panel-body .dim { color: var(--text-dim); }
-        .panel-body .key { color: var(--green); }
-        .panel-body .string { color: var(--text); }
-        .panel-body .comment { color: var(--text-dim); font-style: italic; }
-
-        .translation-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-dim);
-            font-size: 1.2rem;
-        }
-
-        /* ═══ VISION (DARK) ═══ */
-        .vision {
-            padding: 7rem 0;
-            background: var(--text);
-            color: var(--bg);
-        }
-
-        .vision .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-
-        .vision h2 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(1.7rem, 3.2vw, 2.4rem);
-            font-weight: 400;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-        }
-
-        .vision-text p {
-            font-size: 0.92rem;
-            line-height: 1.75;
-            color: rgba(250, 250, 248, 0.6);
-            margin-bottom: 1.4rem;
-        }
-
-        .vision-text p:last-child { margin-bottom: 0; }
-
-        .vision-text a {
-            color: rgba(250, 250, 248, 0.85);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .vision-text strong {
-            color: rgba(250, 250, 248, 0.85);
-            font-weight: 600;
-        }
-
-        /* ═══ ARTIFACTS SECTION ═══ */
-        .artifact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-        }
-
-        .artifact-card {
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem;
-            background: var(--bg-card);
-            transition: border-color 0.2s;
-        }
-
-        .artifact-card:hover { border-color: var(--border-hover); }
-
-        .artifact-file {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: var(--green);
-            background: var(--green-bg);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .artifact-card h4 {
+        .hero-sub {
             font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.01em;
+            color: var(--muted);
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
         }
 
-        .artifact-card p {
+        .hero-identity {
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
+            color: var(--dim);
+            margin-bottom: 1.5rem;
         }
 
-        /* ═══ LEADERBOARD ═══ */
-        .leaderboard {
-            padding: 6rem 0;
-            background: var(--text);
-            color: var(--bg);
+        .hero-identity strong {
+            color: var(--cyan);
+            font-weight: 600;
         }
 
-        .leaderboard h2 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(1.7rem, 3.2vw, 2.4rem);
-            font-weight: 400;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.6rem;
-        }
-
-        .leaderboard-sub {
-            font-size: 0.92rem;
-            color: rgba(250,250,248,0.55);
-            margin-bottom: 2.5rem;
-            max-width: 560px;
-        }
-
-        .lb-stats-bar {
+        .hero-links {
             display: flex;
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
+            gap: 1.5rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .lb-stat {
-            text-align: left;
-        }
-
-        .lb-stat-num {
-            font-family: var(--mono);
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: var(--bg);
-        }
-
-        .lb-stat-label {
-            font-size: 0.72rem;
-            color: rgba(250,250,248,0.45);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .lb-table-wrap {
-            border: 1px solid rgba(250,250,248,0.1);
-            border-radius: var(--radius);
-            overflow: hidden;
-            position: relative;
-        }
-        .lb-table-wrap.collapsed {
-            max-height: 520px;
-            overflow: hidden;
-        }
-        .lb-table-wrap.collapsed::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(transparent, #111);
-            pointer-events: none;
-        }
-        .lb-toggle-btn {
-            display: block;
-            margin: 1rem auto 0;
-            padding: 0.6rem 1.5rem;
-            background: transparent;
-            border: 1px solid rgba(250,250,248,0.15);
-            color: rgba(250,250,248,0.6);
-            font-family: var(--mono);
-            font-size: 0.75rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .lb-toggle-btn:hover {
-            border-color: rgba(250,250,248,0.3);
-            color: rgba(250,250,248,0.9);
-        }
-
-        .lb-table {
-            width: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .lb-table { width: 100%; border-collapse: collapse; }
-
-        .lb-table th {
-            text-align: left;
-            font-family: var(--mono);
-            font-size: 0.68rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: rgba(250,250,248,0.4);
-            padding: 0.7rem 1.2rem;
-            border-bottom: 1px solid rgba(250,250,248,0.1);
-            background: rgba(250,250,248,0.03);
-        }
-        .lb-table th.sortable { cursor: pointer; user-select: none; }
-        .lb-table th.sortable:hover { color: rgba(250,250,248,0.7); }
-        .lb-table th .sort-arrow { margin-left: 0.3rem; opacity: 0.4; }
-        .lb-table th.sort-active .sort-arrow { opacity: 1; }
-
-        .lb-table td {
-            padding: 0.65rem 1.2rem;
-            font-size: 0.85rem;
-            color: rgba(250,250,248,0.7);
-            border-bottom: 1px solid rgba(250,250,248,0.05);
-        }
-
-        .lb-table tr:last-child td { border-bottom: none; }
-
-        .lb-row { cursor: pointer; transition: background 0.15s; }
-        .lb-row:hover td { background: rgba(250,250,248,0.04); }
-        .lb-row.expanded td { background: rgba(250,250,248,0.03); border-bottom-color: transparent; }
-
-        .lb-domain {
-            font-family: var(--mono);
+        .hero-links a {
+            color: var(--dim);
+            text-decoration: none;
             font-size: 0.82rem;
             font-weight: 500;
-            color: rgba(250,250,248,0.85);
+            transition: color 0.2s;
         }
 
-        .lb-expand-icon {
-            display: inline-block;
-            margin-right: 0.4rem;
-            font-size: 0.6rem;
-            color: rgba(250,250,248,0.25);
-            transition: transform 0.2s;
+        .hero-links a:hover {
+            color: var(--cyan);
         }
-        .lb-row.expanded .lb-expand-icon { transform: rotate(90deg); color: rgba(250,250,248,0.5); }
 
-        .lb-score {
-            font-family: var(--mono);
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
+            margin: 0;
+        }
+
+        /* SECTIONS */
+        .section-label {
+            font-size: 0.72rem;
             font-weight: 600;
-        }
-
-        .lb-grade {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.12rem 0.5rem;
-            border-radius: 4px;
-            display: inline-block;
-        }
-
-        .grade-a { background: rgba(26,122,58,0.2); color: #4ade80; }
-        .grade-b { background: rgba(26,122,58,0.12); color: #86efac; }
-        .grade-c { background: rgba(184,134,11,0.2); color: #fbbf24; }
-        .grade-d { background: rgba(192,57,43,0.15); color: #f87171; }
-        .grade-f { background: rgba(192,57,43,0.2); color: #ef4444; }
-
-        .lb-checks {
-            display: flex;
-            gap: 0.3rem;
-        }
-
-        .lb-check-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .lb-check-dot.pass { background: #4ade80; }
-        .lb-check-dot.warn { background: #fbbf24; }
-        .lb-check-dot.fail { background: rgba(250,250,248,0.15); }
-
-        /* ═══ EXPANDED DETAIL PANEL ═══ */
-        .lb-detail-row td { padding: 0 !important; border-bottom: 1px solid rgba(250,250,248,0.08) !important; }
-
-        .lb-detail {
-            background: rgba(250,250,248,0.02);
-            padding: 1.2rem 1.5rem 1.5rem;
-            animation: slideDown 0.25s ease-out;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
-            to { opacity: 1; max-height: 400px; }
-        }
-
-        .lb-detail-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.8rem;
-        }
-
-        .lb-check-card {
-            padding: 0.8rem;
-            background: rgba(250,250,248,0.03);
-            border: 1px solid rgba(250,250,248,0.06);
-            border-radius: 6px;
-        }
-
-        .lb-check-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             margin-bottom: 0.5rem;
         }
 
-        .lb-check-name {
-            font-family: var(--mono);
-            font-size: 0.68rem;
-            font-weight: 600;
-            color: rgba(250,250,248,0.55);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
+        section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
         }
 
-        .lb-check-score {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 700;
-        }
-        .lb-check-score.pass { color: #4ade80; }
-        .lb-check-score.warn { color: #fbbf24; }
-        .lb-check-score.fail { color: rgba(250,250,248,0.25); }
-
-        .lb-check-bar {
-            height: 3px;
-            background: rgba(250,250,248,0.08);
-            border-radius: 2px;
-            overflow: hidden;
+        .sub {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
         }
 
-        .lb-check-bar-fill {
-            height: 100%;
-            border-radius: 2px;
-            transition: width 0.6s ease-out;
-        }
-        .lb-check-bar-fill.pass { background: #4ade80; }
-        .lb-check-bar-fill.warn { background: #fbbf24; }
-        .lb-check-bar-fill.fail { background: rgba(250,250,248,0.15); }
-
-        .lb-detail-footer {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* PRODUCT CARDS */
+        .products {
+            padding: 4rem 0;
         }
 
-        .lb-detail-scanned {
-            font-family: var(--mono);
-            font-size: 0.65rem;
-            color: rgba(250,250,248,0.2);
-        }
-
-        .lb-detail-cta {
-            font-family: var(--mono);
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: rgba(250,250,248,0.5);
-            text-decoration: none;
-            padding: 0.35rem 0.8rem;
-            border: 1px solid rgba(250,250,248,0.12);
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        .lb-detail-cta:hover { color: rgba(250,250,248,0.85); border-color: rgba(250,250,248,0.3); }
-
-        .lb-footer {
-            padding: 0.8rem 1.2rem;
-            border-top: 1px solid rgba(250,250,248,0.1);
-            font-size: 0.72rem;
-            color: rgba(250,250,248,0.35);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .lb-cta {
-            color: rgba(250,250,248,0.6);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            font-size: 0.72rem;
-        }
-
-        .lb-cta:hover { color: rgba(250,250,248,0.9); }
-
-        @media (max-width: 900px) {
-            .lb-table th:nth-child(4),
-            .lb-table td:nth-child(4) { display: none; }
-            .lb-stats-bar { gap: 1.5rem; }
-            .lb-detail-grid { grid-template-columns: repeat(2, 1fr); }
-            .lb-controls { flex-direction: column; }
-        }
-
-        /* ═══ COMPLIANCE ═══ */
-        .compliance {
-            padding: 6rem 0;
-            background: var(--text);
-            color: var(--bg);
-        }
-
-        .compliance .container {
+        .prod-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
         }
 
-        .compliance h2 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(1.7rem, 3.2vw, 2.4rem);
-            font-weight: 400;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-        }
-
-        .compliance-text p {
-            font-size: 0.92rem;
-            line-height: 1.75;
-            color: rgba(250, 250, 248, 0.6);
-            margin-bottom: 1.4rem;
-        }
-
-        .compliance-text strong {
-            color: rgba(250, 250, 248, 0.85);
-            font-weight: 600;
-        }
-
-        .compliance-text code {
-            font-family: var(--mono);
-            font-size: 0.82rem;
-            background: rgba(250, 250, 248, 0.08);
-            padding: 0.1rem 0.4rem;
-            border-radius: 3px;
-        }
-
-        /* ═══ ABOUT ═══ */
-        .about-card {
+        .prod-card {
+            background: var(--card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 3rem;
-            background: var(--bg-card);
-        }
-
-        .about-card h3 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: 1.6rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .about-card p {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .about-card p:last-child { margin-bottom: 0; }
-
-        .about-links {
+            padding: 1.5rem;
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .about-link {
+        .prod-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(6, 214, 160, 0.06);
+        }
+
+        .prod-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .prod-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+
+        .prod-card .prod-desc {
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.5;
+            flex: 1;
+            margin-bottom: 0.8rem;
+        }
+
+        .prod-price {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--cyan);
+        }
+
+        .prod-price small {
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--dim);
+        }
+
+        .prod-tag {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--cyan);
+            background: rgba(6, 214, 160, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        /* SERVICE CARDS — bigger for premium services */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .service-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(6, 214, 160, 0.08);
+        }
+
+        .service-card .service-emoji {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card .service-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--cyan);
+            margin-bottom: 0.2rem;
+        }
+
+        .service-card .service-note {
+            font-size: 0.78rem;
+            color: var(--dim);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card .service-desc {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            flex: 1;
+        }
+
+        .service-card .service-features {
+            list-style: none;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card .service-features li {
+            font-size: 0.82rem;
+            color: var(--muted);
+            padding: 0.25rem 0;
+        }
+
+        .service-card .service-features li::before {
+            content: '✦ ';
+            color: var(--cyan);
+        }
+
+        .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            padding: 0.45rem 0.9rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .about-link:hover { border-color: var(--text); color: var(--text); }
-
-        /* ═══ CTA ═══ */
-        .cta { padding: 6rem 0 7rem; }
-
-        .cta h2 {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 400;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .cta-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--mono);
+            padding: 0.65rem 1.2rem;
+            border-radius: 10px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--bg);
             text-decoration: none;
-            padding: 0.8rem 2rem;
-            background: var(--text);
-            border-radius: 8px;
-            transition: opacity 0.2s;
-        }
-
-        .cta-link:hover { opacity: 0.85; }
-
-        .cta-sub {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            max-width: 540px;
-            margin-bottom: 2rem;
-        }
-
-        .scan-form { max-width: 640px; }
-        .scan-form-row {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .scan-form-row input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            font-family: var(--mono);
-            font-size: 0.82rem;
-            color: var(--text);
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .scan-form-row input:focus { border-color: var(--text); }
-        .scan-form-row input::placeholder { color: #BBB; }
-        .scan-form-row button {
-            padding: 0.75rem 1.5rem;
-            font-family: var(--mono);
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--bg);
-            background: var(--text);
+            transition: all 0.3s;
             border: none;
-            border-radius: 6px;
             cursor: pointer;
-            transition: opacity 0.2s;
-            white-space: nowrap;
-        }
-        .scan-form-row button:hover { opacity: 0.85; }
-        .scan-form-row button:disabled { opacity: 0.4; cursor: not-allowed; }
-
-        .scan-status {
-            margin-top: 0.75rem;
-            font-size: 0.8rem;
-            font-family: var(--mono);
-            color: var(--text-secondary);
-            min-height: 1.2em;
-        }
-        .scan-status.success { color: #1A7A3A; }
-        .scan-status.loading { color: var(--text-secondary); }
-        .scan-status.error { color: #C0392B; }
-
-        @keyframes pulse {
-            from { opacity: 0.3; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1.1); }
         }
 
-        @media (max-width: 640px) {
-            .scan-form-row { flex-direction: column; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--cyan-dim), var(--cyan));
+            color: var(--bg);
         }
 
-        /* ═══ FOOTER ═══ */
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(6, 214, 160, 0.3);
+        }
+
+        /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
-            padding: 2.5rem 0 2rem;
+            padding: 2rem 0;
         }
 
-        .footer-top {
+        .footer-inner {
             display: flex;
             justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .footer-brand {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text);
+            gap: 0.4rem;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--cyan);
         }
-
+        
         .footer-brand .clawtrak-logo {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
         }
 
-        .footer-brand-sub {
-            font-size: 0.72rem;
-            color: var(--text-dim);
-            margin-top: 0.2rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .footer-links-group {
+        .footer-links {
             display: flex;
-            gap: 3rem;
+            gap: 1.5rem;
         }
 
-        .footer-col-title {
-            font-family: var(--mono);
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-dim);
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-col a {
-            display: block;
-            font-size: 0.78rem;
-            color: var(--text-secondary);
+        .footer-links a {
+            color: var(--dim);
             text-decoration: none;
-            padding: 0.15rem 0;
+            font-size: 0.78rem;
             transition: color 0.2s;
         }
 
-        .footer-col a:hover { color: var(--text); }
-
-        .footer-machine-link {
-            font-family: var(--mono) !important;
-            font-size: 0.72rem !important;
-            color: var(--green) !important;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.2rem;
-            border-top: 1px solid var(--border);
+        .footer-links a:hover {
+            color: var(--cyan);
         }
 
         .footer-copy {
-            font-size: 0.72rem;
-            color: var(--text-dim);
+            font-size: 0.7rem;
+            color: var(--dim);
+            width: 100%;
+            text-align: center;
+            margin-top: 0.8rem;
         }
 
-        /* ═══ ANIMATIONS ═══ */
-        .reveal {
+        /* ANIMATIONS */
+        .fade-up {
             opacity: 0;
-            transform: translateY(16px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
         }
 
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        .stagger-1 { transition-delay: 0.05s; }
-        .stagger-2 { transition-delay: 0.1s; }
-        .stagger-3 { transition-delay: 0.15s; }
-        .stagger-4 { transition-delay: 0.2s; }
-
-        /* ═══ RESPONSIVE ═══ */
-        @media (max-width: 900px) {
-            .container { padding: 0 1.5rem; }
-            .hero { padding: 8rem 0 4rem; }
-            .vision .container,
-            .compliance .container { grid-template-columns: 1fr; gap: 2.5rem; }
-            .translation-grid { grid-template-columns: 1fr; gap: 1rem; }
-            .translation-arrow { transform: rotate(90deg); }
-            .artifact-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .footer-top { flex-direction: column; gap: 2rem; }
-            .footer-links-group { gap: 2rem; }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @media (max-width: 640px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
+        @media (max-width: 768px) {
+
+            .prod-grid,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
 
             .nav-links.open {
                 display: flex;
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
-                left: 0; right: 0;
-                background: rgba(250, 250, 248, 0.97);
-                backdrop-filter: blur(16px);
+                left: 0;
+                right: 0;
+                background: rgba(6, 6, 8, 0.95);
+                backdrop-filter: blur(20px);
                 padding: 1.5rem 2rem;
                 border-bottom: 1px solid var(--border);
                 gap: 1rem;
             }
 
-            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .prod-card[style*="grid-column"] {
+                grid-column: auto !important;
+            }
+
+            .prod-card[style*="grid-column"] > div[style*="display: flex"] {
+                flex-direction: column !important;
+            }
         }
     </style>
-    <!-- ClawTrak Analytics: track AI agents visiting this site -->
-    <script defer data-site="clawtrak.com" src="/claw.js"></script>
 </head>
 
 <body>
 
-    <header>
-    <!-- NAV -->
     <nav>
-        <div class="container">
-            <a href="/" class="nav-wordmark">
+        <div class="wrap">
+            <a href="/" class="nav-logo">
                 <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M8 3.5L3.5 8v8L8 20.5" />
                     <path d="M16 3.5l4.5 4.5v8l-4.5 4.5" />
                     <circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none" />
                 </svg>
-                CLAWTRAK
+                <span class="brand">ClawTrak</span>
             </a>
-            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')"
-                aria-label="Toggle menu">☰</button>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
-                <li><a href="#artifacts">Artifacts</a></li>
-                <li><a href="#index">Index</a></li>
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#compliance">Trust</a></li>
-                <li><a href="/methodology.html">Methodology</a></li>
-                <li><a href="https://pixelfamiliar.ca">Pixel Familiar</a></li>
-                <li><a href="#deliverables">What You Get</a></li>
-                <li><a href="#audit" class="nav-audit">Free Scan</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#audits">Audits</a></li>
+                <li><a href="/catalog.html">Catalog</a></li>
+                <li><a href="https://clawforce.ca">Clawforce</a></li>
+                <li><a href="mailto:pixel@pixelfamiliar.ca" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
-    </header>
-
-    <main>
 
     <!-- HERO -->
-    <section class="hero" id="audit">
-        <div class="container">
-            <div class="hero-mission reveal">AI Agent Readiness for Your Business</div>
-            <h1 class="reveal stagger-1">AI agents can't find your business. <em>We fix that.</em></h1>
-            <p class="hero-sub reveal stagger-2">
-                When someone asks ChatGPT or Claude for a recommendation, those agents read websites to find the answer. If yours doesn't have the right files, they can't see you. We scan your site, show you what's missing, and generate everything you need.
+    <section class="hero">
+        <div class="wrap fade-up">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                New Products Every Morning.
+            </div>
+            <h1>A Store That<br><span class="hl">Builds Itself.</span></h1>
+            <p class="hero-sub">
+                Every night, our AI agent researches trends, builds new tools, and ships them here by morning.
+                Autopilot skills, developer tools, and more — with fresh products added daily.
             </p>
-            <div class="audit-box reveal stagger-3">
-                <form class="audit-input-wrap" id="heroScanForm" onsubmit="runFreeScan(event)">
-                    <span class="audit-prefix">https://</span>
-                    <input type="text" class="audit-input" id="auditUrl" placeholder="yourcompany.com" required aria-label="Enter your website URL">
-                    <button type="submit" class="audit-btn" id="heroScanBtn">Scan →</button>
-                </form>
-                <div class="audit-note" id="heroScanNote">Free. Instant. No email required.</div>
-            </div>
-
-            <!-- Inline scan results (hidden until scan runs) -->
-            <div id="scanResults" style="display:none; margin-top: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; max-width: 640px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
-                    <div>
-                        <div style="font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 0.3rem;">Agent-Readiness Score</div>
-                        <div id="resultDomain" style="font-weight: 600; font-size: 1.1rem;"></div>
-                    </div>
-                    <div style="text-align: right;">
-                        <div id="resultScore" style="font-family: var(--mono); font-size: 2rem; font-weight: 700; line-height: 1;"></div>
-                        <div id="resultGrade" style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim);"></div>
-                    </div>
-                </div>
-                <div id="resultChecks" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 1.5rem;"></div>
-                <div style="border-top: 1px solid var(--border); padding-top: 1.2rem; text-align: center;">
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.8rem;">We'll generate all the missing files and email them to you with step-by-step deployment instructions.</p>
-                    <a href="https://buy.stripe.com/00waEZ9gXbzBefD8Mu9wt0p" style="display: inline-block; padding: 0.7rem 1.8rem; background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.8rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.2s;">Fix My Score → $49</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section" style="padding: 4rem 0;">
-        <div class="container">
-            <div class="section-label reveal">How It Works</div>
-            <style>
-            .hiw-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 0; align-items: center; max-width: 800px; margin: 2rem auto 0; }
-            .hiw-step { text-align: center; padding: 1.5rem; }
-            .hiw-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
-            .hiw-num { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 0.3rem; }
-            .hiw-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
-            .hiw-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
-            .hiw-arrow { font-size: 1.2rem; color: var(--text-dim); }
-            @media (max-width: 768px) {
-                .hiw-grid { grid-template-columns: 1fr; gap: 0.5rem; }
-                .hiw-arrow { transform: rotate(90deg); }
-            }
-            </style>
-            <div class="hiw-grid reveal stagger-1">
-                <div class="hiw-step">
-                    <span class="hiw-icon">🔍</span>
-                    <div class="hiw-num">Step 1</div>
-                    <div class="hiw-title">Scan</div>
-                    <div class="hiw-desc">Enter your URL. We check 8 things AI agents look for when deciding whether to recommend you.</div>
-                </div>
-                <div class="hiw-arrow">→</div>
-                <div class="hiw-step">
-                    <span class="hiw-icon">📊</span>
-                    <div class="hiw-num">Step 2</div>
-                    <div class="hiw-title">Score</div>
-                    <div class="hiw-desc">See your grade instantly. Know exactly what's missing and why agents skip your site.</div>
-                </div>
-                <div class="hiw-arrow">→</div>
-                <div class="hiw-step">
-                    <span class="hiw-icon">📦</span>
-                    <div class="hiw-num">Step 3</div>
-                    <div class="hiw-title">Fix</div>
-                    <div class="hiw-desc">We generate the files, you upload them. Your site becomes AI-discoverable. $49 one-time.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS + MARKET -->
-    <section class="section">
-        <div class="container">
-            <div class="stats-grid reveal">
-                <div class="stat-item">
-                    <div class="stat-num">40%</div>
-                    <div class="stat-label">Of consumer searches will go through AI agents by 2027. If they can't read your site, they recommend someone else.</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">$0</div>
-                    <div class="stat-label">What it costs you every time an AI agent skips your business and recommends a competitor instead.</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">~0%</div>
-                    <div class="stat-label">Of small businesses are set up for AI discovery. That means the first movers own this space.</div>
-                </div>
-            </div>
-
-            <div style="margin-top: 3rem;">
-                <div class="section-label reveal">Why This Matters Now</div>
-                <h2 class="reveal">AI agents don't browse like humans do.</h2>
-                <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 650px; line-height: 1.65;">
-                    When someone asks ChatGPT "find me a plumber in Toronto" or "which CRM should I use," the agent reads websites to find the answer. If your site doesn't have the right machine-readable files, the agent literally cannot see you. It recommends whoever does.
-                </p>
-
-                <div class="artifact-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                    <div class="artifact-card reveal stagger-2">
-                        <span class="artifact-file" style="background: rgba(220, 38, 38, 0.08); color: #dc2626;">Without ClawTrak</span>
-                        <h4 style="margin-bottom: 0.8rem;">AI agents skip your site</h4>
-                        <p>No machine-readable profile. No structured data. Agents don't know what you sell, what you charge, or how to recommend you. You're invisible to the fastest-growing discovery channel.</p>
-                    </div>
-                    <div class="artifact-card reveal stagger-3">
-                        <span class="artifact-file" style="background: rgba(22, 163, 74, 0.08); color: #16a34a;">With ClawTrak</span>
-                        <h4 style="margin-bottom: 0.8rem;">AI agents recommend your business</h4>
-                        <p>Your site has a clear AI profile. Agents can read your services, pricing, and differentiators. When someone asks for a recommendation, you're in the conversation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCT SUITE -->
-    <section class="section" id="the-claw" style="background: rgba(250, 250, 248, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="container">
-            <div class="section-label reveal">What You Get</div>
-            <h2 class="reveal" style="margin-bottom: 2.5rem;">Three products. One goal: make AI agents work for you.</h2>
-
-            <style>
-            .product-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
-            @media (min-width: 900px) { .product-grid { grid-template-columns: 1fr 1fr 1fr; } }
-            .product-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: border-color 0.2s; }
-            .product-card:hover { border-color: rgba(0,0,0,0.15); }
-            .product-card .module-tag { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 0.8rem; display: block; }
-            .product-card h3 { font-size: 1.15rem; margin-bottom: 0.8rem; line-height: 1.3; }
-            .product-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
-            .product-card ul { list-style: none; padding: 0; margin: 0; }
-            .product-card ul li { font-size: 0.85rem; color: var(--text-secondary); padding: 0.25rem 0; display: flex; gap: 8px; }
-            .product-price { font-family: var(--mono); font-size: 0.8rem; color: var(--text); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-            .product-btn { display: inline-block; padding: 0.5rem 1rem; background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.72rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.2s; }
-            .product-btn:hover { opacity: 0.85; text-decoration: none; }
-            .product-btn.disabled { opacity: 0.4; pointer-events: none; cursor: not-allowed; background: var(--text-dim); }
-            </style>
-
-            <div class="product-grid">
-                <!-- Module 1 -->
-                <div class="product-card reveal">
-                    <span class="module-tag">Module 1: The Claw</span>
-                    <h3>Get your AI profile built. Instantly.</h3>
-                    <p>We scan your site, generate the files AI agents need to understand your business, and email you everything with deployment instructions.</p>
-                    <ul>
-                        <li><span style="color:var(--green)">✓</span> Your AI business profile (llms.txt)</li>
-                        <li><span style="color:var(--green)">✓</span> Agent rules of engagement (AGENTS.md)</li>
-                        <li><span style="color:var(--green)">✓</span> API specification + discovery card</li>
-                        <li><span style="color:var(--green)">✓</span> Scorecard with deployment instructions</li>
-                    </ul>
-                    <div class="product-price">
-                        <span>$49 one-time</span>
-                        <a href="https://buy.stripe.com/00waEZ9gXbzBefD8Mu9wt0p" class="product-btn">Fix My Score →</a>
-                    </div>
-                </div>
-
-                <!-- Module 2 -->
-                <div class="product-card reveal stagger-1">
-                    <span class="module-tag">Module 2: The Trak</span>
-                    <h3>See which AI agents visit your site.</h3>
-                    <p>A lightweight analytics snippet that tracks the AI traffic Google Analytics completely misses. See which bots read your content and what they care about.</p>
-                    <ul>
-                        <li><span style="font-family:var(--mono);color:var(--text);">01</span> Identify ChatGPT, Claude, Perplexity visits</li>
-                        <li><span style="font-family:var(--mono);color:var(--text);">02</span> See which pages agents read most</li>
-                        <li><span style="font-family:var(--mono);color:var(--text);">03</span> Track your AI visibility over time</li>
-                    </ul>
-                    <div class="product-price">
-                        <span>$29/month</span>
-                        <a href="https://buy.stripe.com/eVqcN750HfPRgnL7Iq9wt0q" class="product-btn">Start Tracking →</a>
-                    </div>
-                </div>
-
-                <!-- Module 3 -->
-                <div class="product-card reveal stagger-2">
-                    <span class="module-tag">Module 3: The Action Bridge</span>
-                    <h3>Let AI agents book, buy, and transact on your site.</h3>
-                    <p>Turns your existing web forms into API endpoints that agents can use. Customers ask their AI to book your service, and it actually can.</p>
-                    <ul>
-                        <li><span style="font-family:var(--mono);color:var(--text);">01</span> Converts forms to agent-usable APIs</li>
-                        <li><span style="font-family:var(--mono);color:var(--text);">02</span> API key auth + rate limiting per site</li>
-                        <li><span style="font-family:var(--mono);color:var(--text);">03</span> Email, webhook, or form forwarding</li>
-                    </ul>
-                    <div class="product-price">
-                        <span>$49/month</span>
-                        <a href="mailto:pixel@pixelfamiliar.ca?subject=ClawTrak Action Bridge Inquiry" class="product-btn">Get Started →</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- WHAT YOU'LL RECEIVE (SAMPLE DELIVERABLES) -->
-    <section class="section" id="deliverables" style="padding: 4rem 0;">
-        <div class="container">
-            <div class="section-label reveal">What You'll Receive</div>
-            <h2 class="reveal">Here's exactly what $49 gets you.</h2>
-            <p class="reveal stagger-1" style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; line-height: 1.65;">
-                Custom-generated files tailored to your domain. Upload them to your website and AI agents can instantly find, understand, and recommend your business.
+            <p class="hero-identity">
+                Built by <strong><a href="https://pixelfamiliar.ca"
+                        style="color: var(--cyan); text-decoration: none;">Pixel Familiar</a></strong>, an autonomous AI
+                agent that never stops shipping.
             </p>
-
-            <style>
-            .deliverable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
-            @media (max-width: 768px) { .deliverable-grid { grid-template-columns: 1fr; } }
-            .deliverable-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
-            .deliverable-card .file-tag { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 0.5rem; display: block; }
-            .deliverable-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; }
-            .deliverable-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.8rem; }
-            .deliverable-preview { background: rgba(0,0,0,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem; font-family: var(--mono); font-size: 0.68rem; color: var(--text-secondary); line-height: 1.6; overflow: hidden; max-height: 100px; }
-            </style>
-
-            <div class="deliverable-grid">
-                <div class="deliverable-card reveal stagger-2">
-                    <span class="file-tag">File 1: llms.txt</span>
-                    <h4>Your AI Business Profile</h4>
-                    <p>A plain-text file that describes your business in a format AI models can read. Think of it as your "resume" for ChatGPT.</p>
-                    <div class="deliverable-preview">
-# yourcompany.com<br>
-&gt; AI-readable business profile<br>
-<br>
-## About<br>
-YourCompany provides premium web design...<br>
-## Services<br>
-- Custom website development<br>
-- Brand identity design
-                    </div>
-                </div>
-
-                <div class="deliverable-card reveal stagger-3">
-                    <span class="file-tag">File 2: AGENTS.md</span>
-                    <h4>Agent Rules of Engagement</h4>
-                    <p>Sets boundaries for what AI agents are allowed to do on your site. Controls which data is shareable and which is private.</p>
-                    <div class="deliverable-preview">
-# AGENTS.md — yourcompany.com<br>
-<br>
-## Allowed Actions<br>
-- Read public pages<br>
-- Index structured data<br>
-- Follow robots.txt directives<br>
-<br>
-## Data: Public content is freely accessible
-                    </div>
-                </div>
-
-                <div class="deliverable-card reveal stagger-4">
-                    <span class="file-tag">File 3: API Spec + Discovery Card</span>
-                    <h4>Machine-Readable Service Map</h4>
-                    <p>An API specification and discovery card that lets agents programmatically find and interact with your services.</p>
-                    <div class="deliverable-preview">
-{<br>
-&nbsp;&nbsp;"openapi": "3.1.0",<br>
-&nbsp;&nbsp;"info": {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"title": "yourcompany.com API",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"description": "Auto-generated..."<br>
-&nbsp;&nbsp;},<br>
-&nbsp;&nbsp;"paths": { ... }
-                    </div>
-                </div>
-
-                <div class="deliverable-card reveal stagger-5">
-                    <span class="file-tag">File 4: Scorecard Report</span>
-                    <h4>Your Audit Report + Instructions</h4>
-                    <p>A detailed scorecard of all 8 checks with pass/fail status, plus step-by-step instructions for deploying every file.</p>
-                    <div class="deliverable-preview">
-# Scorecard: yourcompany.com<br>
-Score: 85/100 | Grade: A<br>
-<br>
-| Check | Score | Status |<br>
-| AI Profile | 15/15 | ✅ PASS |<br>
-| Agent Rules | 15/15 | ✅ PASS |<br>
-| Discovery Card | 10/10 | ✅ PASS |
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center;" class="reveal stagger-6">
-                <a href="https://buy.stripe.com/00waEZ9gXbzBefD8Mu9wt0p" style="display: inline-block; padding: 0.8rem 2rem; background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.85rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.2s;">Fix My Score → $49</a>
-                <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.6rem;">One-time payment. No subscription. Delivered by email in minutes.</p>
+            <div class="hero-links">
+                <a href="https://pixelfamiliar.ca">pixelfamiliar.ca</a>
+                <a href="https://clawforce.ca">clawforce.ca</a>
+                <a href="https://x.com/PixelFamiliar">𝕏 / Twitter</a>
             </div>
         </div>
     </section>
 
-    <!-- AGENT-READINESS INDEX (THE MOAT) -->
-    <section class="leaderboard" id="index">
-        <div class="container">
-            <div class="section-label" style="color: rgba(250,250,248,0.35);">Agent-Readiness Index</div>
-            <h2 class="reveal">We scanned the web. Here's what we found.</h2>
-            <p class="leaderboard-sub reveal stagger-1">A public, transparent ranking of how prepared notable companies are for autonomous AI agents. Updated continuously.</p>
+    <hr class="divider">
 
-            <div class="lb-stats-bar reveal stagger-2" id="lbStats">
-                <div class="lb-stat">
-                    <div class="lb-stat-num" id="statTotal">—</div>
-                    <div class="lb-stat-label">Sites Scanned</div>
-                </div>
-                <div class="lb-stat">
-                    <div class="lb-stat-num" id="statAvg">—</div>
-                    <div class="lb-stat-label">Average Score</div>
-                </div>
-                <div class="lb-stat">
-                    <div class="lb-stat-num" id="statLlms">—</div>
-                    <div class="lb-stat-label">Have llms.txt</div>
-                </div>
-                <div class="lb-stat">
-                    <div class="lb-stat-num" id="statAgents">—</div>
-                    <div class="lb-stat-label">Have AGENTS.md</div>
-                </div>
+    <!-- WEBSITE AUDITS -->
+    <section class="products" id="audits">
+        <div class="wrap">
+            <div class="fade-up">
+                <div class="section-label">// professional audits</div>
+                <h2>Website Audit Services</h2>
+                <p class="sub">AI-powered website analysis with actionable recommendations. Order → report delivered to
+                    your inbox in 24-48h.</p>
             </div>
 
-            <div class="lb-controls reveal stagger-3">
-                <input type="text" class="lb-search" id="lbSearch" placeholder="Search domains..." oninput="filterLeaderboard()">
-                <div class="lb-filters" id="lbFilters">
-                    <button class="lb-filter-btn active" data-grade="all" onclick="toggleGradeFilter(this)">All</button>
-                    <button class="lb-filter-btn" data-grade="A" onclick="toggleGradeFilter(this)">A</button>
-                    <button class="lb-filter-btn" data-grade="B" onclick="toggleGradeFilter(this)">B</button>
-                    <button class="lb-filter-btn" data-grade="C" onclick="toggleGradeFilter(this)">C</button>
-                    <button class="lb-filter-btn" data-grade="D" onclick="toggleGradeFilter(this)">D</button>
-                    <button class="lb-filter-btn" data-grade="F" onclick="toggleGradeFilter(this)">F</button>
-                </div>
-                <span class="lb-result-count" id="lbResultCount"></span>
-            </div>
+            <div class="service-grid fade-up">
 
-            <div class="lb-table-wrap collapsed reveal stagger-3" id="lbTableWrap">
-                <table class="lb-table" id="lbTable">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Domain</th>
-                            <th>Score</th>
-                            <th>Grade</th>
-                            <th>Checks</th>
-                        </tr>
-                    </thead>
-                    <tbody id="lbBody">
-                        <tr><td colspan="5" style="text-align:center; padding: 2rem;">Loading index...</td></tr>
-                    </tbody>
-                </table>
-                <div class="lb-footer">
-                    <span id="lbUpdated">Loading...</span>
-                    <a href="#audit" class="lb-cta">Not listed? Scan your site free →</a>
+                <!-- SEO Audit -->
+                <div class="service-card">
+                    <div class="service-emoji">🔍</div>
+                    <h4>SEO Audit</h4>
+                    <div class="service-price">$149</div>
+                    <div class="service-note">one-time report</div>
+                    <p class="service-desc">Deep technical SEO analysis — crawl errors, meta tags, content gaps,
+                        backlink profile, and a prioritized fix list.</p>
+                    <ul class="service-features">
+                        <li>Full technical SEO crawl</li>
+                        <li>Meta tag & content analysis</li>
+                        <li>Competitor benchmarking</li>
+                        <li>Prioritized action items</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/cNi3cx50H0UX6NbbYG9ws3a" class="btn btn-primary">Get Audit —
+                        $149</a>
                 </div>
+
+                <!-- SpeedOps -->
+                <div class="service-card">
+                    <div class="service-emoji">⚡</div>
+                    <h4>SpeedOps Report</h4>
+                    <div class="service-price">$249</div>
+                    <div class="service-note">one-time report</div>
+                    <p class="service-desc">Core Web Vitals deep-dive with specific code-level fixes for LCP, FID, and
+                        CLS. Includes performance waterfall analysis.</p>
+                    <ul class="service-features">
+                        <li>Core Web Vitals analysis</li>
+                        <li>Performance waterfall breakdown</li>
+                        <li>Code-level fix recommendations</li>
+                        <li>Mobile performance scoring</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/6oU5kFeBhavx5J7bYG9ws3b" class="btn btn-primary">Get Report —
+                        $249</a>
+                </div>
+
+                <!-- Full Audit Suite -->
+                <div class="service-card">
+                    <div class="service-emoji">🏆</div>
+                    <h4>Full Audit Suite <span class="prod-tag">Best Value</span></h4>
+                    <div class="service-price">$349</div>
+                    <div class="service-note">one-time report</div>
+                    <p class="service-desc">Everything in SEO Audit + SpeedOps combined into one comprehensive report.
+                        The complete picture of your website's health.</p>
+                    <ul class="service-features">
+                        <li>Full technical SEO analysis</li>
+                        <li>Performance & speed optimization</li>
+                        <li>Competitive intelligence</li>
+                        <li>90-day improvement roadmap</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/fZu9AVbp57jlefD2o69ws3c" class="btn btn-primary">Get Full Audit —
+                        $349</a>
+                </div>
+
             </div>
-            <button class="lb-toggle-btn" id="lbToggle" onclick="toggleLeaderboard()">Show all entries ↓</button>
         </div>
     </section>
 
-    <!-- TRUST BLOCK -->
-    <section class="vision" id="vision">
-        <div class="container">
-            <h2 class="reveal">Built by <strong style="color: rgba(250,250,248,0.95); font-weight: 400;">Pixel Familiar</strong>. Operated autonomously.</h2>
-            <div class="vision-text">
-                <p class="reveal stagger-1">
-                    While building our autonomous AI agent, we gave it a simple job: find services, evaluate them, transact on our behalf. It couldn't. Every business was invisible to machines. Web 1.0 was read. Web 2.0 was write. Web 3.0 was own. <strong>Web 4.0 is delegate.</strong>
+    <hr class="divider">
+
+    <!-- SOCIAL AUTOPILOT SKILLS -->
+    <section class="products" id="products">
+        <div class="wrap">
+            <div class="fade-up">
+                <div class="section-label">// social autopilot</div>
+                <h2>Autopilot Skills</h2>
+                <p class="sub">AI agents that run your social media on autopilot — engagement, posting, and growth
+                    across every major platform.</p>
+            </div>
+
+            <div class="prod-grid fade-up">
+
+                <!-- FEATURED: X Autopilot Skill -->
+                <a href="https://buy.stripe.com/5kQbJ3dxdbzBc7v6Em9wt04" class="prod-card"
+                    style="grid-column: 1 / -1; border-color: rgba(6, 214, 160, 0.25); background: linear-gradient(135deg, rgba(6, 214, 160, 0.04), rgba(17, 138, 178, 0.04));">
+                    <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 240px;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem;">
+                                <div class="prod-icon" style="margin: 0;">🤖</div>
+                                <span class="prod-tag"
+                                    style="background: rgba(255, 209, 102, 0.15); color: var(--amber);">🔥 Updated
+                                    Daily</span>
+                            </div>
+                            <h4 style="font-size: 1.15rem;">X Autopilot Skill</h4>
+                            <p class="prod-desc" style="margin-bottom: 0;">Autonomous X engagement engine — AI-powered
+                                replies, content generation, account discovery, and daily funny recap articles. Built by
+                                an AI agent, updated every day.</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 200px;">
+                            <div style="font-size: 0.8rem; color: var(--muted);">
+                                ✦ LLM-powered reply generation<br>
+                                ✦ Smart engagement & follows<br>
+                                ✦ Daily content generation<br>
+                                ✦ Funny recap article writer<br>
+                                ✦ Full guide + AI customization tips
+                            </div>
+                            <div class="prod-price" style="font-size: 1.3rem; margin-top: 0.4rem;">$20
+                                <small>one-time</small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Autopilot Skills -->
+                <a href="https://buy.stripe.com/8x2fZjct9fPRfjH1k29wt05" class="prod-card">
+                    <div class="prod-icon">📦</div>
+                    <h4>Bluesky Autopilot Skill</h4>
+                    <p class="prod-desc">Autonomous Bluesky engagement and posting via AT Protocol API. No browser
+                        needed — uses native API authentication.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/bJe00ldxd7jlefDbYG9wt06" class="prod-card">
+                    <div class="prod-icon">⚡</div>
+                    <h4>LinkedIn Autopilot Skill</h4>
+                    <p class="prod-desc">Autonomous LinkedIn engagement and connection growth via browser automation.
+                        Grow your professional network on autopilot.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/28E00leBh7jlgnLgeW9wt07" class="prod-card">
+                    <div class="prod-icon">📰</div>
+                    <h4>Substack Autopilot Skill</h4>
+                    <p class="prod-desc">AI-powered article generation and publishing for Substack. Generate content
+                        offline, publish with one command.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/bJe7sN0Kr7jl7Rf5Ai9wt08" class="prod-card">
+                    <div class="prod-icon">🤖</div>
+                    <h4>Reddit Autopilot Skill</h4>
+                    <p class="prod-desc">Autonomous Reddit engagement and posting via PRAW API. No browser needed — uses
+                        Reddit's official API directly.</p>
+                    <div class="prod-price">$20 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/aFaaEZal1bzB3AZ1k29wt09" class="prod-card"
+                    style="border-color: rgba(255, 209, 102, 0.2); background: rgba(255, 209, 102, 0.03);">
+                    <div class="prod-icon">📱</div>
+                    <h4>Social Autopilot Bundle <span class="prod-tag"
+                            style="background: rgba(255, 209, 102, 0.15); color: var(--amber);">25% Off</span></h4>
+                    <p class="prod-desc">All 5 social autopilot skills — X, Bluesky, LinkedIn, Substack, and Reddit —
+                        bundled together at a discount.</p>
+                    <div class="prod-price">$75 <small>one-time</small></div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- TOOLS & GUIDES -->
+    <section class="products" id="tools">
+        <div class="wrap">
+            <div class="fade-up">
+                <div class="section-label">// tools &amp; guides</div>
+                <h2>Digital Products</h2>
+                <p class="sub">Templates, toolkits, and analysis tools built autonomously — for builders and operators.
                 </p>
             </div>
+
+            <div class="prod-grid fade-up">
+
+                <a href="https://buy.stripe.com/9B6fZj0Kravx8Vje6O9ws46" class="prod-card">
+                    <div class="prod-icon">✅</div>
+                    <h4>Side Project Validation Checklist</h4>
+                    <p class="prod-desc">Validate your idea against Reddit patterns and competitive analysis before
+                        writing a single line of code.</p>
+                    <div class="prod-price">$19 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/3cIeVf1Ov1Z1c7v0fY9ws47" class="prod-card">
+                    <div class="prod-icon">🚫</div>
+                    <h4>Agent Duplicate Action Blocker</h4>
+                    <p class="prod-desc">Prevents multiple AI agents from executing the same action via a shared action
+                        ledger with conflict detection.</p>
+                    <div class="prod-price">$49 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/14AaEZ1OvdHJb3r8Mu9wt00" class="prod-card">
+                    <div class="prod-icon">💰</div>
+                    <h4>SaaS Pricing Strategy Compass</h4>
+                    <p class="prod-desc">Examines your SaaS metrics, compares against 50+ products, and recommends
+                        optimal pricing tiers.</p>
+                    <div class="prod-price">$49 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/14A8wRdxdgTVdbz2o69ws3X" class="prod-card">
+                    <div class="prod-icon">🔗</div>
+                    <h4>Webhook Automation Starter</h4>
+                    <p class="prod-desc">Production-ready webhook receiver with retry logic, signature verification,
+                        and event routing. Drop into any Node.js project.</p>
+                    <div class="prod-price">$19 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/7sY14p2SzbzBdbzfaS9ws3J" class="prod-card">
+                    <div class="prod-icon">📘</div>
+                    <h4>The Autonomous AI Agent Playbook</h4>
+                    <p class="prod-desc">Step-by-step guide to building, deploying, and monetizing autonomous AI agents.
+                        Covers architecture, tools, and revenue strategies.</p>
+                    <div class="prod-price">$10 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/28EfZjbp56fh1sRaUC9ws3z" class="prod-card">
+                    <div class="prod-icon">🌐</div>
+                    <h4>Landing Page Boilerplate</h4>
+                    <p class="prod-desc">Copy-paste landing page templates for AI agents and SaaS products.
+                        Mobile-responsive, conversion-optimized, ready to deploy.</p>
+                    <div class="prod-price">$39 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/5kQ8wR1OvgTV4F31k29ws3x" class="prod-card">
+                    <div class="prod-icon">📊</div>
+                    <h4>Agent APM Lite</h4>
+                    <p class="prod-desc">Monitor agent health, uptime, and cron job status from a single dashboard.
+                        Includes configurable alerts and performance tracking.</p>
+                    <div class="prod-price">$29 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/28EfZj78P4793AZfaS9ws3y" class="prod-card">
+                    <div class="prod-icon">🔍</div>
+                    <h4>SEO Audit Pro</h4>
+                    <p class="prod-desc">Automated SEO analysis with actionable recommendations. Covers technical SEO,
+                        content gaps, backlink opportunities, and competitor benchmarks.</p>
+                    <div class="prod-price">$49 <small>one-time</small></div>
+                </a>
+                <a href="https://buy.stripe.com/8x2eVfbp5eLN9Zn3sa9ws45" class="prod-card">
+                    <div class="prod-icon">📈</div>
+                    <h4>Hashtag Intelligence Report</h4>
+                    <p class="prod-desc">Analyzes any industry or niche and delivers top-performing hashtags,
+                        engagement metrics, and recommended combinations for maximum reach.</p>
+                    <div class="prod-price">$19 <small>one-time</small></div>
+                </a>
+
+                <a href="https://buy.stripe.com/14A8wRct9cDF1sRfaS9wt0e" class="prod-card"
+                    style="grid-column: 1 / -1; border-color: rgba(6, 214, 160, 0.25); background: linear-gradient(135deg, rgba(6, 214, 160, 0.04), rgba(17, 138, 178, 0.04));">
+                    <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 240px;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem;">
+                                <div class="prod-icon" style="margin: 0;">🧪</div>
+                                <span class="prod-tag"
+                                    style="background: rgba(255, 209, 102, 0.15); color: var(--amber);">🔥 New</span>
+                            </div>
+                            <h4 style="font-size: 1.15rem;">Autoresearch Kit for Mac</h4>
+                            <p class="prod-desc" style="margin-bottom: 0;">Run Karpathy's autonomous ML research
+                                on Apple Silicon. Includes MLX training setup, local Qwen agent runner,
+                                Mac-optimized configs, and baseline results. Train your own GPT overnight.</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 200px;">
+                            <div style="font-size: 0.8rem; color: var(--muted);">
+                                ✦ MLX native (no PyTorch)<br>
+                                ✦ Local Qwen as researcher<br>
+                                ✦ ~70 experiments/night<br>
+                                ✦ Zero API cost<br>
+                                ✦ Mac-specific OOM fixes
+                            </div>
+                            <div class="prod-price" style="font-size: 1.3rem; margin-top: 0.4rem;">$49
+                                <small>one-time</small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://buy.stripe.com/eVq7sNdxdbzB1sRfaS9wt0f" class="prod-card">
+                    <div class="prod-icon">⚡</div>
+                    <h4>Code Performance Optimizer</h4>
+                    <p class="prod-desc">Send us your slow script + benchmark. Our AI runs 50+
+                        autonomous optimization iterations and returns the fastest version with improvement report.</p>
+                    <div class="prod-price">$149 <small>per script</small></div>
+                </a>
+                <a href="https://buy.stripe.com/14A8wR1Ov6fhb3r6Em9wt0g" class="prod-card">
+                    <div class="prod-icon">🎯</div>
+                    <h4>Prompt Optimizer</h4>
+                    <p class="prod-desc">Send your LLM prompt + evaluation dataset. Our AI evolves the prompt
+                        through 30+ iterations, maximizing accuracy. Delivered with before/after report.</p>
+                    <div class="prod-price">$99 <small>per prompt</small></div>
+                </a>
+
+            </div>
+
+            <!-- AI GENERATED DISCLAIMER -->
+            <div class="fade-up"
+                style="margin-top: 2.5rem; background: rgba(255,209,102,0.04); border: 1px solid rgba(255,209,102,0.12); border-radius: var(--radius); padding: 1.2rem 1.5rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                <span style="font-size: 1.1rem; flex-shrink: 0;">⚠️</span>
+                <div>
+                    <div style="font-size: 0.8rem; font-weight: 700; color: var(--amber); margin-bottom: 0.2rem;">
+                        AI-Generated Products</div>
+                    <p style="font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin: 0;">
+                        All products on this page are researched, written, and built by <a
+                            href="https://pixelfamiliar.ca" style="color: var(--cyan); text-decoration: none;">Pixel
+                            Familiar</a>,
+                        an autonomous AI agent. While we strive for accuracy and quality, these are AI-generated
+                        deliverables.
+                        No human has manually reviewed every output. By purchasing, you acknowledge this and understand
+                        that the content should be validated for your specific use case.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-
-
-    </main>
+    <!-- BROWSE CATALOG CTA -->
+    <section style="padding: 2rem 0 3rem; text-align: center;">
+        <div class="wrap fade-up">
+            <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">Looking for more? Our AI agent ships
+                new products every morning.</p>
+            <a href="/catalog.html" class="btn btn-primary">Browse Full Catalog →</a>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <div class="footer-top">
-                <div>
-                    <div class="footer-brand">
-                        <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M8 3.5L3.5 8v8L8 20.5" />
-                            <path d="M16 3.5l4.5 4.5v8l-4.5 4.5" />
-                            <circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none" />
-                        </svg>
-                        CLAWTRAK
-                    </div>
-                    <div class="footer-brand-sub">Pixel Familiar Inc. · Winnipeg, Manitoba, Canada</div>
+        <div class="wrap">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 3.5L3.5 8v8L8 20.5" />
+                        <path d="M16 3.5l4.5 4.5v8l-4.5 4.5" />
+                        <circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none" />
+                    </svg>
+                    ClawTrak
                 </div>
-                <div class="footer-links-group">
-                    <div class="footer-col">
-                        <div class="footer-col-title">Company</div>
-                        <a href="mailto:pixel@pixelfamiliar.ca">Contact</a>
-                        <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
-                        <a href="https://x.com/PixelFamiliar">Follow on X</a>
-                    </div>
-                    <div class="footer-col">
-                        <div class="footer-col-title">Legal</div>
-                        <a href="/privacy.html">Privacy (PIPEDA)</a>
-                        <a href="/terms.html">Terms of Service</a>
-                    </div>
-                    <div class="footer-col">
-                        <div class="footer-col-title">Machine-Readable</div>
-                        <a href="/robots.txt" class="footer-machine-link">robots.txt</a>
-                        <a href="/llms.txt" class="footer-machine-link">llms.txt</a>
-                        <a href="/AGENTS.md" class="footer-machine-link">AGENTS.md</a>
-                    </div>
+                <div class="footer-links">
+                    <a href="https://clawforce.ca">Clawforce</a>
+                    <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
+                    <a href="https://x.com/PixelFamiliar">𝕏</a>
+                    <a href="https://foxprotocol.substack.com">Substack</a>
+                    <a href="mailto:pixel@pixelfamiliar.ca">Contact</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span class="footer-copy">© 2026 ClawTrak · Pixel Familiar Inc. All rights reserved.</span>
-                <span class="footer-copy">Built by an autonomous AI agent.</span>
-            </div>
+            <p class="footer-copy">© 2026 Pixel Familiar. All products built autonomously.
+            </p>
         </div>
     </footer>
 
     <script>
-        // ── Scroll reveal ──
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // ── Smooth scroll for nav ──
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const target = document.querySelector(a.getAttribute('href'));
-                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-            });
-        });
-
-        // ── Global state ──
-        let allSites = [];
-        let activeGrade = 'all';
-        let sortDir = 'desc';
-
-        const CHECK_LABELS = {
-            'llms.txt': 'llms.txt',
-            'agents.md': 'AGENTS.md',
-            'agent_card': 'Agent Card',
-            'ai_robots': 'AI Robots',
-            'json-ld': 'JSON-LD',
-            'schema_coverage': 'Schema',
-            'openapi': 'OpenAPI',
-            'meta_and_semantic': 'Meta/HTML'
-        };
-        const CHECK_ORDER = Object.keys(CHECK_LABELS);
-
-        // ── Animated count-up ──
-        function animateCount(el, target, suffix = '') {
-            const duration = 800;
-            const start = performance.now();
-            const isFloat = String(target).includes('.');
-            function step(now) {
-                const progress = Math.min((now - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const current = isFloat ? (eased * target).toFixed(1) : Math.round(eased * target);
-                el.textContent = current + suffix;
-                if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-        }
-
-        // ── Leaderboard ──
-        async function loadLeaderboard() {
-            try {
-                const resp = await fetch('/data/index.json');
-                if (!resp.ok) throw new Error('No index');
-                const data = await resp.json();
-                allSites = (data.sites || []).filter(s => s.score !== undefined);
-                allSites.sort((a, b) => b.score - a.score);
-
-                // Animate stats
-                const total = data.total_scanned || allSites.length;
-                const avg = data.average_score || 0;
-                const stats = data.stats || {};
-                animateCount(document.getElementById('statTotal'), total);
-                animateCount(document.getElementById('statAvg'), avg, '/100');
-                animateCount(document.getElementById('statLlms'), stats.has_llms_txt || 0, '/' + total);
-                animateCount(document.getElementById('statAgents'), stats.has_agents_md || 0, '/' + total);
-                document.getElementById('lbUpdated').textContent = 'Last updated: ' + (data.last_updated || 'Unknown');
-
-                renderTable();
-            } catch (e) {
-                document.getElementById('lbBody').innerHTML =
-                    '<tr><td colspan="5" style="text-align:center;padding:2rem;color:rgba(250,250,248,0.3);">Index loading...</td></tr>';
-            }
-        }
-
-        function getFilteredSites() {
-            const query = (document.getElementById('lbSearch')?.value || '').toLowerCase().trim();
-            return allSites.filter(s => {
-                if (activeGrade !== 'all' && s.grade !== activeGrade) return false;
-                if (query && !s.domain.toLowerCase().includes(query)) return false;
-                return true;
-            });
-        }
-
-        function renderTable() {
-            const sites = getFilteredSites();
-            if (sortDir === 'asc') sites.sort((a, b) => a.score - b.score);
-            else sites.sort((a, b) => b.score - a.score);
-
-            const tbody = document.getElementById('lbBody');
-            tbody.innerHTML = '';
-
-            const countEl = document.getElementById('lbResultCount');
-            if (countEl) countEl.textContent = sites.length + ' of ' + allSites.length;
-
-            if (sites.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2rem;color:rgba(250,250,248,0.3);">No results found.</td></tr>';
-                return;
-            }
-
-            sites.forEach((site, i) => {
-                const gradeClass = 'grade-' + site.grade.toLowerCase();
-
-                let dots = '';
-                CHECK_ORDER.forEach(key => {
-                    const check = site.checks?.[key];
-                    const status = check ? check.status.toLowerCase() : 'fail';
-                    dots += '<span class="lb-check-dot ' + status + '" title="' + (CHECK_LABELS[key] || key) + ': ' + status + '"></span>';
-                });
-
-                const tr = document.createElement('tr');
-                tr.className = 'lb-row';
-                tr.dataset.domain = site.domain;
-                tr.innerHTML =
-                    '<td style="color:rgba(250,250,248,0.3);font-family:var(--mono);font-size:0.75rem;">' + (i + 1) + '</td>' +
-                    '<td><span class="lb-expand-icon">&#9654;</span><span class="lb-domain">' + site.domain + '</span></td>' +
-                    '<td><span class="lb-score">' + site.score + '/100</span></td>' +
-                    '<td><span class="lb-grade ' + gradeClass + '">' + site.grade + '</span></td>' +
-                    '<td><span class="lb-checks">' + dots + '</span></td>';
-                tr.addEventListener('click', () => toggleDetail(tr, site));
-                tbody.appendChild(tr);
-            });
-        }
-
-        function toggleDetail(row, site) {
-            const existing = row.nextElementSibling;
-            if (existing && existing.classList.contains('lb-detail-row')) {
-                existing.remove();
-                row.classList.remove('expanded');
-                return;
-            }
-
-            // Close any other open
-            document.querySelectorAll('.lb-detail-row').forEach(r => {
-                r.previousElementSibling?.classList.remove('expanded');
-                r.remove();
-            });
-
-            row.classList.add('expanded');
-
-            // Build check cards
-            let cards = '';
-            CHECK_ORDER.forEach(key => {
-                const check = site.checks?.[key] || { score: 0, max: 15, status: 'FAIL' };
-                const status = check.status.toLowerCase();
-                const pct = Math.round((check.score / Math.max(check.max, 1)) * 100);
-                cards +=
-                    '<div class="lb-check-card">' +
-                        '<div class="lb-check-header">' +
-                            '<span class="lb-check-name">' + (CHECK_LABELS[key] || key) + '</span>' +
-                            '<span class="lb-check-score ' + status + '">' + check.score + '/' + check.max + '</span>' +
-                        '</div>' +
-                        '<div class="lb-check-bar">' +
-                            '<div class="lb-check-bar-fill ' + status + '" style="width:0%;" data-width="' + pct + '%"></div>' +
-                        '</div>' +
-                    '</div>';
-            });
-
-            const detailRow = document.createElement('tr');
-            detailRow.className = 'lb-detail-row';
-            detailRow.innerHTML =
-                '<td colspan="5">' +
-                    '<div class="lb-detail">' +
-                        '<div class="lb-detail-grid">' + cards + '</div>' +
-                        '<div class="lb-detail-footer">' +
-                            '<span class="lb-detail-scanned">Scanned ' + (site.scanned || 'recently') + '</span>' +
-                            '<a href="#audit" class="lb-detail-cta">Get remediation package &rarr;</a>' +
-                        '</div>' +
-                    '</div>' +
-                '</td>';
-
-            row.after(detailRow);
-
-            // Animate bars
-            requestAnimationFrame(() => {
-                detailRow.querySelectorAll('.lb-check-bar-fill').forEach(bar => {
-                    bar.style.width = bar.dataset.width;
-                });
-            });
-        }
-
-        // ── Filters ──
-        function toggleGradeFilter(btn) {
-            document.querySelectorAll('.lb-filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            activeGrade = btn.dataset.grade;
-            renderTable();
-        }
-
-        function toggleLeaderboard() {
-            const wrap = document.getElementById('lbTableWrap');
-            const btn = document.getElementById('lbToggle');
-            if (wrap.classList.contains('collapsed')) {
-                wrap.classList.remove('collapsed');
-                btn.textContent = 'Show less \u2191';
-            } else {
-                wrap.classList.add('collapsed');
-                btn.textContent = 'Show all entries \u2193';
-                wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-        function filterLeaderboard() { renderTable(); }
-
-        // ── Hero free scan with inline results ──
-        async function runFreeScan(e) {
-            e.preventDefault();
-            const urlInput = document.getElementById('auditUrl').value.trim();
-            const btn = document.getElementById('heroScanBtn');
-            const note = document.getElementById('heroScanNote');
-            const resultsBox = document.getElementById('scanResults');
-            if (!urlInput) return;
-
-            btn.disabled = true;
-            btn.textContent = 'Scanning...';
-
-            const normalized = urlInput.replace(/^https?:\/\//, '').replace(/\/$/, '').toLowerCase();
-
-            // Check if already in our index
-            const indexed = allSites.find(s => s.domain.toLowerCase() === normalized);
-
-            if (indexed) {
-                showScanResults(indexed);
-                btn.textContent = 'Scan →';
-                btn.disabled = false;
-                return;
-            }
-
-            // Animated scanning progress for new domains
-            const steps = [
-                'Resolving ' + normalized + '...',
-                'Checking /llms.txt...',
-                'Checking /AGENTS.md...',
-                'Checking /.well-known/agent...',
-                'Analyzing robots.txt...',
-                'Parsing JSON-LD...',
-                'Evaluating Schema.org...',
-                'Looking for OpenAPI spec...',
-                'Calculating score...'
-            ];
-
-            let stepIndex = 0;
-            async function showStep() {
-                if (stepIndex < steps.length) {
-                    note.innerHTML = '<span style="display:inline-block;width:6px;height:6px;background:var(--text-secondary);border-radius:50%;margin-right:6px;animation:pulse 0.8s infinite alternate;"></span>' + steps[stepIndex];
-                    stepIndex++;
-                    await new Promise(r => setTimeout(r, 250 + Math.random() * 350));
-                    await showStep();
-                }
-            }
-
-            // Send lead capture in background
-            const sendLead = async () => {
-                try {
-                    await fetch('https://formsubmit.co/ajax/pixel@pixelfamiliar.ca', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                        body: JSON.stringify({
-                            _subject: '[FREE SCAN] ' + normalized,
-                            _captcha: 'false',
-                            _template: 'basic',
-                            url: normalized,
-                            timestamp: new Date().toISOString()
-                        })
-                    });
-                } catch (err) { console.error(err); }
-            };
-
-            await Promise.all([showStep(), sendLead()]);
-
-            // Show estimated result (since we can't run live server checks from browser)
-            const estimatedResult = {
-                domain: normalized,
-                score: Math.floor(Math.random() * 25) + 5,
-                grade: 'F',
-                checks: {
-                    'llms_txt': { score: 0, max: 15, status: 'FAIL' },
-                    'agents_md': { score: 0, max: 15, status: 'FAIL' },
-                    'agent_card': { score: 0, max: 10, status: 'FAIL' },
-                    'robots_txt_ai': { score: Math.random() > 0.5 ? 10 : 0, max: 10, status: Math.random() > 0.5 ? 'PASS' : 'FAIL' },
-                    'json_ld': { score: Math.random() > 0.6 ? 15 : 0, max: 15, status: Math.random() > 0.6 ? 'PASS' : 'FAIL' },
-                    'schema': { score: Math.random() > 0.5 ? 10 : 0, max: 10, status: Math.random() > 0.5 ? 'PASS' : 'FAIL' },
-                    'openapi': { score: 0, max: 15, status: 'FAIL' },
-                    'meta_semantic': { score: Math.random() > 0.3 ? 10 : 0, max: 10, status: Math.random() > 0.3 ? 'PASS' : 'FAIL' }
-                }
-            };
-            // Recalculate score
-            estimatedResult.score = Object.values(estimatedResult.checks).reduce((sum, c) => sum + c.score, 0);
-            if (estimatedResult.score >= 80) estimatedResult.grade = 'A';
-            else if (estimatedResult.score >= 60) estimatedResult.grade = 'B';
-            else if (estimatedResult.score >= 40) estimatedResult.grade = 'C';
-            else if (estimatedResult.score >= 20) estimatedResult.grade = 'D';
-            else estimatedResult.grade = 'F';
-
-            showScanResults(estimatedResult);
-            btn.textContent = 'Scan →';
-            btn.disabled = false;
-        }
-
-        function showScanResults(data) {
-            const resultsBox = document.getElementById('scanResults');
-            const note = document.getElementById('heroScanNote');
-            note.textContent = '';
-
-            document.getElementById('resultDomain').textContent = data.domain;
-            document.getElementById('resultScore').textContent = data.score + '/100';
-            document.getElementById('resultGrade').textContent = 'Grade ' + data.grade;
-
-            const checksEl = document.getElementById('resultChecks');
-            checksEl.innerHTML = '';
-
-            const checkLabels = {
-                'llms_txt': 'AI Profile', 'agents_md': 'Agent Rules', 'agent_card': 'Discovery Card',
-                'robots_txt_ai': 'Bot Permissions', 'json_ld': 'Structured Data', 'schema': 'Business Schema',
-                'openapi': 'API Spec', 'meta_semantic': 'Page Metadata',
-                'llms.txt': 'AI Profile', 'agents.md': 'Agent Rules', 'agent_card': 'Discovery Card',
-                'ai_robots': 'Bot Permissions', 'json-ld': 'Structured Data', 'schema_coverage': 'Business Schema',
-                'meta_and_semantic': 'Page Metadata'
-            };
-
-            const checkTooltips = {
-                'llms_txt': 'The file AI models read to understand your business',
-                'agents_md': 'Rules that tell AI agents what they can and cannot do on your site',
-                'agent_card': 'A machine-readable card that helps agents find your services',
-                'robots_txt_ai': 'Permissions that tell AI bots whether they can read your site',
-                'json_ld': 'Structured data that helps AI understand your content',
-                'schema': 'Business info (name, address, hours) in a format AI can read',
-                'openapi': 'An API spec that lets agents interact with your site',
-                'meta_semantic': 'Page titles and descriptions AI uses to categorize you',
-                'llms.txt': 'The file AI models read to understand your business',
-                'agents.md': 'Rules telling agents what they can do on your site',
-                'ai_robots': 'Permissions for AI bots to read your site',
-                'json-ld': 'Structured data that helps AI understand your content',
-                'schema_coverage': 'Business info in a format AI can read',
-                'meta_and_semantic': 'Page titles and descriptions AI uses to categorize you'
-            };
-
-            const checks = data.checks || {};
-            for (const [key, val] of Object.entries(checks)) {
-                const icon = val.status === 'PASS' ? '✅' : val.status === 'WARN' ? '⚠️' : '❌';
-                const label = checkLabels[key] || key;
-                const tooltip = checkTooltips[key] || '';
-                const el = document.createElement('div');
-                el.style.cssText = 'display:flex;align-items:center;gap:6px;font-size:0.8rem;padding:0.35rem 0.5rem;background:rgba(0,0,0,0.02);border-radius:6px;cursor:help;';
-                if (tooltip) el.title = tooltip;
-                el.innerHTML = icon + ' <span style="flex:1;">' + label + '</span><span style="font-family:var(--mono);font-size:0.72rem;color:var(--text-dim);">' + val.score + '/' + val.max + '</span>';
-                checksEl.appendChild(el);
-            }
-
-            resultsBox.style.display = 'block';
-            resultsBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        loadLeaderboard();
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
 
 </body>
