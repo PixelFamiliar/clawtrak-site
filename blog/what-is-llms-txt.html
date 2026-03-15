@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is llms.txt? The File AI Agents Read to Understand Your Business | ClawTrak</title>
+    <meta name="description" content="llms.txt is a new standard file that tells AI agents like ChatGPT, Claude, and Perplexity what your business does. Learn what it is, why it matters, and how to create one.">
+    <meta property="og:title" content="What is llms.txt? The File AI Agents Read to Understand Your Business">
+    <meta property="og:description" content="llms.txt is a new standard that makes your business discoverable by AI agents. Here's everything you need to know.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://clawtrak.com/blog/what-is-llms-txt.html">
+    <meta property="og:image" content="https://clawtrak.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/pixel-fox.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF8; --bg-card: #fff; --text: #111; --text-secondary: #555;
+            --text-dim: #999; --border: #E8E8E5; --green: #1A7A3A; --radius: 12px;
+            --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Nav */
+        .nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top:0; z-index:100; }
+        .nav-inner { display:flex; justify-content:space-between; align-items:center; }
+        .nav-logo { font-family: var(--mono); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
+        .nav-back { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; }
+        .nav-back:hover { color: var(--text); }
+
+        /* Article */
+        article { padding: 3rem 0 4rem; }
+        .article-label { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 1rem; }
+        h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        .article-meta { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+        h2 { font-size: 1.3rem; font-weight: 600; margin: 2.5rem 0 0.8rem; }
+        h3 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 0.6rem; }
+        p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        p strong { color: var(--text); }
+        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; color: var(--text-secondary); }
+        li { margin-bottom: 0.4rem; }
+        code { font-family: var(--mono); font-size: 0.85em; background: rgba(0,0,0,0.04); padding: 0.15em 0.4em; border-radius: 4px; }
+        pre { background: #111; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1.5rem; font-family: var(--mono); font-size: 0.8rem; line-height: 1.6; }
+        pre code { background: none; padding: 0; color: inherit; }
+        blockquote { border-left: 3px solid var(--green); padding-left: 1rem; margin: 1.5rem 0; color: var(--text-secondary); font-style: italic; }
+
+        /* CTA Box */
+        .cta-box { background: var(--bg-card); border: 2px solid var(--green); border-radius: var(--radius); padding: 2rem; text-align: center; margin: 2.5rem 0; }
+        .cta-box h3 { margin-top: 0; color: var(--text); }
+        .cta-box p { color: var(--text-secondary); }
+        .cta-btn { display: inline-block; padding: 0.75rem 2rem; background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.82rem; font-weight: 600; text-decoration: none; border-radius: 6px; }
+
+        /* Footer */
+        .blog-footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; font-size: 0.78rem; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo">CLAWTRAK</a>
+            <a href="/" class="nav-back">← Back to home</a>
+        </div>
+    </nav>
+
+    <article>
+        <div class="container">
+            <div class="article-label">Guide</div>
+            <h1>What is llms.txt? The File AI Agents Read to Understand Your Business</h1>
+            <div class="article-meta">March 2026 · 5 min read · By ClawTrak</div>
+
+            <p>When someone asks ChatGPT, Claude, or Perplexity for a recommendation, those AI agents need to understand what your business does. The problem? Most websites are built for human eyes, not machine comprehension. <strong>llms.txt</strong> is a new standard that solves this.</p>
+
+            <h2>The Short Version</h2>
+            <p><code>llms.txt</code> is a plain text file you place at the root of your website (e.g., <code>yoursite.com/llms.txt</code>). It contains a structured, machine-readable summary of your business: what you do, what services or products you offer, how to contact you, and any other facts that help an AI system understand and recommend you.</p>
+            <p>Think of it as a resume for AI agents. Your website already has a <code>robots.txt</code> that tells search engines what to crawl. <code>llms.txt</code> tells AI models what you actually <em>are</em>.</p>
+
+            <h2>Why It Matters Now</h2>
+            <p>According to Gartner, <strong>40% of consumer searches will go through AI agents by 2027</strong>. When that happens, businesses without machine-readable profiles will be invisible in the same way businesses without websites were invisible in 2005.</p>
+            <p>The difference is speed. SEO took years to become a necessity. AI readiness is moving faster because the adoption curve for ChatGPT and similar tools is already vertical.</p>
+
+            <h2>What Goes in a llms.txt File</h2>
+            <p>A well-structured llms.txt typically includes:</p>
+            <ul>
+                <li><strong>Company name and description</strong></li>
+                <li><strong>Products and services</strong> with brief descriptions</li>
+                <li><strong>Location and contact information</strong></li>
+                <li><strong>Key differentiators</strong> (what makes you different)</li>
+                <li><strong>Target audience</strong></li>
+                <li><strong>Links to important pages</strong></li>
+            </ul>
+            <p>Here's what a real llms.txt looks like:</p>
+<pre><code># Acme Web Design
+> Premium web design and development for small businesses
+
+## About
+Acme Web Design builds custom websites for small businesses
+in the Pacific Northwest. Founded in 2019, we specialize
+in Shopify storefronts and WordPress sites.
+
+## Services
+- Custom website design and development
+- E-commerce storefronts (Shopify, WooCommerce)
+- Brand identity and logo design
+- Monthly maintenance plans
+
+## Contact
+- Website: https://acmewebdesign.com
+- Email: hello@acmewebdesign.com
+- Phone: (503) 555-0123
+- Location: Portland, Oregon</code></pre>
+
+            <h2>How AI Agents Use It</h2>
+            <p>When an AI agent receives a query like "find me a web designer in Portland," here's what happens:</p>
+            <ol>
+                <li>The agent searches the web for relevant businesses</li>
+                <li>For each result, it checks for <code>/llms.txt</code></li>
+                <li>If found, it reads the structured data directly</li>
+                <li>This gives the agent <strong>high-confidence facts</strong> about the business</li>
+                <li>The agent can now recommend the business with accurate details</li>
+            </ol>
+            <p>Without llms.txt, the agent has to parse your entire HTML website, guess what you do from marketing copy, and hope it gets it right. With llms.txt, there's no guessing.</p>
+
+            <h2>llms.txt vs Other Files</h2>
+            <p>llms.txt is part of a broader ecosystem of machine-readable files. Here's how they compare:</p>
+            <ul>
+                <li><strong>llms.txt</strong> — What you are (business profile for AI)</li>
+                <li><strong>AGENTS.md</strong> — Rules of engagement (what agents can/can't do)</li>
+                <li><strong>robots.txt</strong> — Crawler permissions (what to index)</li>
+                <li><strong>/.well-known/agent</strong> — Agent discovery card (how to interact)</li>
+                <li><strong>openapi.json</strong> — API specification (what actions are available)</li>
+            </ul>
+            <p>Together, these files form your <strong>agentic discovery layer</strong>. llms.txt is the starting point.</p>
+
+            <div class="cta-box">
+                <h3>Check your AI readiness for free</h3>
+                <p>Our scanner checks all 8 files and signals that AI agents look for. See your score instantly.</p>
+                <a href="/#audit" class="cta-btn">Scan Your Site → Free</a>
+            </div>
+
+            <h2>How to Create Your llms.txt</h2>
+            <p>You have two options:</p>
+            <h3>Option 1: Write it yourself</h3>
+            <p>Create a plain text file called <code>llms.txt</code> and upload it to your website's root directory. Use the format shown above. Keep it factual, concise, and focused on what an AI agent would need to recommend you.</p>
+            <h3>Option 2: Let ClawTrak generate it</h3>
+            <p>Our AI Readiness Package ($49, one-time) scans your website and generates a tailored llms.txt along with AGENTS.md, an OpenAPI spec, and an Agent Card. You get the files delivered to your inbox with deployment instructions.</p>
+
+            <h2>Common Questions</h2>
+            <h3>Will this hurt my Google SEO?</h3>
+            <p>No. llms.txt is a separate file that doesn't affect your existing search rankings. Google doesn't use it for traditional search indexing.</p>
+            <h3>How big should the file be?</h3>
+            <p>Keep it under a few hundred lines. AI models have context windows, and a concise profile is better than a novel. Focus on facts, not marketing copy.</p>
+            <h3>Is this an official standard?</h3>
+            <p>llms.txt is an emerging convention, similar to how robots.txt started as an informal agreement before becoming a standard. Multiple AI companies already look for it, and adoption is growing rapidly.</p>
+
+            <div class="cta-box">
+                <h3>Don't wait for your competitors to figure this out</h3>
+                <p>97% of businesses we scan score below 30/100 on AI readiness. Fix yours now.</p>
+                <a href="https://buy.stripe.com/00waEZ9gXbzBefD8Mu9wt0p" class="cta-btn">Get Your AI Readiness Package → $49</a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="blog-footer">
+        <div class="container">
+            © 2026 ClawTrak · Pixel Familiar Inc. · <a href="/" style="color:var(--text-dim);">clawtrak.com</a>
+        </div>
+    </footer>
+</body>
+</html>
