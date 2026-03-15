@@ -209,7 +209,7 @@
         }
 
         /* ═══ HERO ═══ */
-        .hero { padding: 11rem 0 5rem; }
+        .hero { padding: 11rem 0 5rem; position: relative; }
 
         .hero-mission {
             font-family: var(--mono);
@@ -999,6 +999,26 @@
         }
 
         /* ═══ FAQ ═══ */
+
+        /* ═══ SCROLL ARROW ═══ */
+        .scroll-arrow {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            opacity: 0.35;
+            transition: opacity 0.4s;
+            animation: bounce 2s ease infinite;
+        }
+        .scroll-arrow:hover { opacity: 0.7; }
+        .scroll-arrow.hidden { opacity: 0; pointer-events: none; }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
         .faq-grid {
             display: grid;
             gap: 0;
@@ -1231,6 +1251,13 @@
                 </form>
                 <div class="audit-note" id="heroScanNote">Free. Instant. No email required.</div>
             </div>
+
+            <!-- Floating scroll arrow -->
+            <a href="#the-claw" class="scroll-arrow" id="scrollArrow" title="Scroll down">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-dim);">
+                    <path d="M12 5v14m-7-7l7 7 7-7"/>
+                </svg>
+            </a>
 
             <!-- Inline scan results (hidden until scan runs) -->
             <div id="scanResults" style="display:none; margin-top: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; max-width: 640px;">
@@ -1577,11 +1604,11 @@ Score: 85/100 | Grade: A<br>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the difference between the free scan and the $49 package?</button>
-                    <div class="faq-a">The free scan shows you <em>what's missing</em> from your site. The $49 package generates the actual files, tailored to your specific domain, and delivers them with deployment instructions. Scan = diagnosis. Package = the fix.</div>
+                    <div class="faq-a">The free scan shows you <em>what's missing</em> from your site. The $49 package generates the actual files, tailored to your specific domain, delivers them with deployment instructions, and gives you a private analytics dashboard to track AI bot visits. Scan = diagnosis. Package = the fix + ongoing visibility.</div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to keep paying?</button>
-                    <div class="faq-a">The $49 audit is a one-time purchase. Your files are yours forever. The optional $29/month analytics module tracks how AI agents interact with your site over time, but it's completely separate and not required.</div>
+                    <div class="faq-a">No. The $49 is a one-time payment. Your files, analytics dashboard, and tracking snippet are yours to keep. There are no subscriptions, monthly fees, or recurring charges. The optional Action Bridge add-on ($99) is also a one-time setup.</div>
                 </div>
             </div>
         </div>
@@ -1659,6 +1686,14 @@ Score: 85/100 | Grade: A<br>
                 if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
             });
         });
+
+        // ── Scroll arrow fade ──
+        const scrollArrow = document.getElementById('scrollArrow');
+        if (scrollArrow) {
+            window.addEventListener('scroll', () => {
+                scrollArrow.classList.toggle('hidden', window.scrollY > 200);
+            }, { passive: true });
+        }
 
         // ── Global state ──
         let allSites = [];

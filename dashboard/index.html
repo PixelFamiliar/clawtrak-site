@@ -527,13 +527,16 @@
 
 <!-- Data Layer -->
 <script>
-    const API_HTTPS = 'https://api.clawtrak.com';
-    const API_HTTP = 'http://api.clawtrak.com';
-    let API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:21100' : API_HTTPS;
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:21100' : 'https://api.clawtrak.com';
     const urlParams = new URLSearchParams(window.location.search);
     const SITE_ID = urlParams.get('site') || 'demo';
     const DAYS = parseInt(urlParams.get('days') || '7');
+    const ACCESS_KEY = urlParams.get('key') || '';
 
+    // Token-gated access
+    if (!ACCESS_KEY && SITE_ID !== 'demo' && window.location.hostname !== 'localhost') {
+        document.querySelector('main').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:60vh;"><div style="text-align:center;"><h2 style="color:var(--text);margin-bottom:8px;">Access Required</h2><p style="color:var(--text-muted);font-size:0.9rem;">This dashboard requires a private access link.<br>Check your ClawTrak delivery email for your unique URL.</p></div></div>';
+    }
     // Update site selector display
     document.querySelector('.site-selector').innerHTML = 
         '<div class="status-dot"></div>' + SITE_ID +
