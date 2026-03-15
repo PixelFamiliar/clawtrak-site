@@ -7,6 +7,11 @@
       "llms": "https://clawtrak.com/hosted/pixelfamiliar.ca/llms.txt",
       "rules": "https://clawtrak.com/hosted/pixelfamiliar.ca/AGENTS.md",
       "api": "https://clawtrak.com/hosted/pixelfamiliar.ca/openapi.json"
+    },
+    "action_bridge": {
+      "endpoint": "https://api.clawtrak.com/bridge/pixelfamiliar.ca",
+      "actions_url": "https://api.clawtrak.com/bridge/pixelfamiliar.ca/actions",
+      "spec_url": "https://api.clawtrak.com/bridge/pixelfamiliar.ca/spec"
     }
   }
 }
