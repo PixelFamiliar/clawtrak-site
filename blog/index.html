@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — ClawTrak</title>
+    <meta name="description" content="Guides and insights on AI readiness, llms.txt, AGENTS.md, and making your business discoverable by AI agents.">
+    <meta property="og:title" content="ClawTrak Blog">
+    <meta property="og:description" content="Guides on AI readiness for businesses.">
+    <meta property="og:image" content="https://clawtrak.com/og-image.png">
+    <link rel="icon" href="/pixel-fox.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF8; --bg-card: #fff; --text: #111; --text-secondary: #555;
+            --text-dim: #999; --border: #E8E8E5; --green: #1A7A3A; --radius: 12px;
+            --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top:0; z-index:100; }
+        .nav-inner { display:flex; justify-content:space-between; align-items:center; }
+        .nav-logo { font-family: var(--mono); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
+        .nav-back { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; }
+
+        .blog-header { padding: 3rem 0 2rem; }
+        .blog-header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .blog-header p { color: var(--text-secondary); }
+
+        .post-list { padding: 0 0 4rem; }
+        .post-card { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin-bottom: 1rem; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.2s; }
+        .post-card:hover { border-color: var(--text); transform: translateY(-1px); }
+        .post-label { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); margin-bottom: 0.4rem; }
+        .post-title { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.3; }
+        .post-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem; }
+        .post-meta { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); }
+
+        .blog-footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; font-size: 0.78rem; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo">CLAWTRAK</a>
+            <a href="/" class="nav-back">← Back to home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="blog-header">
+            <h1>Blog</h1>
+            <p>Guides on AI readiness, agent discovery, and the emerging standards that make businesses visible to the AI web.</p>
+        </div>
+
+        <div class="post-list">
+            <a href="/blog/ai-readiness-for-small-business.html" class="post-card">
+                <div class="post-label">Guide</div>
+                <div class="post-title">AI Readiness for Small Business: 8 Things AI Agents Look For</div>
+                <div class="post-desc">Every time someone asks ChatGPT for a recommendation, AI agents scan for 8 specific files and signals. Most businesses have zero of them. Here's the complete breakdown.</div>
+                <div class="post-meta">March 2026 · 7 min read</div>
+            </a>
+
+            <a href="/blog/what-is-llms-txt.html" class="post-card">
+                <div class="post-label">Guide</div>
+                <div class="post-title">What is llms.txt? The File AI Agents Read to Understand Your Business</div>
+                <div class="post-desc">llms.txt is a new standard file that tells AI agents what your business does. Think of it as a resume for ChatGPT. Here's how to create one.</div>
+                <div class="post-meta">March 2026 · 5 min read</div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="blog-footer">
+        <div class="container">
+            © 2026 ClawTrak · Pixel Familiar Inc. · <a href="/" style="color:var(--text-dim);">clawtrak.com</a>
+        </div>
+    </footer>
+</body>
+</html>
