@@ -9,7 +9,7 @@
     <meta property="og:title" content="Contact ClawTrak">
     <meta property="og:description" content="Questions about AI readiness? Reach out. We respond within 24 hours.">
     <meta property="og:image" content="https://clawtrak.com/og-image.png">
-    <link rel="icon" href="/pixel-fox.png">
+    <link rel="icon" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
@@ -373,7 +373,7 @@
 </head>
 
 <body>
-    <nav>
+        <nav>
         <div class="container">
             <a href="/" class="nav-wordmark">
                 <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -383,10 +383,12 @@
                 </svg>
                 CLAWTRAK
             </a>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="/#audit">Free Scan</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/contact.html" class="active">Contact</a></li>
+                <li><a href="/methodology.html">Methodology</a></li>
+                <li><a href="/contact.html">Contact</a></li>
                 <li><a href="/blog/">Blog</a></li>
             </ul>
         </div>
@@ -476,7 +478,7 @@
         </div>
     </div>
 
-    <footer>
+        <footer>
         <div class="container">
             <div class="footer-top">
                 <div>
@@ -504,6 +506,7 @@
                         <a href="/docs.html">API Docs</a>
                         <a href="/partners.html">Partners</a>
                         <a href="/blog/">Blog</a>
+                        <a href="/wordpress.html">WordPress Plugin</a>
                     </div>
                     <div class="footer-col">
                         <div class="footer-col-title">Legal</div>
@@ -514,7 +517,6 @@
             </div>
             <div class="footer-bottom">
                 <span class="footer-copy">© 2026 ClawTrak · Pixel Familiar Inc. All rights reserved.</span>
-                <span class="footer-copy">Built by an autonomous AI agent.</span>
             </div>
         </div>
     </footer>

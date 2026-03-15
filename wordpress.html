@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — ClawTrak</title>
-    <meta name="description" content="Guides and insights on AI readiness, llms.txt, AGENTS.md, and making your business discoverable by AI agents.">
-    <meta property="og:title" content="ClawTrak Blog">
-    <meta property="og:description" content="Guides on AI readiness for businesses.">
+    <title>WordPress Plugin — ClawTrak AI Readiness</title>
+    <meta name="description" content="Official ClawTrak WordPress plugin to automatically generate llms.txt, AGENTS.md, and track AI agent visits.">
+    <meta property="og:title" content="WordPress Plugin — ClawTrak">
+    <meta property="og:description" content="Make your WordPress site visible to AI agents instantly.">
     <meta property="og:image" content="https://clawtrak.com/og-image.png">
     <link rel="icon" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,26 +21,25 @@
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; }
         .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top:0; z-index:100; }
-        .nav-inner { display:flex; justify-content:space-between; align-items:center; }
-        .nav-logo { font-family: var(--mono); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
-        .nav-back { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; }
-
-        .blog-header { padding: 3rem 0 2rem; }
-        .blog-header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .blog-header p { color: var(--text-secondary); }
-
-        .post-list { padding: 0 0 4rem; }
-        .post-card { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin-bottom: 1rem; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.2s; }
-        .post-card:hover { border-color: var(--text); transform: translateY(-1px); }
-        .post-label { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); margin-bottom: 0.4rem; }
-        .post-title { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.3; }
-        .post-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem; }
-        .post-meta { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); }
-
-        .blog-footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; font-size: 0.78rem; color: var(--text-dim); }
-    
+        
         /* ── ADDED STANDARDIZED NAV CSS ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            background: rgba(250, 250, 248, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .nav-wordmark {
             display: flex;
             align-items: center;
@@ -102,6 +101,24 @@
             }
             .nav-links.open { display: flex; }
         }
+
+        article { padding: 8rem 0 4rem; }
+        .article-label { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin-bottom: 1rem; }
+        h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        .article-meta { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
+        h2 { font-size: 1.3rem; font-weight: 600; margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+        p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        code { font-family: var(--mono); font-size: 0.85em; background: rgba(0,0,0,0.04); padding: 0.15em 0.4em; border-radius: 4px; }
+        
+        .download-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin: 2rem 0; display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+        .btn-download { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.6rem; background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.85rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.2s; }
+        .btn-download:hover { opacity: 0.85; }
+        
+        .step-list { list-style: none; padding: 0; counter-reset: custom-counter; margin-bottom: 2rem; }
+        .step-list li { position: relative; padding-left: 2.5rem; margin-bottom: 1.2rem; color: var(--text-secondary); }
+        .step-list li::before { counter-increment: custom-counter; content: counter(custom-counter); position: absolute; left: 0; top: 0; width: 1.5rem; height: 1.5rem; background: rgba(26,122,58,0.1); color: var(--green); font-family: var(--mono); font-size: 0.75rem; font-weight: 600; text-align: center; line-height: 1.5rem; border-radius: 4px; }
+        
         /* ── ADDED STANDARDIZED FOOTER CSS ── */
         footer {
             border-top: 1px solid var(--border);
@@ -183,11 +200,10 @@
             .footer-links-group { flex-wrap: wrap; gap: 2rem; }
             .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
-
     </style>
 </head>
 <body>
-        <nav>
+    <nav>
         <div class="container">
             <a href="/" class="nav-wordmark">
                 <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -208,30 +224,47 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="blog-header">
-            <h1>Blog</h1>
-            <p>Guides on AI readiness, agent discovery, and the emerging standards that make businesses visible to the AI web.</p>
+    <article>
+        <div class="container">
+            <div class="article-label">Integrations</div>
+            <h1>WordPress Plugin</h1>
+            <p class="article-meta">Make your WordPress site instantly discoverable by AI agents like ChatGPT, Claude, and Perplexity. Our free plugin handles the fundamentals hands-off.</p>
+            
+            <div class="download-box">
+                <h3 style="margin: 0;">ClawTrak AI Readiness v1.0.0</h3>
+                <p style="margin: 0; font-size: 0.9rem;">Auto-generates <code>/llms.txt</code>, <code>/AGENTS.md</code>, and injects our <code>claw.js</code> analytics tracking so you can see which AI bots visit your website.</p>
+                <a href="/clawtrak-ai-readiness.zip" class="btn-download">Download Plugin (.zip)</a>
+            </div>
+
+            <div style="background: rgba(26,122,58,0.05); border-left: 4px solid var(--green); padding: 1rem 1.2rem; margin-bottom: 2rem; font-size: 0.9rem;">
+                <strong>Note:</strong> This free plugin covers <strong>2 of the 8 AI readiness checks</strong>. For full coverage (OpenAPI specifications, AI agent discovery cards, detailed Schema.org JSON-LD coverage), you can purchase the complete <a href="/#the-claw" style="color:var(--green); font-weight: 600;">$49 AI Readiness Package</a>.
+            </div>
+
+            <h2>Installation</h2>
+            <ul class="step-list">
+                <li><strong>Download</strong> the <code>clawtrak-ai-readiness.zip</code> file using the button above.</li>
+                <li>Log in to your WordPress Admin dashboard.</li>
+                <li>Go to <strong>Plugins &gt; Add New Plugin</strong>, then click <strong>Upload Plugin</strong> at the top.</li>
+                <li>Select the downloaded ZIP file and click <strong>Install Now</strong>.</li>
+                <li>After installation, click <strong>Activate Plugin</strong>.</li>
+            </ul>
+
+            <h2>Configuration</h2>
+            <ul class="step-list">
+                <li>In your WordPress Admin menu, go to <strong>Settings &gt; ClawTrak</strong>.</li>
+                <li>Verify your <strong>Site ID</strong> (your domain name) is correct. This is used to track your AI analytics.</li>
+                <li><em>(Optional)</em> In the <strong>Extra Business Info</strong> box, add any specific details, services, or pricing you want ChatGPT and Claude to know about that isn't explicitly on your pages.</li>
+                <li>Click <strong>Save Changes</strong>.</li>
+            </ul>
+
+            <h2>How it works</h2>
+            <p>Once activated, the plugin dynamically creates a machine-readable profile of your business. If an AI agent attempts to read <code>yourdomain.com/llms.txt</code> or <code>yourdomain.com/AGENTS.md</code>, the plugin intercepts the request and serves standard-compliant Markdown describing your site's name, description, recent pages, posts, and AI crawler permissions.</p>
+            <p>It also injects a lightweight `&lt;script&gt;` tag in your footer. This analytics beacon detects known generative AI crawler bots and logs their visits to your ClawTrak dashboard.</p>
+
         </div>
+    </article>
 
-        <div class="post-list">
-            <a href="/blog/ai-readiness-for-small-business.html" class="post-card">
-                <div class="post-label">Guide</div>
-                <div class="post-title">AI Readiness for Small Business: 8 Things AI Agents Look For</div>
-                <div class="post-desc">Every time someone asks ChatGPT for a recommendation, AI agents scan for 8 specific files and signals. Most businesses have zero of them. Here's the complete breakdown.</div>
-                <div class="post-meta">March 2026 · 7 min read</div>
-            </a>
-
-            <a href="/blog/what-is-llms-txt.html" class="post-card">
-                <div class="post-label">Guide</div>
-                <div class="post-title">What is llms.txt? The File AI Agents Read to Understand Your Business</div>
-                <div class="post-desc">llms.txt is a new standard file that tells AI agents what your business does. Think of it as a resume for ChatGPT. Here's how to create one.</div>
-                <div class="post-meta">March 2026 · 5 min read</div>
-            </a>
-        </div>
-    </div>
-
-        <footer>
+    <footer>
         <div class="container">
             <div class="footer-top">
                 <div>
