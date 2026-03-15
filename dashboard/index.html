@@ -527,7 +527,9 @@
 
 <!-- Data Layer -->
 <script>
-    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:21100' : 'https://api.clawtrak.com';
+    const API_HTTPS = 'https://api.clawtrak.com';
+    const API_HTTP = 'http://api.clawtrak.com';
+    let API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:21100' : API_HTTPS;
     const urlParams = new URLSearchParams(window.location.search);
     const SITE_ID = urlParams.get('site') || 'demo';
     const DAYS = parseInt(urlParams.get('days') || '7');
@@ -558,6 +560,13 @@
             renderAgentBars(stats.agent_distribution || {}, stats.bot_events || 0);
             renderLogTable(eventsData.events || []);
         } catch (e) {
+            if (API_BASE === API_HTTPS) {
+                console.warn('[ClawTrak] HTTPS failed, falling back to HTTP');
+                API_BASE = API_HTTP;
+                loadDashboard();
+                loadActionEvents();
+                return;
+            }
             console.warn('[ClawTrak] API unavailable, showing demo data');
             renderDemoData();
         }
