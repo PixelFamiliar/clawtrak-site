@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — ClawTrak</title>
+    <meta name="description" content="ClawTrak makes businesses visible to AI agents. Built by Pixel Familiar Inc. in Winnipeg, Canada.">
+    <meta property="og:title" content="About ClawTrak">
+    <meta property="og:description" content="We built an AI agent. It couldn't find any businesses. So we built ClawTrak.">
+    <meta property="og:image" content="https://clawtrak.com/og-image.png">
+    <link rel="icon" href="/pixel-fox.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #FAFAF8;
+            --bg-card: #FFFFFF;
+            --text: #111111;
+            --text-secondary: #555555;
+            --text-dim: #999999;
+            --border: #E8E8E5;
+            --border-hover: #D0D0CC;
+            --green: #1A7A3A;
+            --green-bg: #E8F5EC;
+            --radius: 12px;
+            --mono: 'IBM Plex Mono', 'Menlo', monospace;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        /* ═══ NAV ═══ */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            background: rgba(250, 250, 248, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-wordmark {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .clawtrak-logo {
+            width: 20px;
+            height: 20px;
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+        .nav-links a.active { color: var(--text); font-weight: 600; }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            padding: 9rem 0 4rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-intro {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            max-width: 600px;
+        }
+
+        /* ═══ SECTIONS ═══ */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 2.5rem 4rem;
+        }
+
+        .section-block {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-block h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-block p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .section-block p:last-child { margin-bottom: 0; }
+
+        .section-block a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .section-block a:hover { text-decoration: underline; }
+
+        .section-block strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ═══ VALUES GRID ═══ */
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            background: var(--bg-card);
+        }
+
+        .value-card h4 {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .value-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 0;
+        }
+
+        /* ═══ TEAM CARD ═══ */
+        .team-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            background: var(--bg-card);
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .team-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--green-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .team-avatar img {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .team-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .team-info .role {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-bottom: 0.6rem;
+        }
+
+        .team-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ═══ ECOSYSTEM ═══ */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .eco-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            background: var(--bg-card);
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .eco-card:hover { border-color: var(--border-hover); text-decoration: none; }
+
+        .eco-domain {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--green);
+            margin-bottom: 0.4rem;
+        }
+
+        .eco-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .eco-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 0;
+        }
+
+        /* ═══ CTA ═══ */
+        .cta-block {
+            border-top: 1px solid var(--border);
+            padding-top: 3rem;
+            margin-top: 1rem;
+        }
+
+        .cta-block h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+        }
+
+        .cta-block p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        .cta-links {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.6rem 1.4rem;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .cta-btn.primary {
+            background: var(--text);
+            color: var(--bg);
+        }
+        .cta-btn.primary:hover { opacity: 0.85; }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .cta-btn.secondary:hover { border-color: var(--text); }
+
+        /* ═══ FOOTER ═══ */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--mono);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-brand-sub {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-top: 0.3rem;
+        }
+
+        .footer-links-group {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .footer-col-title {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-col a {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: var(--text); }
+
+        .footer-machine-link { font-family: var(--mono); font-size: 0.75rem !important; }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 7rem 0 3rem; }
+            .content { padding: 0 1.5rem 3rem; }
+            .values-grid { grid-template-columns: 1fr; }
+            .ecosystem-grid { grid-template-columns: 1fr; }
+            .team-card { flex-direction: column; gap: 1rem; }
+            .nav-links { display: none; }
+            .footer-top { flex-direction: column; }
+            .footer-links-group { flex-wrap: wrap; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-wordmark">
+                <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 3.5L3.5 8v8L8 20.5" />
+                    <path d="M16 3.5l4.5 4.5v8l-4.5 4.5" />
+                    <circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none" />
+                </svg>
+                CLAWTRAK
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#audit">Free Scan</a></li>
+                <li><a href="/about.html" class="active">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">About ClawTrak</div>
+            <h1>We built an AI agent. It couldn't find any businesses. So we built this.</h1>
+            <p class="hero-intro">
+                ClawTrak makes businesses discoverable by autonomous AI agents. We scan websites for the files and signals AI systems look for, then generate everything that's missing. One purchase, no subscription.
+            </p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="section-block">
+            <h2>The problem</h2>
+            <p>
+                When someone asks ChatGPT for a restaurant recommendation, a CRM comparison, or a plumber in their city, the AI doesn't search Google. It reads websites directly, looking for machine-readable signals: structured data, AI profile files, API specifications. If your site doesn't have them, the agent skips you and recommends whoever does.
+            </p>
+            <p>
+                We discovered this firsthand. While building <a href="https://pixelfamiliar.ca">Pixel Familiar</a>, our autonomous AI agent, we gave it a simple task: find services online, evaluate them, and transact. It couldn't. Every business was invisible to machines. The web was built for human eyes, not agent workflows.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>What ClawTrak does</h2>
+            <p>
+                We scan your website against 8 deterministic checks that measure how well AI agents can discover, understand, and interact with your business. Then we generate the files that fix your score: an AI business profile (<strong>llms.txt</strong>), agent rules of engagement (<strong>AGENTS.md</strong>), a machine-readable discovery card, an API specification, and an analytics dashboard to track which bots visit your site.
+            </p>
+            <p>
+                The scan is free. The full remediation package is $49, one-time. No subscriptions, no upsells, no ongoing fees. You upload a few files and your business becomes visible to the fastest-growing discovery channel on the internet.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>What we believe</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>Transparency</h4>
+                    <p>Our <a href="/methodology.html">methodology is public</a>. Same URL, same score, every time. No subjective reviews, no hidden criteria.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Accessibility</h4>
+                    <p>The free scan requires no signup and no email. AI readiness shouldn't be gatekept behind enterprise sales calls.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Ownership</h4>
+                    <p>The files we generate are yours. No vendor lock-in, no SaaS dependency. Upload them once and they work forever.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2>The team</h2>
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="/pixel-fox.png" alt="Pixel Familiar">
+                </div>
+                <div class="team-info">
+                    <h4>Pixel Familiar Inc.</h4>
+                    <div class="role">Winnipeg, Manitoba, Canada</div>
+                    <p>
+                        ClawTrak is built and operated by Pixel Familiar Inc., a company focused on agent-native infrastructure based in Winnipeg. We build tools that make the web work for AI agents, not just humans. Pixel Familiar, our autonomous AI agent, handles product development, customer fulfillment, content, and day-to-day operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2>The ecosystem</h2>
+            <p>ClawTrak is one piece of a larger agent-native infrastructure stack.</p>
+            <div class="ecosystem-grid">
+                <a href="https://clawforce.ca" class="eco-card" target="_blank" rel="noopener">
+                    <div class="eco-domain">clawforce.ca</div>
+                    <h4>ClawForce</h4>
+                    <p>Security certification and trust registry for AI agent skills. Scan, verify, and certify that agent code is safe to run.</p>
+                </a>
+                <a href="https://pixelfamiliar.ca" class="eco-card" target="_blank" rel="noopener">
+                    <div class="eco-domain">pixelfamiliar.ca</div>
+                    <h4>Pixel Familiar</h4>
+                    <p>The parent company and hub for all products, services, and the blog. Home of the autonomous AI agent that runs the operation.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="section-block cta-block">
+            <h2>Ready to see your score?</h2>
+            <p>Run a free scan on your website. Takes 10 seconds, no signup required.</p>
+            <div class="cta-links">
+                <a href="/#audit" class="cta-btn primary">Scan Your Site Free →</a>
+                <a href="/contact.html" class="cta-btn secondary">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-brand">
+                        <svg class="clawtrak-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3.5L3.5 8v8L8 20.5" />
+                            <path d="M16 3.5l4.5 4.5v8l-4.5 4.5" />
+                            <circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none" />
+                        </svg>
+                        CLAWTRAK
+                    </div>
+                    <div class="footer-brand-sub">Pixel Familiar Inc. · Winnipeg, Manitoba, Canada</div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <div class="footer-col-title">Company</div>
+                        <a href="/about.html">About</a>
+                        <a href="/contact.html">Contact</a>
+                        <a href="https://pixelfamiliar.ca">Pixel Familiar</a>
+                        <a href="https://x.com/PixelFamiliar">Follow on X</a>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-col-title">Resources</div>
+                        <a href="/methodology.html">Methodology</a>
+                        <a href="/docs.html">API Docs</a>
+                        <a href="/partners.html">Partners</a>
+                        <a href="/blog/">Blog</a>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-col-title">Legal</div>
+                        <a href="/privacy.html">Privacy (PIPEDA)</a>
+                        <a href="/terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 ClawTrak · Pixel Familiar Inc. All rights reserved.</span>
+                <span class="footer-copy">Built by an autonomous AI agent.</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

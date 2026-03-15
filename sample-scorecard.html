@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Scorecard — ClawTrak</title>
+</head>
+<body style="margin:0; padding:0; background:#F5F5F3; font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
+
+<!-- Wrapper -->
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#F5F5F3; padding:32px 16px;">
+<tr><td align="center">
+<table width="640" cellpadding="0" cellspacing="0" style="max-width:640px; width:100%;">
+
+    <!-- Header -->
+    <tr><td style="padding:24px 32px; background:#111; border-radius:12px 12px 0 0;">
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="font-family:-apple-system,sans-serif; font-size:15px; font-weight:700; color:#FAFAF8; letter-spacing:0.04em;">CLAWTRAK</td>
+                <td align="right" style="font-size:11px; color:rgba(250,250,248,0.4); font-family:monospace;">Agent-Readiness Scorecard</td>
+            </tr>
+        </table>
+    </td></tr>
+
+    <!-- Score Hero -->
+    <tr><td style="background:#FAFAF8; padding:40px 32px; text-align:center; border-bottom:1px solid #E8E8E5;">
+
+        <!-- Score Ring -->
+        <div style="margin:0 auto 16px;">
+            <svg width="140" height="140" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="#E8E8E5" stroke-width="8"/>
+                <circle cx="60" cy="60" r="54" fill="none" stroke="#2D8B4A" stroke-width="8"
+                    stroke-dasharray="237.5 101.8" stroke-linecap="round"
+                    transform="rotate(-90 60 60)"/>
+                <text x="60" y="55" text-anchor="middle" font-family="monospace" font-size="28" font-weight="700" fill="#2D8B4A">70</text>
+                <text x="60" y="72" text-anchor="middle" font-family="monospace" font-size="10" fill="#999">/100</text>
+            </svg>
+        </div>
+
+        <div style="display:inline-block; background:#E8F5EC; color:#2D8B4A; padding:4px 16px; border-radius:6px; font-size:13px; font-weight:700; font-family:monospace; margin-bottom:12px;">
+            Grade B
+        </div>
+
+        <div style="font-size:20px; font-weight:700; color:#111; margin-top:8px;">clawtrak.com</div>
+        <div style="font-size:12px; color:#999; margin-top:4px;">Scanned March 15, 2026</div>
+        <div style="display:inline-block; background:#F5F5F3; padding:3px 10px; border-radius:4px; font-size:10px; color:#999; margin-top:8px; font-family:monospace;">SAMPLE REPORT</div>
+
+    </td></tr>
+
+    <!-- Assessment -->
+    <tr><td style="background:#FAFAF8; padding:24px 32px 8px;">
+        <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#999; margin-bottom:8px;">Assessment</div>
+        <div style="font-size:14px; color:#555; line-height:1.6;">Your website is partially agent-ready. Most core elements are in place, but there are gaps limiting full autonomous interaction.</div>
+    </td></tr>
+
+    <!-- Check Breakdown (PARTIAL — 3 of 8 shown) -->
+    <tr><td style="background:#FAFAF8; padding:24px 32px;">
+        <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#999; margin-bottom:12px;">Score Breakdown <span style="font-weight:400; text-transform:none; letter-spacing:normal;">(3 of 8 checks shown)</span></div>
+        <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E8E8E5; border-radius:8px; overflow:hidden;">
+            <tr style="background:#F9F9F7;">
+                <th style="padding:8px 16px; text-align:left; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#999; border-bottom:1px solid #E8E8E5;">Check</th>
+                <th style="padding:8px 16px; text-align:center; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#999; border-bottom:1px solid #E8E8E5; width:70px;">Score</th>
+                <th style="padding:8px 16px; text-align:left; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#999; border-bottom:1px solid #E8E8E5; width:120px;"></th>
+            </tr>
+
+        <!-- CHECK 1: llms.txt (visible) -->
+        <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5; font-size:14px; color:#111; font-weight:500;">&#x2705; llms.txt</td>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5; text-align:center;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1A7A3A;">15/15</span>
+            </td>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5;">
+                <div style="background:#F0F0EE; border-radius:4px; height:6px; width:100%; overflow:hidden;">
+                    <div style="background:#1A7A3A; height:6px; width:100%; border-radius:4px;"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="padding:0 16px 12px 44px; border-bottom:1px solid #F5F5F3; font-size:12px; color:#888; line-height:1.4;">/llms.txt found and well-formatted (47 lines).</td>
+        </tr>
+
+        <!-- CHECK 2: AGENTS.md (visible) -->
+        <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5; font-size:14px; color:#111; font-weight:500;">&#x2705; AGENTS.md</td>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5; text-align:center;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1A7A3A;">10/10</span>
+            </td>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5;">
+                <div style="background:#F0F0EE; border-radius:4px; height:6px; width:100%; overflow:hidden;">
+                    <div style="background:#1A7A3A; height:6px; width:100%; border-radius:4px;"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="padding:0 16px 12px 44px; border-bottom:1px solid #F5F5F3; font-size:12px; color:#888; line-height:1.4;">/AGENTS.md found. Agent engagement rules declared.</td>
+        </tr>
+
+        <!-- CHECK 3: Agent Card (visible) -->
+        <tr>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5; font-size:14px; color:#111; font-weight:500;">&#x2705; Agent Card</td>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5; text-align:center;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:#1A7A3A;">15/15</span>
+            </td>
+            <td style="padding:12px 16px; border-bottom:1px solid #E8E8E5;">
+                <div style="background:#F0F0EE; border-radius:4px; height:6px; width:100%; overflow:hidden;">
+                    <div style="background:#1A7A3A; height:6px; width:100%; border-radius:4px;"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="padding:0 16px 12px 44px; border-bottom:1px solid #F5F5F3; font-size:12px; color:#888; line-height:1.4;">Agent Card found. Capabilities: yes, Auth: yes.</td>
+        </tr>
+
+        <!-- LOCKED CHECKS (5 remaining) -->
+        <tr>
+            <td colspan="3" style="padding:0; position:relative;">
+                <div style="padding:20px 16px; text-align:center; background:linear-gradient(180deg, rgba(250,250,248,0.3) 0%, rgba(245,245,243,1) 100%);">
+                    <div style="filter:blur(4px); pointer-events:none; opacity:0.4; margin-bottom:8px;">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td style="padding:8px 16px; font-size:14px; color:#888; font-weight:500;">&#x2705; ██████████</td>
+                                <td style="padding:8px 16px; text-align:center;">
+                                    <span style="font-family:monospace; font-size:13px; color:#999;">██/██</span>
+                                </td>
+                                <td style="padding:8px 16px;">
+                                    <div style="background:#E8E8E5; border-radius:4px; height:6px; width:100%;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 16px; font-size:14px; color:#888; font-weight:500;">&#x274C; ██████████</td>
+                                <td style="padding:8px 16px; text-align:center;">
+                                    <span style="font-family:monospace; font-size:13px; color:#999;">██/██</span>
+                                </td>
+                                <td style="padding:8px 16px;">
+                                    <div style="background:#E8E8E5; border-radius:4px; height:6px; width:100%;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 16px; font-size:14px; color:#888; font-weight:500;">&#x274C; ██████████</td>
+                                <td style="padding:8px 16px; text-align:center;">
+                                    <span style="font-family:monospace; font-size:13px; color:#999;">██/██</span>
+                                </td>
+                                <td style="padding:8px 16px;">
+                                    <div style="background:#E8E8E5; border-radius:4px; height:6px; width:100%;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 16px; font-size:14px; color:#888; font-weight:500;">&#x2705; ██████████</td>
+                                <td style="padding:8px 16px; text-align:center;">
+                                    <span style="font-family:monospace; font-size:13px; color:#999;">██/██</span>
+                                </td>
+                                <td style="padding:8px 16px;">
+                                    <div style="background:#E8E8E5; border-radius:4px; height:6px; width:100%;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 16px; font-size:14px; color:#888; font-weight:500;">&#x26A0;&#xFE0F; ██████████</td>
+                                <td style="padding:8px 16px; text-align:center;">
+                                    <span style="font-family:monospace; font-size:13px; color:#999;">██/██</span>
+                                </td>
+                                <td style="padding:8px 16px;">
+                                    <div style="background:#E8E8E5; border-radius:4px; height:6px; width:100%;"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="font-size:13px; font-weight:600; color:#111; margin-bottom:4px;">🔒 5 more checks in the full report</div>
+                    <div style="font-size:12px; color:#888;">Purchase the $49 package to see your complete breakdown, priority remediations, and all generated files.</div>
+                </div>
+            </td>
+        </tr>
+        </table>
+
+    </td></tr>
+
+    <!-- CTA (instead of remediation section) -->
+    <tr><td style="background:#FAFAF8; padding:24px 32px 32px; text-align:center;">
+        <div style="border-top:1px solid #E8E8E5; padding-top:24px;">
+            <div style="font-size:16px; font-weight:700; color:#111; margin-bottom:6px;">See your full results + get the fix</div>
+            <div style="font-size:13px; color:#888; margin-bottom:16px; line-height:1.5;">The complete report includes all 8 checks, priority remediations, and the generated files (llms.txt, AGENTS.md, API spec) ready to deploy.</div>
+            <a href="https://buy.stripe.com/00waEZ9gXbzBefD8Mu9wt0p" style="display:inline-block; background:#111; color:#FAFAF8; padding:12px 28px; border-radius:8px; text-decoration:none; font-size:14px; font-weight:600;">Get the Full Package &rarr; $49</a>
+            <div style="margin-top:10px;">
+                <a href="https://clawtrak.com/#audit" style="font-size:12px; color:#888; text-decoration:none;">or run a free scan on your own domain</a>
+            </div>
+        </div>
+    </td></tr>
+
+    <!-- Footer -->
+    <tr><td style="padding:24px 32px; background:#111; border-radius:0 0 12px 12px;">
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="font-size:11px; color:rgba(250,250,248,0.4);">
+                    &copy; 2026 ClawTrak &middot; Pixel Familiar Inc.<br>
+                    Winnipeg, Manitoba, Canada
+                </td>
+                <td align="right" style="font-size:11px; color:rgba(250,250,248,0.3);">
+                    <a href="https://clawtrak.com" style="color:rgba(250,250,248,0.5); text-decoration:none;">clawtrak.com</a>
+                </td>
+            </tr>
+        </table>
+        <div style="margin-top:12px; font-size:10px; color:rgba(250,250,248,0.2); line-height:1.5;">
+            This is a sample report. Full reports include all 8 deterministic checks, priority remediations, and generated remediation files.
+        </div>
+    </td></tr>
+
+</table>
+</td></tr>
+</table>
+
+</body>
+</html>
