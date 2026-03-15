@@ -1969,33 +1969,39 @@ Score: 85/100 | Grade: A<br>
                 } catch (err) { console.error(err); }
             };
 
+            // Run real scan via API + animations in parallel
+            const scanPromise = fetch('https://api.clawtrak.com/scan?url=' + encodeURIComponent(normalized))
+                .then(r => r.json())
+                .catch(err => {
+                    console.error('Scan API error:', err);
+                    return null;
+                });
+
             await Promise.all([showStep(), sendLead()]);
 
-            // Show estimated result (since we can't run live server checks from browser)
-            const estimatedResult = {
-                domain: normalized,
-                score: Math.floor(Math.random() * 25) + 5,
-                grade: 'F',
-                checks: {
-                    'llms_txt': { score: 0, max: 15, status: 'FAIL' },
-                    'agents_md': { score: 0, max: 15, status: 'FAIL' },
-                    'agent_card': { score: 0, max: 10, status: 'FAIL' },
-                    'robots_txt_ai': { score: Math.random() > 0.5 ? 10 : 0, max: 10, status: Math.random() > 0.5 ? 'PASS' : 'FAIL' },
-                    'json_ld': { score: Math.random() > 0.6 ? 15 : 0, max: 15, status: Math.random() > 0.6 ? 'PASS' : 'FAIL' },
-                    'schema': { score: Math.random() > 0.5 ? 10 : 0, max: 10, status: Math.random() > 0.5 ? 'PASS' : 'FAIL' },
-                    'openapi': { score: 0, max: 15, status: 'FAIL' },
-                    'meta_semantic': { score: Math.random() > 0.3 ? 10 : 0, max: 10, status: Math.random() > 0.3 ? 'PASS' : 'FAIL' }
-                }
-            };
-            // Recalculate score
-            estimatedResult.score = Object.values(estimatedResult.checks).reduce((sum, c) => sum + c.score, 0);
-            if (estimatedResult.score >= 80) estimatedResult.grade = 'A';
-            else if (estimatedResult.score >= 60) estimatedResult.grade = 'B';
-            else if (estimatedResult.score >= 40) estimatedResult.grade = 'C';
-            else if (estimatedResult.score >= 20) estimatedResult.grade = 'D';
-            else estimatedResult.grade = 'F';
+            let scanData = await scanPromise;
 
-            showScanResults(estimatedResult);
+            if (scanData && scanData.reachable && scanData.checks) {
+                // Transform checks array to object keyed by name
+                const checksObj = {};
+                for (const c of scanData.checks) {
+                    const key = c.name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/_+$/, '');
+                    checksObj[key] = { score: c.score, max: c.max, status: c.status };
+                }
+                showScanResults({
+                    domain: scanData.url || normalized,
+                    score: scanData.score,
+                    grade: scanData.grade,
+                    checks: checksObj
+                });
+            } else {
+                // Fallback: show error state
+                const note = document.getElementById('heroScanNote');
+                note.innerHTML = '<span style="color:#ef4444;">Could not reach ' + normalized + '. Check the URL and try again.</span>';
+                btn.textContent = 'Scan →';
+                btn.disabled = false;
+                return;
+            }
             incrementScanCount();
             btn.textContent = 'Scan →';
             btn.disabled = false;
