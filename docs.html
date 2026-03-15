@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan API Documentation — ClawTrak</title>
+    <meta name="description" content="Free API to check any website's AI readiness score. Returns 8 checks, a score out of 100, and a grade. Rate limited to 10 requests per minute.">
+    <meta property="og:title" content="ClawTrak Scan API">
+    <meta property="og:description" content="Free API to check AI readiness. 8 checks, score out of 100, JSON response.">
+    <meta property="og:image" content="https://clawtrak.com/og-image.png">
+    <link rel="icon" href="/pixel-fox.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF8; --bg-card: #fff; --text: #111; --text-secondary: #555;
+            --text-dim: #999; --border: #E8E8E5; --green: #1A7A3A; --radius: 12px;
+            --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+        .nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top:0; z-index:100; }
+        .nav-inner { display:flex; justify-content:space-between; align-items:center; }
+        .nav-logo { font-family: var(--mono); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
+        .nav-back { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; }
+        article { padding: 3rem 0 4rem; }
+        .article-label { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin-bottom: 1rem; }
+        h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        .article-meta { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+        h2 { font-size: 1.3rem; font-weight: 600; margin: 2.5rem 0 0.8rem; }
+        h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+        p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+        p strong { color: var(--text); }
+        code { font-family: var(--mono); font-size: 0.85em; background: rgba(0,0,0,0.04); padding: 0.15em 0.4em; border-radius: 4px; }
+        pre { background: #111; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1.5rem; font-family: var(--mono); font-size: 0.78rem; line-height: 1.6; }
+        pre code { background: none; padding: 0; color: inherit; }
+        .endpoint-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .method { font-family: var(--mono); font-size: 0.72rem; font-weight: 600; background: rgba(26,122,58,0.1); color: var(--green); padding: 0.2em 0.5em; border-radius: 4px; margin-right: 0.5rem; }
+        .endpoint-url { font-family: var(--mono); font-size: 0.88rem; font-weight: 500; }
+        .param-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+        .param-table th { text-align: left; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); }
+        .param-table td { padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.03); }
+        .param-table td code { font-size: 0.82em; }
+        .rate-box { background: rgba(26,122,58,0.05); border: 1px solid rgba(26,122,58,0.15); border-radius: 8px; padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; }
+        ul { margin-bottom: 1.2rem; padding-left: 1.5rem; color: var(--text-secondary); }
+        li { margin-bottom: 0.4rem; }
+        .blog-footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; font-size: 0.78rem; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo">CLAWTRAK</a>
+            <a href="/" class="nav-back">← Back to home</a>
+        </div>
+    </nav>
+
+    <article>
+        <div class="container">
+            <div class="article-label">API Reference</div>
+            <h1>Scan API</h1>
+            <div class="article-meta">Free, public, rate-limited. No API key required.</div>
+
+            <p>Check any website's AI readiness score programmatically. The API runs the same 8-check scanner used by <a href="/" style="color:var(--green)">clawtrak.com</a> and returns structured JSON with individual check results, a total score, and a letter grade.</p>
+
+            <div class="rate-box">
+                <strong>Rate limit:</strong> 10 requests per minute per IP. Results are cached for 24 hours.
+            </div>
+
+            <h2>Endpoint</h2>
+
+            <div class="endpoint-card">
+                <div style="margin-bottom:0.8rem;">
+                    <span class="method">GET</span>
+                    <span class="endpoint-url">https://api.clawtrak.com/scan</span>
+                </div>
+                <table class="param-table">
+                    <thead>
+                        <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>url</code></td><td>string</td><td>Yes</td><td>Domain or URL to scan (e.g. <code>example.com</code>)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Quick Start</h2>
+
+            <h3>cURL</h3>
+<pre><code>curl "https://api.clawtrak.com/scan?url=shopify.com"</code></pre>
+
+            <h3>JavaScript</h3>
+<pre><code>const res = await fetch('https://api.clawtrak.com/scan?url=shopify.com');
+const data = await res.json();
+console.log(data.score, data.grade);  // 37, "D"</code></pre>
+
+            <h3>Python</h3>
+<pre><code>import requests
+r = requests.get('https://api.clawtrak.com/scan', params={'url': 'shopify.com'})
+data = r.json()
+print(f"{data['score']}/100 — Grade {data['grade']}")</code></pre>
+
+            <h2>Response</h2>
+
+            <p>A successful scan returns a JSON object with the following fields:</p>
+
+<pre><code>{
+  "url": "shopify.com",
+  "reachable": true,
+  "score": 37,
+  "max_score": 100,
+  "grade": "D",
+  "checks": [
+    {
+      "name": "llms.txt",
+      "score": 15,
+      "max": 15,
+      "status": "PASS",
+      "detail": "/llms.txt found and well-formatted (21 lines)."
+    },
+    {
+      "name": "AGENTS.md",
+      "score": 0,
+      "max": 10,
+      "status": "FAIL",
+      "detail": "No AGENTS.md found."
+    }
+    // ... 6 more checks
+  ],
+  "summary": "Score: 37/100 (Grade D)",
+  "timestamp": "2026-03-14T21:30:00"
+}</code></pre>
+
+            <h2>The 8 Checks</h2>
+
+            <table class="param-table">
+                <thead><tr><th>Check</th><th>Max Points</th><th>What It Tests</th></tr></thead>
+                <tbody>
+                    <tr><td><code>llms.txt</code></td><td>15</td><td>AI profile file at <code>/llms.txt</code></td></tr>
+                    <tr><td><code>AGENTS.md</code></td><td>10</td><td>Agent rules of engagement</td></tr>
+                    <tr><td><code>Agent Card</code></td><td>15</td><td>Discovery card at <code>/.well-known/agent</code></td></tr>
+                    <tr><td><code>Bot Permissions</code></td><td>10</td><td>AI bot directives in <code>robots.txt</code></td></tr>
+                    <tr><td><code>Structured Data</code></td><td>15</td><td>JSON-LD embedded in HTML</td></tr>
+                    <tr><td><code>Business Schema</code></td><td>10</td><td>Schema.org vocabulary coverage</td></tr>
+                    <tr><td><code>API Spec</code></td><td>15</td><td>OpenAPI/Swagger specification</td></tr>
+                    <tr><td><code>Page Metadata</code></td><td>10</td><td>Meta tags, headings, semantic HTML</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Grading Scale</h2>
+            <ul>
+                <li><strong>A (80-100)</strong> — Fully agent-ready</li>
+                <li><strong>B (60-79)</strong> — Mostly ready, minor gaps</li>
+                <li><strong>C (40-59)</strong> — Partially visible to AI</li>
+                <li><strong>D (20-39)</strong> — Barely visible</li>
+                <li><strong>F (0-19)</strong> — Invisible to agents</li>
+            </ul>
+
+            <h2>Error Responses</h2>
+
+<pre><code>// Missing URL parameter
+{"error": "url parameter required"}           // 400
+
+// Rate limit exceeded
+{"error": "rate limit exceeded, try again in 60s"}  // 429
+
+// Site unreachable
+{"error": "Could not reach example.com"}      // 500</code></pre>
+
+            <h2>Use Cases</h2>
+            <ul>
+                <li><strong>Agencies:</strong> Batch-scan client portfolios to identify upsell opportunities</li>
+                <li><strong>Developers:</strong> Build AI readiness into CI/CD pipelines</li>
+                <li><strong>SEO Tools:</strong> Add AI readiness as a metric alongside traditional SEO checks</li>
+                <li><strong>Monitoring:</strong> Track your score over time with automated re-scans</li>
+            </ul>
+
+            <p>Need bulk access or higher rate limits? <a href="/partners.html" style="color:var(--green)">Apply for partner access →</a></p>
+        </div>
+    </article>
+
+    <footer class="blog-footer">
+        <div class="container">
+            © 2026 ClawTrak · Pixel Familiar Inc. · <a href="/" style="color:var(--text-dim);">clawtrak.com</a>
+        </div>
+    </footer>
+</body>
+</html>
