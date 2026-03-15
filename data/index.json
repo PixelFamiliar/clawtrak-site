@@ -1224,9 +1224,9 @@
     },
     {
       "domain": "clawtrak.com",
-      "score": 98,
+      "score": 100,
       "grade": "A",
-      "scanned": "2026-03-14",
+      "scanned": "2026-03-15",
       "checks": {
         "llms.txt": {
           "score": 15,
@@ -1264,7 +1264,7 @@
           "status": "PASS"
         },
         "meta_and_semantic": {
-          "score": 8,
+          "score": 10,
           "max": 10,
           "status": "PASS"
         }
@@ -1272,9 +1272,9 @@
     },
     {
       "domain": "pixelfamiliar.ca",
-      "score": 99,
+      "score": 100,
       "grade": "A",
-      "scanned": "2026-03-14",
+      "scanned": "2026-03-15",
       "checks": {
         "llms.txt": {
           "score": 15,
@@ -1312,7 +1312,7 @@
           "status": "PASS"
         },
         "meta_and_semantic": {
-          "score": 9,
+          "score": 10,
           "max": 10,
           "status": "PASS"
         }
@@ -1320,9 +1320,9 @@
     },
     {
       "domain": "clawforce.ca",
-      "score": 97,
+      "score": 100,
       "grade": "A",
-      "scanned": "2026-03-14",
+      "scanned": "2026-03-15",
       "checks": {
         "llms.txt": {
           "score": 15,
@@ -1360,7 +1360,7 @@
           "status": "PASS"
         },
         "meta_and_semantic": {
-          "score": 7,
+          "score": 10,
           "max": 10,
           "status": "PASS"
         }
