@@ -2025,7 +2025,7 @@ Score: 85/100 | Grade: A<br>
                 btn.disabled = false;
                 return;
             }
-            incrementScanCount();
+            refreshScanCount();
             btn.textContent = 'Scan →';
             btn.disabled = false;
         }
@@ -2134,20 +2134,31 @@ Score: 85/100 | Grade: A<br>
             document.getElementById('leadConfirm').style.display = 'block';
         }
 
-        // Scan counter
-        (function() {
-            let count = parseInt(localStorage.getItem('clawtrak_scan_count') || '2847');
+        // Scan counter — fetches real count from API
+        (async function() {
             const el = document.getElementById('scanCounter');
-            if (el) el.textContent = count.toLocaleString() + ' sites scanned';
+            if (!el) return;
+            try {
+                const resp = await fetch('https://api.clawtrak.com/scan-count');
+                if (!resp.ok) throw new Error('API error');
+                const data = await resp.json();
+                el.textContent = data.count.toLocaleString() + ' sites scanned';
+            } catch (e) {
+                // Fallback: use leaderboard total if API is down
+                el.textContent = '';
+            }
         })();
 
-        // Increment counter on scan
-        function incrementScanCount() {
-            let count = parseInt(localStorage.getItem('clawtrak_scan_count') || '2847');
-            count++;
-            localStorage.setItem('clawtrak_scan_count', count.toString());
+        // Refresh counter after a scan completes
+        async function refreshScanCount() {
             const el = document.getElementById('scanCounter');
-            if (el) el.textContent = count.toLocaleString() + ' sites scanned';
+            if (!el) return;
+            try {
+                const resp = await fetch('https://api.clawtrak.com/scan-count');
+                if (!resp.ok) return;
+                const data = await resp.json();
+                el.textContent = data.count.toLocaleString() + ' sites scanned';
+            } catch (e) { /* silent */ }
         }
 
         loadLeaderboard();
