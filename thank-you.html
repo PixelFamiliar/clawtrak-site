@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You — ClawTrak</title>
+    <link rel="icon" href="/pixel-fox.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f5f5f0;
-            --text: #1a1a1a;
-            --text-secondary: #5a5a5a;
-            --text-dim: #999;
-            --mono: 'SF Mono', 'Fira Code', monospace;
-            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --border: rgba(0,0,0,0.08);
-            --green: #16a34a;
+            --bg: #FAFAF8; --bg-card: #fff; --text: #111; --text-secondary: #555;
+            --text-dim: #999; --border: #E8E8E5; --green: #1A7A3A; --radius: 12px;
+            --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -22,139 +21,137 @@
             color: var(--text);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 2rem;
         }
         .card {
-            background: white;
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            max-width: 600px;
+            border-radius: var(--radius);
+            max-width: 580px;
             width: 100%;
             padding: 3rem;
-            text-align: center;
         }
-        .check-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(22, 163, 74, 0.1);
+        .check-ring {
+            width: 72px; height: 72px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(26, 122, 58, 0.08);
+            display: flex; align-items: center; justify-content: center;
             margin: 0 auto 1.5rem;
-            font-size: 2rem;
+            animation: scaleIn 0.4s ease;
         }
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-        .sub {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-        .timeline {
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-        .timeline-item {
-            display: flex;
-            gap: 1rem;
-            padding: 0.8rem 0;
+        .check-ring svg { width: 36px; height: 36px; color: var(--green); }
+        @keyframes scaleIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        h1 { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 0.6rem; line-height: 1.3; }
+        .sub { font-size: 0.95rem; color: var(--text-secondary); text-align: center; line-height: 1.6; margin-bottom: 2rem; }
+
+        .timeline { margin-bottom: 2rem; }
+        .tl-item {
+            display: flex; gap: 1rem; padding: 0.9rem 0;
             border-bottom: 1px solid var(--border);
         }
-        .timeline-item:last-child { border-bottom: none; }
-        .timeline-num {
-            font-family: var(--mono);
-            font-size: 0.75rem;
-            background: rgba(0,0,0,0.05);
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+        .tl-item:last-child { border-bottom: none; }
+        .tl-num {
+            font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
+            background: rgba(0,0,0,0.04); border-radius: 50%;
+            width: 28px; height: 28px; min-width: 28px;
+            display: flex; align-items: center; justify-content: center;
             margin-top: 2px;
         }
-        .timeline-text h3 {
-            font-size: 0.9rem;
-            margin-bottom: 0.2rem;
-        }
-        .timeline-text p {
+        .tl-item.active .tl-num { background: rgba(26,122,58,0.1); color: var(--green); }
+        .tl-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.15rem; }
+        .tl-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+
+        .eta-box {
+            background: rgba(0,0,0,0.02);
+            border-radius: 8px;
+            padding: 0.8rem 1rem;
+            display: flex; align-items: center; gap: 0.6rem;
+            margin-bottom: 1.5rem;
             font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
         }
-        .cta-link {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            background: var(--text);
-            color: var(--bg);
-            font-family: var(--mono);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: opacity 0.2s;
+        .eta-box .dot {
+            width: 8px; height: 8px; background: var(--green);
+            border-radius: 50%; animation: pulse 1.5s infinite;
         }
-        .cta-link:hover { opacity: 0.85; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block; padding: 0.7rem 1.5rem;
+            font-family: var(--mono); font-size: 0.78rem; font-weight: 600;
+            text-decoration: none; border-radius: 6px; transition: all 0.2s;
+        }
+        .btn-primary { background: var(--text); color: var(--bg); }
+        .btn-primary:hover { opacity: 0.85; }
+        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--text); }
+
         .footer-note {
-            margin-top: 1.5rem;
-            font-size: 0.75rem;
-            color: var(--text-dim);
+            margin-top: 1.5rem; text-align: center;
+            font-size: 0.72rem; color: var(--text-dim);
         }
         .footer-note a { color: var(--text-secondary); }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="check-icon">✅</div>
-        <h1>Your audit is being generated.</h1>
+        <div class="check-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+            </svg>
+        </div>
+        <h1>Your AI Readiness Package is being built.</h1>
         <p class="sub">
-            We're scanning your site, running all 8 checks, and building your AI profile files right now.
-            You'll receive everything by email within a few minutes.
+            We're scanning your domain, generating your custom files, and preparing your private dashboard right now.
         </p>
 
+        <div class="eta-box">
+            <div class="dot"></div>
+            <span>Usually delivered within <strong>5 minutes</strong></span>
+        </div>
+
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-num">1</div>
-                <div class="timeline-text">
-                    <h3>Scan running now</h3>
-                    <p>We're checking your site for all 8 AI readiness signals.</p>
+            <div class="tl-item active">
+                <div class="tl-num">1</div>
+                <div>
+                    <div class="tl-title">Scanning your site</div>
+                    <div class="tl-desc">Running all 8 AI readiness checks against your domain.</div>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-num">2</div>
-                <div class="timeline-text">
-                    <h3>Files being generated</h3>
-                    <p>Your AI profile, agent rules, API spec, and discovery card are being built custom for your domain.</p>
+            <div class="tl-item">
+                <div class="tl-num">2</div>
+                <div>
+                    <div class="tl-title">Generating your files</div>
+                    <div class="tl-desc">Building llms.txt, AGENTS.md, OpenAPI spec, and Agent Card custom-tailored to your business.</div>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-num">3</div>
-                <div class="timeline-text">
-                    <h3>Email delivery</h3>
-                    <p>Everything arrives in your inbox with step-by-step deployment instructions. Just upload the files to your site.</p>
+            <div class="tl-item">
+                <div class="tl-num">3</div>
+                <div>
+                    <div class="tl-title">Setting up your dashboard</div>
+                    <div class="tl-desc">Creating your private analytics dashboard and claw.js tracking snippet.</div>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-num">4</div>
-                <div class="timeline-text">
-                    <h3>Re-scan to verify</h3>
-                    <p>After deploying, scan your site again at ClawTrak to see your improved score.</p>
+            <div class="tl-item">
+                <div class="tl-num">4</div>
+                <div>
+                    <div class="tl-title">Email delivery</div>
+                    <div class="tl-desc">Everything arrives in your inbox with step-by-step deployment instructions. Upload the files, paste the snippet, done.</div>
                 </div>
             </div>
         </div>
 
-        <a href="/" class="cta-link">← Back to ClawTrak</a>
+        <div class="actions">
+            <a href="/#audit" class="btn btn-primary">Scan another site →</a>
+            <a href="/blog/ai-readiness-for-small-business.html" class="btn btn-secondary">Read: AI Readiness Guide</a>
+        </div>
 
         <p class="footer-note">
-            Questions? Reply to the email you receive, or contact us at <a href="https://pixelfamiliar.ca">Pixel Familiar</a>.
+            Questions? Reply to the delivery email, or contact <a href="mailto:pixel@pixelfamiliar.ca">pixel@pixelfamiliar.ca</a>
         </p>
     </div>
 </body>
